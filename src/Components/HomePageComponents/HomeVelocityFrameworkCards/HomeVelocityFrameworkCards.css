@@ -1,0 +1,137 @@
+.HomeVelocityFrameworkCardsContainer {
+    position: relative;
+}
+
+.VelocityFrameworkCardsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.VelocityFrameworkCardsItem {
+    min-height: 450px;
+    height: 450px;
+    width: 100%;
+    background-color: rgb(16, 16, 16);
+    position: sticky;
+    top: 20%;
+    transform-origin: center top;
+    will-change: transform, filter;
+    padding: 30px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.VelocityContentAndImageGrid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.VelocityContentSecondHalf {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+.VelocityContentSecondHalf img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.VelocityContentFirstHalf {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.VelocityContentSecondHalf::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to left, transparent 0%, rgb(16, 16, 16) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.PointsTagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.PointsTagList div {
+    display: flex;
+
+}
+
+.PointsTagList div p {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.PointsTagList div p svg {
+    width: 17px;
+    height: 17px;
+    color: var(--BrandColor);
+}
+
+.backgroundAttachmentFixedImage {
+    background-image: url("/Images/BackgroundImages/HeroBackgroundRoughBack.webp");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-attachment: fixed;
+    opacity: 0.3;
+}
+
+.backgroundAttachmentFixedImage .LeftCircleContainer {
+    opacity: 0.6 !important;
+    position: sticky;
+    top: 30px;
+    right: 0px;
+    margin-left: auto !important;
+    background-color: var(--BrandColor);
+}
+
+@media screen and (max-width: 768px) {
+    .VelocityFrameworkCardsItem {
+        min-height: 100%;
+        height: 100%;
+        position: static;
+        padding: 20px 10px;
+        border-radius: 10px !important;
+    }
+    .VelocityContentAndImageGrid {
+        grid-template-columns: 1fr;
+    }
+    .HomeVelocityFrameworkCardsContainer {
+        position: relative;
+        overflow: hidden;
+    }
+    .VelocityContentFirstHalf{
+        gap: 20px;
+    }
+}

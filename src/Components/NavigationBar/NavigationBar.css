@@ -1,0 +1,379 @@
+#navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+#navigation-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.473) 0%, transparent 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#navigation-bar.scrolled {
+    background-color: #0e0e0ed7;
+    backdrop-filter: blur(10px);
+}
+
+#navigation-bar.scrolled::before {
+    opacity: 1;
+}
+
+.NavigationBarContainer {
+    padding: 30px 0;
+    transition: padding 0.3s ease;
+}
+
+#navigation-bar.scrolled .NavigationBarContainer {
+    padding: 20px 0;
+}
+
+.NavigationBarContainer .Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LogoContainer img {
+    width: 120px;
+    object-fit: cover;
+}
+
+.nav-menu-div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu-div li {
+    list-style: none;
+}
+
+.nav-menu-div a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu-div a:hover {
+    color: var(--BrandColor);
+}
+
+.nav-menu-div a.active {
+    color: var(--BrandColor);
+    font-weight: 500;
+}
+
+.NavigationBarContainer .buttonContainer img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+
+.buttonContainerNavigation .buttonContainer button {
+    padding: 10px 25px;
+}
+
+/* Mobile menu elements - hidden by default */
+.mobile-right-section {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-whatsapp-btn {
+    background: var(--BrandColor);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(230, 176, 53, 0.4);
+}
+
+.mobile-whatsapp-btn img {
+    width: 24px;
+    height: 24px;
+    /* filter: brightness(0) invert(0); */
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    border-color: var(--BrandColor);
+    background: rgba(230, 176, 53, 0.1);
+}
+
+.hamburger-btn span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Drawer Backdrop */
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Drawer Menu */
+.drawer-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    max-width: 85%;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0e0e0e 100%);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.drawer-menu.open {
+    transform: translateX(0);
+}
+
+.drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px 25px;
+}
+
+.drawer-header {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-header img {
+    width: 120px;
+}
+
+.drawer-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.drawer-close-btn:hover {
+    background: var(--BrandColor);
+    border-color: var(--BrandColor);
+    color: #000;
+    transform: rotate(90deg);
+}
+
+.drawer-close-btn:active {
+    transform: rotate(90deg) scale(0.9);
+}
+
+.drawer-nav {
+    flex: 1;
+}
+
+.drawer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drawer-nav-item {
+    opacity: 0;
+    transform: translateX(30px);
+    margin-bottom: 8px;
+}
+
+.drawer-nav-item.animate {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.drawer-nav-item a {
+    display: block;
+    padding: 18px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.drawer-nav-item a:hover {
+    background: rgba(230, 176, 53, 0.1);
+    color: var(--BrandColor);
+    border-color: rgba(230, 176, 53, 0.2);
+    transform: translateX(5px);
+}
+
+.drawer-nav-item a.active {
+    background: rgba(230, 176, 53, 0.15);
+    color: var(--BrandColor);
+    border-color: var(--BrandColor);
+    font-weight: 500;
+}
+
+.drawer-footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawer-whatsapp-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--BrandColor);
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drawer-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(230, 176, 53, 0.4);
+}
+
+.drawer-whatsapp-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .desktop-whatsapp-btn {
+        display: none;
+    }
+
+    .mobile-right-section {
+        display: flex;
+    }
+
+    .NavigationBarContainer {
+        padding: 20px 0;
+    }
+
+    #navigation-bar.scrolled .NavigationBarContainer {
+        padding: 15px 0;
+    }
+
+    .LogoContainer img {
+        width: 100px;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .drawer-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .LogoContainer img {
+        width: 90px;
+    }
+
+    .mobile-whatsapp-btn,
+    .hamburger-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-right-section {
+        gap: 10px;
+    }
+}

@@ -1,0 +1,53 @@
+.CenteredHeaderContainer {
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.CenteredHeaderContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.CenteredHeaderContent .tagParagraphVersion2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.CenteredHeaderContent .tagParagraphVersion2 svg {
+    width: 20px;
+    height: 20px;
+    color: #E6B035;
+}
+
+.CenteredHeaderContent h2 {
+    text-align: center;
+}
+
+.CenteredDescription {
+    max-width: 600px;
+}
+
+.CenteredDescription p {
+    text-align: center;
+    line-height: 160%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .CenteredHeaderContainer {
+        max-width: 100%;
+    }
+    .CenteredHeaderContainer .Container{
+        padding: 0 0px;
+    }
+}

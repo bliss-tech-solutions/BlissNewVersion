@@ -1,0 +1,28 @@
+.tagParagraphVersion2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tagParagraphVersion2 svg {
+    width: 20px;
+    height: 20px;
+    color: #E6B035;
+}
+
+.HeaderGridItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .HeaderGridItem {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    #flex-between-header .Container{
+        padding: 0 0px;
+    }
+}

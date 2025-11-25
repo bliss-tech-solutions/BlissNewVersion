@@ -1,0 +1,139 @@
+.FlexGridSystem {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.AboutHomeComponentContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+#about-home-component .ContainerGridSystem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#about-home-component .ContainerGridSystem .CompanyWorkDetailsItem {
+    position: relative;
+    padding: 10px 0px;
+}
+
+#about-home-component .ContainerGridSystem .CompanyWorkDetailsItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 1px;
+    background-color: white;
+    opacity: 0.4;
+}
+
+.imageContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.imageContainer::before,
+.imageContainer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.imageContainer::before {
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.78) 0%, transparent 32%, transparent 68%, rgba(0, 0, 0, 0.9) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, transparent 26%, transparent 74%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.imageContainer::after {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 22%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.85) 100%);
+    mix-blend-mode: soft-light;
+}
+
+#about-home-component .CompanyWorkDetailsItem h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+#about-home-component .counter-wrapper {
+    display: inline-flex;
+    gap: 0;
+}
+
+#about-home-component .rolling-digit {
+    display: inline-block;
+    height: 1.2em;
+    line-height: 1.2em;
+    overflow: hidden;
+    position: relative;
+    width: 0.6em;
+    text-align: center;
+}
+
+#about-home-component .rolling-digit::before,
+#about-home-component .rolling-digit::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#about-home-component .rolling-digit::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+#about-home-component .rolling-digit::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+#about-home-component .digit-container {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                filter 0.2s ease-in-out;
+    will-change: transform, filter;
+    filter: blur(0px);
+}
+
+#about-home-component .digit-container.animating {
+    filter: blur(2px);
+}
+
+#about-home-component .digit-item {
+    display: block;
+    height: 1.2em;
+    line-height: 1.2em;
+}
+#about-home-component .ContainerGridSystem p{
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+    .AboutHomeComponentContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

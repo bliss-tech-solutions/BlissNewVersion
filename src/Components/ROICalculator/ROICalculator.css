@@ -1,0 +1,237 @@
+/* ROI Calculator Styles */
+.roi-calculator-container {
+    min-height: 100vh;
+    background: #000000;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+/* Heading Section */
+.roi-heading-wrapper {
+    max-width: 900px;
+    margin-bottom: 32px;
+}
+
+.roi-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(230, 176, 53, 0.1);
+    border: 1px solid rgba(230, 176, 53, 0.2);
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #E6B035;
+    letter-spacing: 1px;
+}
+
+.roi-main-heading {
+    font-size: 48px;
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+}
+
+.roi-heading-gradient {
+    background: linear-gradient(90deg, #E6B035, #f4c563);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.roi-description {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+/* Main Layout */
+.roi-main-layout {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Left Panel - Filters */
+.roi-filters-panel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.roi-dropdown-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.roi-controls-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.roi-input-group {
+    flex: 1;
+}
+
+.roi-input-label {
+    font-size: 12px;
+    margin-bottom: 4px;
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.roi-input,
+.roi-select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    outline: none;
+    color: white;
+    font-family: inherit;
+}
+
+.roi-select {
+    cursor: pointer;
+}
+
+.roi-select option {
+    background: #000;
+    color: white;
+}
+
+.roi-disclaimer {
+    font-size: 11px;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Right Panel - Results */
+.roi-results-panel {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* KPI Cards */
+.roi-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.roi-kpi-card {
+    background: rgba(230, 176, 53, 0.05);
+    border: 1px solid rgba(230, 176, 53, 0.2);
+    border-radius: 18px;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.roi-kpi-title {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px;
+}
+
+.roi-kpi-value {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.roi-kpi-subtitle {
+    font-size: 11px;
+    color: #E6B035;
+}
+
+/* Total Budget */
+.roi-total-budget {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: white;
+}
+
+/* Chart Container */
+.roi-chart-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .roi-main-layout {
+        flex-direction: column;
+    }
+
+    .roi-results-panel {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .roi-main-heading {
+        font-size: 36px;
+    }
+
+    .roi-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .roi-dropdown-row,
+    .roi-controls-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .roi-filters-panel {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .roi-main-heading {
+        font-size: 28px;
+    }
+
+    .roi-badge {
+        font-size: 10px;
+        padding: 5px 12px;
+    }
+
+    .roi-description {
+        font-size: 13px;
+    }
+
+    .roi-kpi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .roi-filters-panel {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .roi-chart-container {
+        padding: 12px;
+    }
+    .roi-chart-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+

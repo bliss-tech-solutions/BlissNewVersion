@@ -1,0 +1,110 @@
+.HomeOurSolutionsContainer .buttonContainer {
+    display: none !important;
+}
+
+.CarousalControlsBtns {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.CarousalControlsBtns button {
+    cursor: pointer;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.swiper-button-prev-custom svg,
+.swiper-button-next-custom svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.swiper-button-prev-custom:active,
+.swiper-button-next-custom:active {
+    transform: scale(0.95);
+}
+
+.Our360SolutionsCard {
+    min-height: 500px;
+    height: 500px;
+    width: 100%;
+    /* background-color: white; */
+    border-radius: 40px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Our360SolutionsCardImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.Our360SolutionsCardImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Our360SolutionsCardContent {
+    position: sticky;
+    z-index: 55;
+
+}
+
+.Our360SolutionsCardButton svg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 5555;
+    background-color: rgba(255, 255, 255, 0.144);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: .5s;
+}
+
+.Our360SolutionsCard:hover .Our360SolutionsCardButton svg {
+    background-color: white;
+    color: black;
+    transition: .5s;
+    transform: translatex(10px) translateY(-10px);
+}
+
+@media screen and (max-width: 768px) {
+    .CarousalControlsBtns{
+        justify-content: start;
+    }
+}
