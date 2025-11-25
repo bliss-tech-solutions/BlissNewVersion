@@ -50,8 +50,12 @@
     align-items: stretch;
 }
 
+.roi-main-layout>div{
+    width: 100%;
+}
 /* Left Panel - Filters */
 .roi-filters-panel {
+height: 100%;
     flex: 1;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);

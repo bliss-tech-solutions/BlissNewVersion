@@ -2,27 +2,34 @@ import React from "react";
 import "./HomePageSomeOfWork.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import HomePageSomeOfWorkData from "./HomePageSomeOfWorkData";
+import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const HomePageSomeOfWork = () => {
     return (
         <div id="home-page-some-of-work">
             <div className="SectionLargeTopPadding">
-                <div className="Container">
-                    <CenteredHeader
-                        heading="Some of Our Work"
-                        description="We have worked with some of the best real estate brands in Gujarat. We have helped them to launch their projects and to sell out their inventory."
-                    />
-                </div>
+                {/* Animated Header */}
+                <AnimatedElement animation="fade-up" duration={0.8} delay={0}>
+                    <div className="Container">
+                        <CenteredHeader
+                            heading="Some of Our Work"
+                            description="We have worked with some of the best real estate brands in Gujarat. We have helped them to launch their projects and to sell out their inventory."
+                        />
+                    </div>
+                </AnimatedElement>
+
+                {/* Swiper keeps its existing autoplay animation */}
                 <div className="WorkSwiperContainer MarginTop60">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
                         centeredSlides={true}
                         loop={true}
+                        speed={800}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -42,7 +49,7 @@ const HomePageSomeOfWork = () => {
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[Pagination]}
+                        modules={[Pagination, Autoplay]}
                         className="workSwiper"
                     >
                         {HomePageSomeOfWorkData.map((item, index) => (
@@ -64,15 +71,19 @@ const HomePageSomeOfWork = () => {
                         ))}
                     </Swiper>
                 </div>
-                <div className="Container">
-                    <div className="buttonContainerNavigation MarginTop60">
-                        <div className="buttonContainer">
-                            <button>
-                                View all projects
-                            </button>
+
+                {/* Animated Button */}
+                <AnimatedElement animation="zoom-in" duration={0.6} delay={0.2}>
+                    <div className="Container" id="home-page-some-of-work-button">
+                        <div className="buttonContainerNavigation MarginTop30">
+                            <div className="buttonContainer">
+                                <button>
+                                    View all projects
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </AnimatedElement>
             </div>
         </div>
     );

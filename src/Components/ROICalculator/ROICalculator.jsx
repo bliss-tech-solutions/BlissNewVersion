@@ -4,6 +4,7 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { ROI_CONFIGS } from "./roiConfig";
 import "./ROICalculator.css";
+import AnimatedElement from "../CommonUsedComponents/AnimatedElement/AnimatedElement";
 
 // Indian number format: 12,34,567 (lakhs and crores)
 const numberWithCommas = (x) => {
@@ -198,129 +199,135 @@ const RoiCalculator = () => {
 
     return (
         <div className="Container SectionLargeTopPadding roi-calculator-container">
-            {/* Heading */}
-            <div className="roi-heading-wrapper">
-                <div className="roi-badge">
-                    ROI CALCULATOR
+            {/* Heading Section - Animated */}
+            <AnimatedElement animation="fade-up" duration={0.8} delay={0}>
+                <div className="roi-heading-wrapper">
+                    <div className="roi-badge">
+                        ROI CALCULATOR
+                    </div>
+                    <h1 className="roi-main-heading">
+                        The ROI Forecast. Input Your Vision, Discover Your Projected Return on&nbsp;
+                        <span className="roi-heading-gradient">
+                            Brand Investment.
+                        </span>
+                    </h1>
+                    <p className="roi-description">
+                        Input your data, and let our ROI-driven strategies show you the scalable growth we can deliver. Precise, data-backed insights to fuel your next big move.
+                    </p>
                 </div>
-                <h1 className="roi-main-heading">
-                    The ROI Forecast. Input Your Vision, Discover Your Projected Return on&nbsp;
-                    <span className="roi-heading-gradient">
-                        Brand Investment.
-                    </span>
-                </h1>
-                <p className="roi-description">
-                    Input your data, and let our ROI-driven strategies show you the scalable growth we can deliver. Precise, data-backed insights to fuel your next big move.
-                </p>
-            </div>
+            </AnimatedElement>
 
             <div className="roi-main-layout">
-                {/* LEFT: Filters */}
-                <div className="roi-filters-panel">
-                    {/* Dropdown row 1 */}
-                    <div className="roi-dropdown-row">
-                        <Select
-                            label="Segment"
-                            value={segment}
-                            options={segments}
-                            onChange={setSegment}
-                        />
-                        <Select
-                            label="Location"
-                            value={location}
-                            options={locations}
-                            onChange={setLocation}
-                        />
-                    </div>
-
-                    {/* Dropdown row 2 */}
-                    <div className="roi-dropdown-row">
-                        <Select
-                            label="Property Type"
-                            value={propertyType}
-                            options={propertyTypes}
-                            onChange={setPropertyType}
-                        />
-                        <Select
-                            label="Ad Type"
-                            value={adType}
-                            options={adTypes}
-                            onChange={setAdType}
-                        />
-                    </div>
-
-                    {/* Sell Units + Duration */}
-                    <div className="roi-controls-row">
-                        <div className="roi-input-group">
-                            <label className="roi-input-label">
-                                Sell Units
-                            </label>
-                            <input
-                                type="number"
-                                min={1}
-                                value={sellUnits}
-                                onChange={(e) => setSellUnits(Number(e.target.value) || 0)}
-                                className="roi-input"
+                {/* LEFT: Filters Panel - Animated */}
+                <AnimatedElement animation="fade-right" duration={0.8} delay={0.2}>
+                    <div className="roi-filters-panel">
+                        {/* Dropdown row 1 */}
+                        <div className="roi-dropdown-row">
+                            <Select
+                                label="Segment"
+                                value={segment}
+                                options={segments}
+                                onChange={setSegment}
+                            />
+                            <Select
+                                label="Location"
+                                value={location}
+                                options={locations}
+                                onChange={setLocation}
                             />
                         </div>
 
-                        <div className="roi-input-group">
-                            <label className="roi-input-label">
-                                Duration
-                            </label>
-                            <select
-                                value={durationMonths}
-                                onChange={(e) => setDurationMonths(Number(e.target.value))}
-                                className="roi-select"
-                            >
-                                <option value={3}>3 Months</option>
-                                <option value={6}>6 Months</option>
-                                <option value={9}>9 Months</option>
-                                <option value={12}>12 Months</option>
-                            </select>
+                        {/* Dropdown row 2 */}
+                        <div className="roi-dropdown-row">
+                            <Select
+                                label="Property Type"
+                                value={propertyType}
+                                options={propertyTypes}
+                                onChange={setPropertyType}
+                            />
+                            <Select
+                                label="Ad Type"
+                                value={adType}
+                                options={adTypes}
+                                onChange={setAdType}
+                            />
+                        </div>
+
+                        {/* Sell Units + Duration */}
+                        <div className="roi-controls-row">
+                            <div className="roi-input-group">
+                                <label className="roi-input-label">
+                                    Sell Units
+                                </label>
+                                <input
+                                    type="number"
+                                    min={1}
+                                    value={sellUnits}
+                                    onChange={(e) => setSellUnits(Number(e.target.value) || 0)}
+                                    className="roi-input"
+                                />
+                            </div>
+
+                            <div className="roi-input-group">
+                                <label className="roi-input-label">
+                                    Duration
+                                </label>
+                                <select
+                                    value={durationMonths}
+                                    onChange={(e) => setDurationMonths(Number(e.target.value))}
+                                    className="roi-select"
+                                >
+                                    <option value={3}>3 Months</option>
+                                    <option value={6}>6 Months</option>
+                                    <option value={9}>9 Months</option>
+                                    <option value={12}>12 Months</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <p className="roi-disclaimer">
+                            Disclaimer: The data is based on past experience and for
+                            informational purposes only.
+                        </p>
+                    </div>
+                </AnimatedElement>
+
+                {/* RIGHT: KPI cards + chart - Animated */}
+                <AnimatedElement animation="fade-left" duration={0.8} delay={0.4}>
+                    <div className="roi-results-panel">
+                        {/* KPI cards */}
+                        <div className="roi-kpi-grid">
+                            <KpiCard
+                                title="Leads"
+                                value={numberWithCommas(metrics.leads)}
+                                subtitle={`CPL ₹${numberWithCommas(metrics.cpl)}`}
+                            />
+                            <KpiCard
+                                title="QL"
+                                value={numberWithCommas(metrics.ql)}
+                                subtitle={`CPQL ₹${numberWithCommas(metrics.cpql)}`}
+                            />
+                            <KpiCard
+                                title="SV"
+                                value={numberWithCommas(metrics.sv)}
+                                subtitle={`CPSV ₹${numberWithCommas(metrics.cpsv)}`}
+                            />
+                            <KpiCard
+                                title="Bookings"
+                                value={numberWithCommas(metrics.bookings)}
+                                subtitle={`CPB ₹${numberWithCommas(metrics.cpb)}`}
+                            />
+                        </div>
+
+                        <div className="roi-total-budget">
+                            Total Budget: ₹{numberWithCommas(metrics.totalBudget)}
+                        </div>
+
+                        <div className="roi-chart-container">
+                            {chartData && <Line data={chartData} options={chartOptions} />}
                         </div>
                     </div>
-
-                    <p className="roi-disclaimer">
-                        Disclaimer: The data is based on past experience and for
-                        informational purposes only.
-                    </p>
-                </div>
-
-                {/* RIGHT: KPI cards + chart */}
-                <div className="roi-results-panel">
-                    {/* KPI cards */}
-                    <div className="roi-kpi-grid">
-                        <KpiCard
-                            title="Leads"
-                            value={numberWithCommas(metrics.leads)}
-                            subtitle={`CPL ₹${numberWithCommas(metrics.cpl)}`}
-                        />
-                        <KpiCard
-                            title="QL"
-                            value={numberWithCommas(metrics.ql)}
-                            subtitle={`CPQL ₹${numberWithCommas(metrics.cpql)}`}
-                        />
-                        <KpiCard
-                            title="SV"
-                            value={numberWithCommas(metrics.sv)}
-                            subtitle={`CPSV ₹${numberWithCommas(metrics.cpsv)}`}
-                        />
-                        <KpiCard
-                            title="Bookings"
-                            value={numberWithCommas(metrics.bookings)}
-                            subtitle={`CPB ₹${numberWithCommas(metrics.cpb)}`}
-                        />
-                    </div>
-
-                    <div className="roi-total-budget">
-                        Total Budget: ₹{numberWithCommas(metrics.totalBudget)}
-                    </div>
-
-                    <div className="roi-chart-container">
-                        {chartData && <Line data={chartData} options={chartOptions} />}
-                    </div>
-                </div>
+                </AnimatedElement>
             </div>
         </div>
     );

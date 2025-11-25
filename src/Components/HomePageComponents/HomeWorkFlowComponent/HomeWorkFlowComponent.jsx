@@ -74,7 +74,7 @@ const HomeWorkFlowComponent = () => {
                                 <div className="StatusIndicator">
                                     <div className="StatusDot"></div>
                                 </div>
-                                
+
                                 <h2>{categories[activeTab].content.title}</h2>
                                 <p className="ContentDescription">{categories[activeTab].content.description}</p>
                                 <div className="TagsContainer">

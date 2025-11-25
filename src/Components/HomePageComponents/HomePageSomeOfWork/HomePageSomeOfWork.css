@@ -98,7 +98,7 @@
     transition: .5s;
 }
 
-.buttonContainer {
+#home-page-some-of-work-button .buttonContainer {
     display: flex;
     justify-content: center;
 }
@@ -132,8 +132,11 @@
         justify-content: start;
         padding-left: 8px;
     }
-    .buttonContainer {
+
+
+    #home-page-some-of-work-button .buttonContainer {
         display: flex;
         justify-content: start;
+        margin-top: 50px !important;
     }
 }

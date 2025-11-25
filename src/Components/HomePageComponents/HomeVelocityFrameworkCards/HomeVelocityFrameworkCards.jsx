@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./HomeVelocityFrameworkCards.css";
 import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
 import VelocityFrameWorkData from "./VelocityFrameWorkData";
+import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 
 const HomeVelocityFrameworkCards = () => {
     const [cardScales, setCardScales] = useState(VelocityFrameWorkData.map(() => ({ scale: 1, blur: 0 })));
@@ -79,17 +80,25 @@ const HomeVelocityFrameworkCards = () => {
 </div>
                 </div>
                 <div className="Container SectionLargeTopPadding">
-                    <div>
-                        <FlexBetweenHeader
-                            tagText="our process"
-                            heading="Services and solutions we offer."
-                            description=""
-                            buttonLabel=""
-                        />
+                    {/* Animated Header Section */}
+                    <AnimatedElement animation="fade-up" duration={0.8} delay={0}>
+                        <div>
+                            <FlexBetweenHeader
+                                tagText="our process"
+                                heading="Services and solutions we offer."
+                                description=""
+                                buttonLabel=""
+                            />
+                        </div>
+                    </AnimatedElement>
+
+                    {/* Animated Description */}
+                    <AnimatedElement animation="fade-up" duration={0.8} delay={0.2}>
                         <div className="MaxWidth-600 MarginTop30">
                             <p>We work with creative teams and ambitious founders to turn vision into product with intuitive UX, standout visuals, and seamless digital experiences that users remember.</p>
                         </div>
-                    </div>
+                    </AnimatedElement>
+                    {/* Cards keep their existing scroll-based animations */}
                     <div className="VelocityFrameworkCardsGrid MarginTop30">
                         {VelocityFrameWorkData.map((item, index) => (
                             <div

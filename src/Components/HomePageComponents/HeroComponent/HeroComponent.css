@@ -81,14 +81,19 @@
 .gapAdjustment {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
+}
+
+.stats-container-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 #hero-component .CompanyWorkDetailsContainer {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    width: 100%;
 }
 
 
@@ -213,6 +218,10 @@
     .HeroContentContainer {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .stats-container-wrapper {
+        position: static !important;
     }
 
     #hero-component .CompanyWorkDetailsContainer {
