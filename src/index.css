@@ -182,7 +182,7 @@ button {
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .SectionTopPadding {
@@ -200,5 +200,13 @@ button {
   .Container {
     padding: 0 10px;
   }
+  .MarginTop30 {
+    margin-top: 10px;
+  }
+
+  .MarginTop60 {
+    margin-top: 40px;
+  }
+  
 
 }

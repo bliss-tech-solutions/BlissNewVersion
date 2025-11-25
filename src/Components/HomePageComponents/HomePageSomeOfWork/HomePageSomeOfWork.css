@@ -127,7 +127,7 @@
     }
 
     .workSwiper .swiper-pagination {
-        bottom: -40px;
+        bottom: -20px;
         display: flex;
         justify-content: start;
         padding-left: 8px;

@@ -353,6 +353,9 @@
     .LogoContainer img {
         width: 100px;
     }
+    .drawer-content {
+        height: 85%;
+    }
 
     
 }

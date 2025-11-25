@@ -106,5 +106,10 @@
 @media screen and (max-width: 768px) {
     .CarousalControlsBtns{
         justify-content: start;
+        margin-top: 0px;
+    }
+    .Our360SolutionsCard{
+        min-height: 370px;
+        height: 370px;
     }
 }

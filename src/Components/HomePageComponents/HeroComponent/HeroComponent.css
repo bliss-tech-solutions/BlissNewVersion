@@ -252,4 +252,9 @@ padding-right: 10px;
     .LeftCircleContainer {
         background-color: #e6b03521;
     }
+    .gapAdjustment {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }

@@ -135,5 +135,6 @@
 @media (max-width: 768px) {
     .AboutHomeComponentContainer {
         grid-template-columns: repeat(1, 1fr);
+        margin-top: 0px !important;
     }
 }
