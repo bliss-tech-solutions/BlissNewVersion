@@ -11,23 +11,24 @@ const NavigationData = [
     },
     {
         id: 3,
-        name: 'Campaign & Shoots',
-        path: '/campaigns'
+        name: 'Performance',
+        path: '/performance'
+    },
+    {
+        id: 4,
+        name: 'Influencer',
+        path: '/influencer',
+        sublinks: []
     },
     {
         id: 4,
         name: 'About Us',
-        path: '/about',
+        path: '/aboutus',
         sublinks: [
             {
                 id: 'about-story',
                 name: 'Our Story',
                 path: '/about/our-story'
-            },
-            {
-                id: 'about-team',
-                name: 'Meet the Team',
-                path: '/about/team'
             },
             {
                 id: 'about-work',
@@ -36,8 +37,13 @@ const NavigationData = [
             },
             {
                 id: 'about-careers',
-                name: 'Careers',
+                name: 'Career',
                 path: '/about/careers'
+            },
+            {
+                id: 'about-contact',
+                name: 'Contact',
+                path: '/contact'
             }
         ]
     }

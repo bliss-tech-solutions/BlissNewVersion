@@ -16,7 +16,7 @@ const HomeRoutes = () => {
             <AboutHomeComponent />
             {/* <HomeWorkFlowComponent /> */}
             {/* <AnimatedZoomContainer /> */}
-            <HomeOurSolutions />
+            {/* <HomeOurSolutions /> */}
             <HomeVelocityFrameworkCards />
             <HomePageSomeOfWork />
             <ROICalculator />

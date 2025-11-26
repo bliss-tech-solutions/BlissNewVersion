@@ -1,36 +1,94 @@
+#about-home-component {
+    position: relative;
+    background-color: black !important;
+    will-change: auto;
+    isolation: isolate;
+}
+
+#about-home-component::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: -2;
+    pointer-events: none;
+}
+
+#about-home-component *:not(button):not(.interactive-button):not(.contact-us-btn) {
+    background-color: transparent !important;
+}
+
+#about-home-component .interactive-button button,
+#about-home-component .interactive-button .interactive-button,
+#about-home-component button.interactive-button {
+    background-color: white !important;
+}
+
+#about-home-component .Container {
+    background-color: transparent !important;
+}
+
+#about-home-component .FlexAdd,
+#about-home-component .tagParagraph {
+    background-color: transparent !important;
+}
+
 .FlexGridSystem {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    background-color: transparent !important;
 }
 
 .AboutHomeComponentContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 30px;
+    background-color: transparent !important;
+    isolation: isolate;
+}
+
+.CompanyWorkDetailsContainer {
+    background-color: transparent !important;
+}
+
+#about-home-component .MarginTop60,
+#about-home-component .MarginTop30 {
+    background-color: transparent !important;
+}
+
+/* Ensure button container wrapper is transparent */
+#about-home-component .interactive-button-wrapper {
+    background-color: transparent !important;
 }
 
 #about-home-component .ContainerGridSystem {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: flex;
+    justify-content: start;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
 #about-home-component .ContainerGridSystem .CompanyWorkDetailsItem {
     position: relative;
     padding: 10px 0px;
+    background-color: transparent !important;
 }
 
-#about-home-component .ContainerGridSystem .CompanyWorkDetailsItem::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 1px;
-    background-color: white;
-    opacity: 0.4;
+
+#about-home-component .FlexGridSystem {
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
+#about-home-component h2, #about-home-component p{
+    text-align: center;
+}
+
 
 .imageContainer {
     height: 100%;
@@ -113,8 +171,8 @@
 #about-home-component .digit-container {
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                filter 0.2s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        filter 0.2s ease-in-out;
     will-change: transform, filter;
     filter: blur(0px);
 }
@@ -128,13 +186,81 @@
     height: 1.2em;
     line-height: 1.2em;
 }
-#about-home-component .ContainerGridSystem p{
+
+#about-home-component .counter-animate {
+    display: inline-block;
+    animation: slideUpSpecial 0.8s ease-out;
+}
+
+@keyframes slideUpSpecial {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#about-home-component .ContainerGridSystem p {
     text-align: start;
+}
+
+.backgroundOverlayImageSet {
+    background-image: url("/Images/BackgroundImages/AboutHomeBackgroundOverlayImage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    /* left: 0; */
+    width: 40%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+    pointer-events: none;
+    /* background-attachment: fixed; */
+
+    /* Left to right fade effect - more visible on right */
+    -webkit-mask-image: linear-gradient(to right, transparent 0px, rgba(0, 0, 0, 0.3) 50px, rgba(0, 0, 0, 0.3) 200px, black 150px);
+    mask-image: linear-gradient(to right, transparent 0px, rgba(0, 0, 0, 0.3) 50px, rgba(0, 0, 0, 1) 100px, black 250px);
 }
 
 @media (max-width: 768px) {
     .AboutHomeComponentContainer {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 0px !important;
+    }
+
+    #about-home-component .ContainerGridSystem {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        justify-items: center;
+    }
+
+    #about-home-component .ContainerGridSystem .CompanyWorkDetailsItem {
+        text-align: center;
+    }
+
+    #about-home-component .ContainerGridSystem .CompanyWorkDetailsItem::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #about-home-component .FlexGridSystem {
+        align-items: start;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    #about-home-component h2, #about-home-component p{
+        text-align: start;
     }
 }

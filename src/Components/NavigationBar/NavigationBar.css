@@ -164,8 +164,106 @@
     object-fit: cover;
 }
 
-.buttonContainerNavigation .buttonContainer button {
+/* Contact Us Button with Dropdown - Desktop */
+.contact-dropdown-wrapper {
+    position: relative;
+}
+
+.contact-us-btn {
     padding: 10px 25px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    /* font-size: 15px; */
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-us-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.contact-us-btn:hover {
+    background: var(--BrandColor);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 176, 53, 0.3);
+}
+
+.contact-dropdown-wrapper:hover .contact-us-btn svg {
+    transform: rotate(180deg);
+}
+
+/* Contact Dropdown Menu */
+.contact-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 240px;
+    background: rgba(17, 17, 17, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.contact-dropdown-wrapper:hover .contact-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.contact-dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-dropdown-menu li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+}
+
+.contact-dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.contact-dropdown-menu li:hover {
+    background: rgba(230, 176, 53, 0.1);
+    transform: translateX(4px);
+}
+
+.contact-dropdown-menu li svg {
+    width: 20px;
+    height: 20px;
+    color: var(--BrandColor);
+    flex-shrink: 0;
+}
+
+.contact-dropdown-menu li span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+}
+
+.contact-dropdown-menu li:hover span {
+    color: var(--BrandColor);
 }
 
 /* Mobile menu elements - hidden by default */
@@ -175,7 +273,7 @@
     gap: 15px;
 }
 
-.mobile-whatsapp-btn {
+.mobile-contact-btn {
     background: var(--BrandColor);
     border: none;
     border-radius: 50%;
@@ -188,15 +286,15 @@
     transition: all 0.3s ease;
 }
 
-.mobile-whatsapp-btn:hover {
+.mobile-contact-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(230, 176, 53, 0.4);
 }
 
-.mobile-whatsapp-btn img {
-    width: 24px;
-    height: 24px;
-    /* filter: brightness(0) invert(0); */
+.mobile-contact-btn svg {
+    width: 22px;
+    height: 22px;
+    color: black;
 }
 
 /* Hamburger Button */
@@ -470,7 +568,14 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.drawer-whatsapp-btn {
+/* Drawer Contact Buttons */
+.drawer-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drawer-contact-btn {
     width: 100%;
     padding: 15px 20px;
     background: var(--BrandColor);
@@ -487,15 +592,15 @@
     transition: all 0.3s ease;
 }
 
-.drawer-whatsapp-btn:hover {
+.drawer-contact-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(230, 176, 53, 0.4);
 }
 
-.drawer-whatsapp-btn img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0);
+.drawer-contact-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #000;
 }
 
 /* Responsive Design */
@@ -504,7 +609,7 @@
         display: none;
     }
 
-    .desktop-whatsapp-btn {
+    .desktop-contact-btn {
         display: none;
     }
 
@@ -541,7 +646,7 @@
         width: 90px;
     }
 
-    .mobile-whatsapp-btn,
+    .mobile-contact-btn,
     .hamburger-btn {
         width: 40px;
         height: 40px;
@@ -549,5 +654,10 @@
 
     .mobile-right-section {
         gap: 10px;
+    }
+
+    .mobile-contact-btn svg {
+        width: 20px;
+        height: 20px;
     }
 }

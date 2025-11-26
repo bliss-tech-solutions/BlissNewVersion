@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "./AnimatedElement.css";
 
 /**
  * AnimatedElement - Reusable animation component similar to AOS
@@ -91,7 +92,11 @@ const AnimatedElement = ({
                 ease: [0.25, 0.46, 0.45, 0.94] // Custom easing for smooth animation
             }}
             variants={selectedVariant}
-            className={className}
+            className={`animated-element-wrapper ${className}`}
+            style={{ 
+                backgroundColor: 'transparent',
+                willChange: 'transform, opacity'
+            }}
             {...props}
         >
             {children}

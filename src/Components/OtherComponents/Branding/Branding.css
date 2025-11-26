@@ -1,0 +1,82 @@
+.AboutUsHeaderGridSystem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.AboutUsRightSideGridSystem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+}
+
+.AboutUsRightSideGridSystem>div {
+    /* background-color: red; */
+    width: 100%;
+    min-height: 200px;
+    border: 0.2px solid rgba(255, 255, 255, 0.072);
+}
+
+#About-us {
+    min-height: 800px;
+    display: flex;
+    align-items: end;
+    position: relative;
+}
+
+#About-us .CenteredHeaderContent {
+    align-items: start;
+    width: 100% !important;
+}
+
+#About-us .CenteredHeaderContent {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+#About-us .CenteredHeaderContent h2,
+.CenteredHeaderContent p {
+    text-align: start;
+}
+
+.AboutUsRightSideGridSystem>div:first-child,
+.AboutUsRightSideGridSystem>div:nth-child(8),
+.AboutUsRightSideGridSystem>div:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+}
+
+.AboutUsRightSideGridSystem>div:first-child>div,
+.AboutUsRightSideGridSystem>div:nth-child(8)>div,
+.AboutUsRightSideGridSystem>div:nth-child(3)>div {
+    border: 0.2px solid rgba(255, 255, 255, 0.072);
+    width: 100%;
+    height: 100%;
+}
+
+.AboutUsRightSideGridSystem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.backgroundOverlayImageSetAboutUs {
+    background-image: url("/Images/BackgroundImages/AboutHomeBackgroundOverlayImage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 40%;
+    height: 100%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    opacity: 0.2;
+    z-index: 1;
+}

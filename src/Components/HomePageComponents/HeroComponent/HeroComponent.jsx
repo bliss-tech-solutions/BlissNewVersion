@@ -81,6 +81,22 @@ const HeroComponent = () => {
     const [startCounter, setStartCounter] = useState(false);
     const counterRef = useRef(null);
 
+    // Top 12 Client Logos
+    const clientLogos = [
+        { id: 1, name: "Samruddh", logo: "/Images/ClientsLogos/samruddh.png" },
+        { id: 2, name: "Pravish", logo: "/Images/ClientsLogos/pravish.png" },
+        { id: 3, name: "Origin Group", logo: "/Images/ClientsLogos/origingroup.png" },
+        { id: 4, name: "Vraj", logo: "/Images/ClientsLogos/Vraj.png" },
+        { id: 5, name: "VR Buildcon", logo: "/Images/ClientsLogos/VrBuildcon.png" },
+        { id: 6, name: "Vision Creative Group", logo: "/Images/ClientsLogos/VisionCreativeGroup.png" },
+        { id: 7, name: "Vinayak", logo: "/Images/ClientsLogos/Vinayak.png" },
+        { id: 8, name: "Verdana", logo: "/Images/ClientsLogos/Verdana.png" },
+        { id: 9, name: "VR Group", logo: "/Images/ClientsLogos/VRGroup.png" },
+        { id: 10, name: "Trisha", logo: "/Images/ClientsLogos/Trisha.png" },
+        { id: 11, name: "Times Square Arcade Group", logo: "/Images/ClientsLogos/TimesSquareArcadeGroup.png" },
+        { id: 12, name: "The Orion", logo: "/Images/ClientsLogos/TheOrion.png" }
+    ];
+
     const companyWorkDetails = [
         {
             title: "Real Estate Branding Agency",
@@ -188,15 +204,15 @@ const HeroComponent = () => {
 
                     {/* Layer 5: Button - appears last in main section */}
                     <AnimatedElement animation="zoom-in" duration={0.6} delay={1.2}>
-                       <InteractiveButton 
-                                buttonText="Let's Talk Strategy"
-                                arrowText=""
-                            />
+                        <InteractiveButton
+                            buttonText="Let's Talk Strategy"
+                            arrowText=""
+                        />
                     </AnimatedElement>
                 </div>
 
                 {/* Layer 6: Stats Container - fades in from bottom */}
-                <AnimatedElement 
+                {/* <AnimatedElement 
                     animation="fade-up" 
                     duration={0.8} 
                     delay={1.5} 
@@ -226,7 +242,21 @@ const HeroComponent = () => {
                             ))}
                         </div>
                     </div>
-                </AnimatedElement>
+                </AnimatedElement> */}
+            </div>
+
+            {/* Client Logos Marquee */}
+            <div className="client-logos-marquee">
+                <div className="marquee-container">
+                    <div className="marquee-content">
+                        {/* Render logos twice for seamless infinite loop */}
+                        {[...clientLogos, ...clientLogos].map((client, index) => (
+                            <div key={`logo-${index}`} className="client-logo-item">
+                                <img src={client.logo} alt={client.name} loading="lazy" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
         </div>

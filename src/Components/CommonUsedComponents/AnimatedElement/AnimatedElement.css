@@ -1,0 +1,19 @@
+/* Ensure AnimatedElement wrapper doesn't add any background */
+.animated-element-wrapper {
+    background-color: transparent !important;
+}
+
+/* Prevent white flash during animations */
+.animated-element-wrapper * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* Prevent flicker on webkit browsers */
+.animated-element-wrapper {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}

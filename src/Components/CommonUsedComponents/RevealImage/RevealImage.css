@@ -1,0 +1,47 @@
+/* Reveal Image Component */
+.reveal-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.reveal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Black Overlay - Starts covering the entire image */
+.reveal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1;
+    transform-origin: bottom;
+}
+
+/* Animation - Overlay slides up from bottom to top */
+.reveal-overlay.reveal {
+    animation: revealFromBottom 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes revealFromBottom {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Optional: Add subtle fade effect during reveal */
+.reveal-image-wrapper .reveal-image {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+

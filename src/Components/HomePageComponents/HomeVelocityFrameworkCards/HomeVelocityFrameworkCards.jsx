@@ -3,6 +3,7 @@ import "./HomeVelocityFrameworkCards.css";
 import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
 import VelocityFrameWorkData from "./VelocityFrameWorkData";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
+import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 
 const HomeVelocityFrameworkCards = () => {
     const [cardScales, setCardScales] = useState(VelocityFrameWorkData.map(() => ({ scale: 1, blur: 0 })));
@@ -75,9 +76,9 @@ const HomeVelocityFrameworkCards = () => {
         <>
             <div className="HomeVelocityFrameworkCardsContainer">
                 <div className="backgroundAttachmentFixedImage">
-<div className="LeftCircleContainer">
+                    <div className="LeftCircleContainer">
 
-</div>
+                    </div>
                 </div>
                 <div className="Container SectionLargeTopPadding">
                     {/* Animated Header Section */}
@@ -128,7 +129,7 @@ const HomeVelocityFrameworkCards = () => {
                                         </div>
                                     </div>
                                     <div className="VelocityContentSecondHalf">
-                                        <img src={item.img} alt="" />
+                                        <RevealImage src={item.img} alt="" />
                                     </div>
                                 </div>
                             </div>

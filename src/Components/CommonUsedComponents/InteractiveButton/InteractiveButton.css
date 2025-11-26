@@ -79,7 +79,7 @@
 
 @media (max-width: 768px) {
     .interactive-button-wrapper {
-        flex-direction: column;
+        /* flex-direction: column; */
         gap: 20px;
         align-items: flex-start;
     }

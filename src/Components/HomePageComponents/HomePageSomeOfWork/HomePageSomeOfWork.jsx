@@ -3,6 +3,7 @@ import "./HomePageSomeOfWork.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import HomePageSomeOfWorkData from "./HomePageSomeOfWorkData";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
+import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -56,7 +57,12 @@ const HomePageSomeOfWork = () => {
                             <SwiperSlide key={index}>
                                 <div className="WorkSlideCard">
                                     <div className="WorkSlideImageContainer">
-                                        <img src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"} alt={item.title} />
+                                        <RevealImage 
+                                            src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"} 
+                                            alt={item.title}
+                                            threshold={0.3}
+                                            duration={1.2}
+                                        />
                                     </div>
                                     <div className="WorkSlideContent">
                                         <h3>{item.title}</h3>
