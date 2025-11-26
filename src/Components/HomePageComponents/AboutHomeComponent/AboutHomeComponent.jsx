@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutHomeComponent.css";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
+import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 
 const AnimatedCounter = ({ target, duration, isVisible }) => {
     const targetString = target.toString();
@@ -180,13 +181,10 @@ const AboutHomeComponent = () => {
 
                         {/* Layer 5: Button - Zooms in */}
                         <AnimatedElement animation="zoom-in" duration={0.6} delay={0.8}>
-                            <div className="buttonContainer">
-                                <button>View portfolio
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                                    </svg>
-                                </button>
-                            </div>
+                            <InteractiveButton 
+                                buttonText="Explore Pricing Plan"
+                                arrowText="Got a concept? Let's design it right."
+                            />
                         </AnimatedElement>
                     </div>
 

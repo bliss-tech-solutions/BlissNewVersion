@@ -1,0 +1,119 @@
+/* Interactive Button Component - Reference Style */
+.interactive-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+}
+
+/* Main Button */
+.interactive-button {
+    background-color: white;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 50px;
+    /* font-size: 18px; */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.interactive-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--BrandColor);
+}
+
+.button-main-text {
+    display: block;
+}
+
+/* Arrow Section */
+.button-arrow-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    transform: translateY(20px);
+    max-width: 230px;
+}
+
+.button-arrow-icon {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.button-arrow-text {
+    /* font-size: 20px; */
+    /* font-weight: 600; */
+    color: white;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .interactive-button-wrapper {
+        gap: 20px;
+    }
+
+    .interactive-button {
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+
+    .button-arrow-icon {
+        width: 40px;
+    }
+
+    .button-arrow-text {
+        font-size: 18px;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .interactive-button-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .interactive-button {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    .button-arrow-section {
+        gap: 12px;
+    }
+
+    .button-arrow-icon {
+        width: 35px;
+    }
+
+    .button-arrow-text {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .interactive-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .button-arrow-text {
+        font-size: 14px;
+    }
+
+    .button-arrow-icon {
+        width: 30px;
+    }
+}

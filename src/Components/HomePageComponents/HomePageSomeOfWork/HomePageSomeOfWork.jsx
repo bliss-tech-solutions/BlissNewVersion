@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-
+import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 const HomePageSomeOfWork = () => {
     return (
         <div id="home-page-some-of-work">
@@ -77,13 +77,15 @@ const HomePageSomeOfWork = () => {
                     <div className="Container" id="home-page-some-of-work-button">
                         <div className="buttonContainerNavigation MarginTop30">
                             <div className="buttonContainer">
-                                <button>
-                                    View all projects
-                                </button>
+                                <InteractiveButton
+                                    buttonText="View all projects"
+                                    arrowText="Got a concept? Let's design it right."
+                                />
                             </div>
                         </div>
                     </div>
                 </AnimatedElement>
+                <br /><br />
             </div>
         </div>
     );

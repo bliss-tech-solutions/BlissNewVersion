@@ -6,6 +6,7 @@ import NavigationData from "./NavigationData";
 const NavigationBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [openSubmenus, setOpenSubmenus] = useState({});
     const location = useLocation();
 
     useEffect(() => {
@@ -35,10 +36,17 @@ const NavigationBar = () => {
         } else {
             document.body.style.overflow = 'unset';
         }
-        
+
         return () => {
             document.body.style.overflow = 'unset';
         };
+    }, [isDrawerOpen]);
+
+    // Reset submenu state whenever drawer closes
+    useEffect(() => {
+        if (!isDrawerOpen) {
+            setOpenSubmenus({});
+        }
     }, [isDrawerOpen]);
 
     const handleWhatsAppClick = () => {
@@ -66,26 +74,62 @@ Thank you!`;
         setIsDrawerOpen(!isDrawerOpen);
     };
 
+    const toggleDrawerSubmenu = (id) => {
+        setOpenSubmenus((prev) => ({
+            ...prev,
+            [id]: !prev[id],
+        }));
+    };
+
     return (
         <>
             <div id="navigation-bar" className={isScrolled ? 'scrolled' : ''}>
                 <div className="NavigationBarContainer">
                     <div className="Container">
                         <div className="LogoContainer">
-                            <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" />
+                           <Link to="/"> <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" /></Link>
                         </div>
                         <div className="desktop-menu">
                             <ul className="nav-menu-div">
-                                {NavigationData.map((item) => (
-                                    <li key={item.id}>
-                                        <Link
-                                            to={item.path}
-                                            className={`FadeParaColor ${location.pathname === item.path ? 'active' : ''}`}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))}
+                                {NavigationData.map((item) => {
+                                    const hasSublinks = Array.isArray(item.sublinks) && item.sublinks.length > 0;
+
+                                    return (
+                                        <li key={item.id} className={`nav-item ${hasSublinks ? 'has-dropdown' : ''}`}>
+                                            <div className={`nav-link-wrapper ${hasSublinks ? 'with-dropdown' : ''}`}>
+                                                <Link
+                                                    to={item.path}
+                                                    className={`nav-link FadeParaColor ${location.pathname === item.path ? 'active' : ''}`}
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                                {hasSublinks && (
+                                                    <span className="dropdown-arrow" aria-hidden="true">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                        </svg>
+                                                    </span>
+                                                )}
+                                            </div>
+                                            {hasSublinks && (
+                                                <div className="dropdown-menu">
+                                                    <ul >
+                                                    {item.sublinks.map((subLink) => (
+                                                        <li key={subLink.id}>
+                                                            <Link
+                                                                to={subLink.path}
+                                                                className={`dropdown-link ${location.pathname === subLink.path ? 'active' : ''}`}
+                                                            >
+                                                                {subLink.name}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                                </div>
+                                            )}
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                         <div className="buttonContainerNavigation">
@@ -96,10 +140,10 @@ Thank you!`;
                             </div>
                             <div className="mobile-right-section">
                                 <button className="mobile-whatsapp-btn" onClick={handleWhatsAppClick} aria-label="WhatsApp">
-                                <img src="/Images/Icons/whatsapp.svg" alt="WhatsApp" />
+                                    <img src="/Images/Icons/whatsapp.svg" alt="WhatsApp" />
                                 </button>
-                                <button 
-                                    className={`hamburger-btn ${isDrawerOpen ? 'active' : ''}`} 
+                                <button
+                                    className={`hamburger-btn ${isDrawerOpen ? 'active' : ''}`}
                                     onClick={toggleDrawer}
                                     aria-label="Menu"
                                 >
@@ -114,7 +158,7 @@ Thank you!`;
             </div>
 
             {/* Backdrop */}
-            <div 
+            <div
                 className={`drawer-backdrop ${isDrawerOpen ? 'active' : ''}`}
                 onClick={toggleDrawer}
             ></div>
@@ -124,33 +168,74 @@ Thank you!`;
                 <div className="drawer-content">
                     <div className="drawer-header">
                         <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" />
-                        <button 
-                            className="drawer-close-btn" 
+                        <button
+                            className="drawer-close-btn"
                             onClick={toggleDrawer}
                             aria-label="Close Menu"
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                     </div>
                     <nav className="drawer-nav">
                         <ul>
-                            {NavigationData.map((item, index) => (
-                                <li 
-                                    key={item.id} 
-                                    className={`drawer-nav-item ${isDrawerOpen ? 'animate' : ''}`}
-                                    style={{ animationDelay: `${index * 0.1}s` }}
-                                >
-                                    <Link
-                                        to={item.path}
-                                        className={`${location.pathname === item.path ? 'active' : ''}`}
-                                        onClick={() => setIsDrawerOpen(false)}
+                            {NavigationData.map((item, index) => {
+                                const hasSublinks = Array.isArray(item.sublinks) && item.sublinks.length > 0;
+                                const isSubmenuOpen = !!openSubmenus[item.id];
+
+                                return (
+                                    <li
+                                        key={item.id}
+                                        className={`drawer-nav-item ${isDrawerOpen ? 'animate' : ''}`}
+                                        style={{ animationDelay: `${index * 0.1}s` }}
                                     >
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
+                                        <div className={`drawer-nav-link ${hasSublinks ? 'has-sublinks' : ''}`}>
+                                            <Link
+                                                to={item.path}
+                                                className={`drawer-parent-link ${location.pathname === item.path ? 'active' : ''}`}
+                                                onClick={() => setIsDrawerOpen(false)}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                            {hasSublinks && (
+                                                <button
+                                                    type="button"
+                                                    className={`drawer-expand-btn ${isSubmenuOpen ? 'open' : ''}`}
+                                                    onClick={(event) => {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                        toggleDrawerSubmenu(item.id);
+                                                    }}
+                                                    aria-label="Toggle submenu"
+                                                    aria-expanded={isSubmenuOpen}
+                                                >
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            )}
+                                        </div>
+                                        {hasSublinks && (
+                                            <div className={`drawer-submenu ${isSubmenuOpen ? 'open' : ''}`}>
+                                                <ul>
+                                                    {item.sublinks.map((subLink) => (
+                                                        <li key={subLink.id}>
+                                                            <Link
+                                                                to={subLink.path}
+                                                                className={`drawer-sub-link ${location.pathname === subLink.path ? 'active' : ''}`}
+                                                                onClick={() => setIsDrawerOpen(false)}
+                                                            >
+                                                                {subLink.name}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </nav>
                     <div className="drawer-footer">

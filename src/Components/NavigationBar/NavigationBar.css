@@ -56,6 +56,90 @@
     gap: 30px;
 }
 
+.nav-item {
+    list-style: none;
+    position: relative;
+}
+
+.nav-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link-wrapper.with-dropdown {
+    cursor: pointer;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item.has-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--BrandColor);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0px);
+    left: 0;
+    min-width: 220px;
+    padding: 20px 0px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+}
+
+.dropdown-menu ul {
+    background: rgba(17, 17, 17, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    padding: 16px 18px;
+    backdrop-filter: blur(15px);
+}
+
+
+.nav-item.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-link:hover,
+.dropdown-link.active {
+    color: var(--BrandColor);
+    transform: translateX(4px);
+}
+
 .nav-menu-div li {
     list-style: none;
 }
@@ -268,27 +352,113 @@
     }
 }
 
-.drawer-nav-item a {
+.drawer-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+}
+
+.drawer-parent-link {
     display: block;
-    padding: 18px 20px;
+    flex: 1;
+    padding: 16px 18px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     border-radius: 12px;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.02);
 }
 
-.drawer-nav-item a:hover {
+.drawer-parent-link:hover {
     background: rgba(230, 176, 53, 0.1);
     color: var(--BrandColor);
     border-color: rgba(230, 176, 53, 0.2);
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
-.drawer-nav-item a.active {
+.drawer-parent-link.active {
     background: rgba(230, 176, 53, 0.15);
+    color: var(--BrandColor);
+    border-color: var(--BrandColor);
+    font-weight: 500;
+}
+
+.drawer-expand-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.drawer-expand-btn:hover {
+    border-color: var(--BrandColor);
+    color: var(--BrandColor);
+}
+
+.drawer-expand-btn.open {
+    transform: rotate(180deg);
+    color: var(--BrandColor);
+    border-color: var(--BrandColor);
+    background: rgba(230, 176, 53, 0.1);
+}
+
+.drawer-submenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    padding-left: 8px;
+}
+
+.drawer-submenu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.drawer-submenu ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.drawer-submenu li {
+    width: 100%;
+}
+
+.drawer-sub-link {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.01);
+    transition: all 0.25s ease;
+}
+
+.drawer-sub-link:hover {
+    color: var(--BrandColor);
+    border-color: rgba(230, 176, 53, 0.3);
+    transform: translateX(6px);
+}
+
+.drawer-sub-link.active {
+    background: rgba(230, 176, 53, 0.12);
     color: var(--BrandColor);
     border-color: var(--BrandColor);
     font-weight: 500;
@@ -353,11 +523,12 @@
     .LogoContainer img {
         width: 100px;
     }
+
     .drawer-content {
         height: 85%;
     }
 
-    
+
 }
 
 @media (max-width: 480px) {

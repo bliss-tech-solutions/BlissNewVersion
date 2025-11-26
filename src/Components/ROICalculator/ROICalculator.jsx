@@ -29,6 +29,7 @@ const RoiCalculator = () => {
 
     const [sellUnits, setSellUnits] = useState(50); // like your UI
     const [durationMonths, setDurationMonths] = useState(6);
+    const [sellUnitsError, setSellUnitsError] = useState('');
 
     // dropdown options from config
     const segments = [...new Set(ROI_CONFIGS.map((c) => c.segment))];
@@ -261,14 +262,40 @@ const RoiCalculator = () => {
                                 </label>
                                 <input
                                     type="number"
-                                    min={1}
+                                    min={50}
                                     value={sellUnits}
-                                    onChange={(e) => setSellUnits(Number(e.target.value) || 0)}
-                                    className="roi-input"
+                                    onChange={(e) => {
+                                        const value = e.target.value;
+                                        if (value === '') {
+                                            setSellUnits('');
+                                            setSellUnitsError('');
+                                        } else {
+                                            const numValue = Number(value);
+                                            setSellUnits(numValue);
+                                            
+                                            if (numValue < 50) {
+                                                setSellUnitsError('Minimum 50 units required');
+                                            } else {
+                                                setSellUnitsError('');
+                                            }
+                                        }
+                                    }}
+                                    onBlur={(e) => {
+                                        const value = Number(e.target.value);
+                                        if (!value || value < 50) {
+                                            setSellUnits(50);
+                                            setSellUnitsError('');
+                                        }
+                                    }}
+                                    className={`roi-input ${sellUnitsError ? 'error' : ''}`}
                                 />
+                                {sellUnitsError && (
+                                    <span className="roi-input-error">{sellUnitsError}</span>
+                                )}
                             </div>
 
-                            <div className="roi-input-group">
+                            {/* Duration select - Hidden for now */}
+                            {/* <div className="roi-input-group">
                                 <label className="roi-input-label">
                                     Duration
                                 </label>
@@ -282,7 +309,7 @@ const RoiCalculator = () => {
                                     <option value={9}>9 Months</option>
                                     <option value={12}>12 Months</option>
                                 </select>
-                            </div>
+                            </div> */}
                         </div>
 
                         <p className="roi-disclaimer">
