@@ -112,6 +112,7 @@
 
     .WorkSlideCard {
         grid-template-columns: 1fr;
+        height: 100% !important;
     }
 
     .WorkSlideContent {

@@ -9,8 +9,8 @@
 }
 
 .VelocityFrameworkCardsItem {
-    min-height: 450px;
-    height: 450px;
+    min-height: 600px;
+    height: 600px;
     width: 100%;
     background-color: rgb(16, 16, 16);
     position: sticky;
@@ -25,15 +25,15 @@
 .VelocityContentAndImageGrid {
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: flex;
+    /* grid-template-columns: 1.5fr 1fr; */
     gap: 30px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .VelocityContentSecondHalf {
-    height: 100%;
-    width: 100%;
+    height: 540px;
+    width: 40%;
     overflow: hidden;
     border-radius: 20px;
     position: relative;
@@ -48,6 +48,7 @@
 
 .VelocityContentFirstHalf {
     height: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -116,6 +117,80 @@
     background-color: var(--BrandColor);
 }
 
+/* Video Slider Styles */
+.VideosListContainer {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.video-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.video-swiper {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.video-slide {
+    width: auto !important;
+}
+
+.video-placeholder-box {
+    width: 200px;
+    height: 170px;
+    background-color: #ff0000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-placeholder-box:hover {
+    transform: scale(1.05);
+}
+
+.video-slider-navigation {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.video-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.video-nav-btn:hover {
+    background-color: var(--BrandColor);
+    border-color: var(--BrandColor);
+}
+
+.video-nav-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.video-nav-btn.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
 @media screen and (max-width: 768px) {
     .VelocityFrameworkCardsItem {
         min-height: 100%;
@@ -124,18 +199,50 @@
         padding: 20px 10px;
         border-radius: 10px !important;
     }
+
     .VelocityContentAndImageGrid {
-        grid-template-columns: 1fr;
+      flex-direction: column;
     }
+
+    .VelocityContentSecondHalf {
+        width: 100%;
+    }
+
+    .VelocityContentFirstHalf {
+        width: 100%;
+    }
+
     .HomeVelocityFrameworkCardsContainer {
         position: relative;
         overflow: hidden;
     }
-    .VelocityContentFirstHalf{
+
+    .VelocityContentFirstHalf {
         gap: 20px;
     }
 
-    .VelocityContentFirstHalf h3{
+    .VelocityContentFirstHalf h3 {
         margin-bottom: 10px;
+    }
+
+    .video-placeholder-box {
+        width: 150px;
+        height: 100px;
+        font-size: 14px;
+    }
+
+    .video-nav-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .video-nav-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .VelocityContentSecondHalf {
+        height: 300px;
+        min-height: 300px;
     }
 }

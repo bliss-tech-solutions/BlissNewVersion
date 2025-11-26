@@ -2,8 +2,10 @@ import React from 'react'
 import CenteredHeader from '../../CommonUsedComponents/CenteredHeader/CenteredHeader'
 import InteractiveButton from '../../CommonUsedComponents/InteractiveButton/InteractiveButton'
 import './Branding.css'
+import WhyRealStateBranding from '../WhyRealStateBranding/WhyRealStateBranding'
 const AboutUs = () => {
     return (
+       <>
         <div id='About-us'>
             <div className='backgroundOverlayImageSetAboutUs'>
 
@@ -87,6 +89,8 @@ const AboutUs = () => {
                 </div>
             </div>
         </div>
+        <WhyRealStateBranding />
+       </>
     )
 }
 

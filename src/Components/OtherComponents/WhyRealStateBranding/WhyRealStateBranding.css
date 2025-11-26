@@ -1,0 +1,38 @@
+.WhyRealStateBrandingGridSystemContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.WhyRealStateBrandingGridSystemContainerLeftSide {
+    position: sticky;
+    top: 30%;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+.WhyRealStateBrandingGridSystemContainerLeftSide .CenteredHeaderContent {
+    width: 100%;
+    max-width: 100%;
+    align-items: start;
+}
+
+.WhyRealStateBrandingGridSystemContainerLeftSide .CenteredHeaderContent h2 {
+    text-align: start;
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide>div {
+    min-height: 500px;
+    background-color: red;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .WhyRealStateBrandingGridSystemContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .WhyRealStateBrandingGridSystemContainerLeftSide {
+        position: static;
+    }
+}

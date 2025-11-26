@@ -75,22 +75,22 @@ const NavigationBar = () => {
 
     return (
         <>
-            <div id="navigation-bar" className={isScrolled ? 'scrolled' : ''}>
-                <div className="NavigationBarContainer">
-                    <div className="Container">
-                        <div className="LogoContainer">
+        <div id="navigation-bar" className={isScrolled ? 'scrolled' : ''}>
+            <div className="NavigationBarContainer">
+                <div className="Container">
+                    <div className="LogoContainer">
                            <Link to="/"> <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" /></Link>
-                        </div>
+                    </div>
                         <div className="desktop-menu">
-                            <ul className="nav-menu-div">
+                        <ul className="nav-menu-div">
                                 {NavigationData.map((item) => {
                                     const hasSublinks = Array.isArray(item.sublinks) && item.sublinks.length > 0;
 
                                     return (
                                         <li key={item.id} className={`nav-item ${hasSublinks ? 'has-dropdown' : ''}`}>
                                             <div className={`nav-link-wrapper ${hasSublinks ? 'with-dropdown' : ''}`}>
-                                                <Link
-                                                    to={item.path}
+                                    <Link
+                                        to={item.path}
                                                     className={`nav-link FadeParaColor ${location.pathname === item.path ? 'active' : ''}`}
                                                 >
                                                     {item.name}
@@ -211,8 +211,8 @@ const NavigationBar = () => {
                                                 to={item.path}
                                                 className={`drawer-parent-link ${location.pathname === item.path ? 'active' : ''}`}
                                                 onClick={() => setIsDrawerOpen(false)}
-                                            >
-                                                {item.name}
+                                    >
+                                        {item.name}
                                             </Link>
                                             {hasSublinks && (
                                                 <button
@@ -243,11 +243,11 @@ const NavigationBar = () => {
                                                                 onClick={() => setIsDrawerOpen(false)}
                                                             >
                                                                 {subLink.name}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                                         )}
                                     </li>
                                 );

@@ -5,9 +5,22 @@ import VelocityFrameWorkData from "./VelocityFrameWorkData";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import { FreeMode, Navigation } from 'swiper/modules';
+
 const HomeVelocityFrameworkCards = () => {
     const [cardScales, setCardScales] = useState(VelocityFrameWorkData.map(() => ({ scale: 1, blur: 0 })));
     const cardRefs = useRef([]);
+    const videoSliderRef = useRef(null);
+
+    // Dummy video slider data (placeholder boxes)
+    const videoPlaceholders = Array.from({ length: 6 }, (_, i) => ({
+        id: i + 1,
+        title: `Video ${i + 1}`
+    }));
 
     useEffect(() => {
         let ticking = false;
@@ -126,6 +139,43 @@ const HomeVelocityFrameworkCards = () => {
                                                         {point}</p>
                                                 </div>
                                             ))}
+                                        </div>
+                                        <div className="VideosListContainer">
+                                            <div className="video-slider-wrapper">
+                                                <Swiper
+                                                    // ref={videoSliderRef}
+                                                    loop={true}
+                                                    slidesPerView={4}
+                                                    spaceBetween={10}
+                                                    freeMode={true}
+                                                    navigation={{
+                                                        prevEl: `.video-prev-${index}`,
+                                                        nextEl: `.video-next-${index}`,
+                                                    }}
+                                                    modules={[FreeMode, Navigation]}
+                                                    className="video-swiper"
+                                                >
+                                                    {videoPlaceholders.map((video) => (
+                                                        <SwiperSlide key={video.id} className="video-slide">
+                                                            <div className="video-placeholder-box">
+                                                                {video.title}
+                                                            </div>
+                                                        </SwiperSlide>
+                                                    ))}
+                                                </Swiper>
+                                                <div className="video-slider-navigation">
+                                                    <button className={`video-nav-btn video-prev-${index}`}>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                                        </svg>
+                                                    </button>
+                                                    <button className={`video-nav-btn video-next-${index}`}>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="VelocityContentSecondHalf">
