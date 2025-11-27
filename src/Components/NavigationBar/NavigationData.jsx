@@ -33,7 +33,7 @@ const NavigationData = [
             {
                 id: 'about-work',
                 name: 'Our Work',
-                path: '/about/work'
+                path: '/ourwork'
             },
             {
                 id: 'about-careers',

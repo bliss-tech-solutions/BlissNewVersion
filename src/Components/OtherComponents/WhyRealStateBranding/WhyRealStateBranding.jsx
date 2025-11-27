@@ -45,7 +45,7 @@ const WhyRealStateBranding = () => {
 
     return (
         <div id="why-real-state-branding">
-            <div className="Container">
+            <div className="Container PaddingBottomSection">
                 <div className="WhyRealStateBrandingGridSystemContainer SectionLargeTopPadding">
                     <div className="WhyRealStateBrandingGridSystemContainerLeftSide">
                         <CenteredHeader

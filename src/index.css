@@ -12,7 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   background-color: black !important;
 }
 
@@ -116,6 +117,10 @@ h6 {
   padding-top: 130px;
 }
 
+.PaddingBottomSection {
+  padding-bottom: 50px;
+}
+
 .SectionLargeTopPadding {
   padding-top: 170px;
 }
@@ -177,26 +182,27 @@ button {
   cursor: pointer !important;
 }
 
-.w-100{
+.w-100 {
   width: 100%;
 }
 
-.h-100{
+.h-100 {
   height: 100%;
 }
 
-.OnlyMobileDevicesLargePaddingTop{
+.OnlyMobileDevicesLargePaddingTop {
   padding-top: 120px !important;
 }
 
-.PCCenterMobileStart{
+.PCCenterMobileStart {
   text-align: center !important;
 }
 
 @media (max-width: 768px) {
-  .PCCenterMobileStart{
+  .PCCenterMobileStart {
     text-align: start !important;
   }
+
   h1 {
     font-size: 42px;
   }
@@ -224,6 +230,7 @@ button {
   .Container {
     padding: 0 10px;
   }
+
   .MarginTop30 {
     margin-top: 10px;
   }
@@ -231,6 +238,6 @@ button {
   .MarginTop60 {
     margin-top: 40px;
   }
-  
+
 
 }

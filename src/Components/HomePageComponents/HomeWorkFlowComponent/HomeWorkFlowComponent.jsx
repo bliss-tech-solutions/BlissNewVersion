@@ -1,6 +1,36 @@
 import React, { useState } from "react";
 import "./HomeWorkFlowComponent.css";
 import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.7, ease: "easeOut" }
+    }
+};
+
+const staggerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
+    }
+};
 
 const HomeWorkFlowComponent = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -44,33 +74,41 @@ const HomeWorkFlowComponent = () => {
     ];
 
     return (
-        <div id="home-work-flow-component">
-            <div className="Container SectionLargeTopPadding">
-                <FlexBetweenHeader
-                    tagText="Our WorkFlow"
-                    heading="How We Transform Properties Into Market Leaders"
-                    description="Our proven workflow combines strategic insight, creative excellence, and performance marketing to deliver results that matter. From foundation to expansion, every step is designed to maximize your market impact."
-                    buttonLabel="Start your project"
-                    onButtonClick={() => { }}
-                />
-                <div className="HomeWorkFlowComponentContainer MarginTop30">
-                    <div className="WorkFlowGrid">
-                        <div className="CategoryButtons">
+        <motion.div
+            id="home-work-flow-component"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+        >
+            <motion.div className="Container SectionLargeTopPadding" variants={sectionVariants}>
+                <motion.div variants={itemVariants}>
+                    <FlexBetweenHeader
+                        tagText="Our WorkFlow"
+                        heading="How We Transform Properties Into Market Leaders"
+                        description="Our proven workflow combines strategic insight, creative excellence, and performance marketing to deliver results that matter. From foundation to expansion, every step is designed to maximize your market impact."
+                        buttonLabel="Start your project"
+                        onButtonClick={() => { }}
+                    />
+                </motion.div>
+                <motion.div className="HomeWorkFlowComponentContainer MarginTop30" variants={staggerVariants}>
+                    <motion.div className="WorkFlowGrid" variants={staggerVariants}>
+                        <motion.div className="CategoryButtons" variants={staggerVariants}>
                             {categories.map((category, index) => (
-                                <button
+                                <motion.button
                                     key={index}
                                     className={`CategoryButton ${activeTab === index ? 'active' : ''}`}
                                     onClick={() => setActiveTab(index)}
+                                    variants={itemVariants}
                                 >
                                     {category.name}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="arrow-icon">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                     </svg>
-                                </button>
+                                </motion.button>
                             ))}
-                        </div>
-                        <div className="ContentArea">
-                            <div className="ContentCard">
+                        </motion.div>
+                        <motion.div className="ContentArea" variants={itemVariants}>
+                            <motion.div className="ContentCard" variants={itemVariants}>
                                 <div className="StatusIndicator">
                                     <div className="StatusDot"></div>
                                 </div>
@@ -85,12 +123,12 @@ const HomeWorkFlowComponent = () => {
                                 <div className="processImageContainer">
                                     <img src="/Images/BackgroundImages/OurApporchImageDummy.jpeg" alt="" />
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 };
 
