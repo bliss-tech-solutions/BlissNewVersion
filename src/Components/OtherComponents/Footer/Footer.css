@@ -51,9 +51,16 @@
 }
 
 @media (max-width: 768px) {
+    .FooterRowContainer{
+        padding-bottom: 0px;
+    }
     .FooterListContainer ul{
         flex-wrap: wrap;
         /* justify-content: start; */
+    }
+    .FooterBottomContainer{
+        flex-direction: column;
+        gap: 10px;
     }
     /* #footer .ant-row{
         justify-content: start;

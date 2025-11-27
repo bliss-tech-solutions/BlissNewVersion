@@ -46,6 +46,11 @@
     .ContactBottomCommonGridSystem {
         margin-left: 0;
         gap: 6px;
+        justify-content: start;
+    }
+
+    .ContactBottomCommonGridSystem>div:last-child{
+        display: none;
     }
     
     #contact-bottom-common{

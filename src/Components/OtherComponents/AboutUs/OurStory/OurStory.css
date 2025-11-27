@@ -99,6 +99,14 @@
     z-index: 2;
 }
 
+.GradientOverlay {
+    background-image: linear-gradient(180deg, rgba(230, 176, 53, 0.22), transparent);
+    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    width: 100%;
+    height: 100px;
+}
+
 
 @media (max-width: 768px) {
     .AboutUsHeaderGridSystem {

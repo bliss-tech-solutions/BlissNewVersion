@@ -184,6 +184,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .WhyRealStateBrandingGridSystemContainerRightSide .WhyRealStateBrandingGridSystemContainerRightSideImage{
+        height: 100% !important;
+    }
     .WhyRealStateBrandingGridSystemContainer {
         grid-template-columns: 1fr;
     }

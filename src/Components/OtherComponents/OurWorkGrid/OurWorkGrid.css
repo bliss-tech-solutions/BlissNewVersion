@@ -22,3 +22,13 @@
     object-fit: cover;
     border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+    .OurWorkGridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .OurWorkGridContainer .OurWorkGridItem .OurWorkGridItemImage {
+        height: 100%;
+    }
+}

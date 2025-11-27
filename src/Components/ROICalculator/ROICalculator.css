@@ -3,6 +3,7 @@
     min-height: 100vh;
     background: #000000;
     font-family: "Bricolage Grotesque", sans-serif;
+    overflow: hidden;
 }
 
 /* Heading Section */

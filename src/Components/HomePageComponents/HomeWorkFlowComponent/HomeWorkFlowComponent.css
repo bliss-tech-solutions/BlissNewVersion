@@ -143,3 +143,9 @@
     z-index: 2;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 0%, transparent 32%, transparent 68%, rgba(0, 0, 0, 0.9) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, transparent 26%, transparent 74%, rgba(0, 0, 0, 0.7) 100%);
 }
+
+@media (max-width: 768px) {
+    .WorkFlowGrid {
+        grid-template-columns: 1fr;
+    }
+}

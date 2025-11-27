@@ -120,6 +120,9 @@ const OurStory = () => {
                     </motion.div>
                 </motion.div>
             </motion.div>
+            <div className="GradientOverlay">
+
+            </div>
             <HomeWorkFlowComponent />
         </>
     );

@@ -214,7 +214,7 @@
 
     .HomeVelocityFrameworkCardsContainer {
         position: relative;
-        overflow: hidden;
+        overflow: hidden !important;
     }
 
     .VelocityContentFirstHalf {
