@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import CenteredHeader from '../../CommonUsedComponents/CenteredHeader/CenteredHeader'
 import InteractiveButton from '../../CommonUsedComponents/InteractiveButton/InteractiveButton'
 import './Branding.css'
@@ -6,6 +6,9 @@ import WhyRealStateBranding from '../WhyRealStateBranding/WhyRealStateBranding'
 import ServicesExplainComponent from '../ServicesExplainComponent/ServicesExplainComponent'
 import AllClientsByCategories from '../AllClientsByCategories/AllClientsByCategories'
 const AboutUs = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <div id='About-us' className='OnlyMobileDevicesLargePaddingTop'>

@@ -4,13 +4,14 @@
     gap: 0px;
 }
 
+
 .ServicesGridContainer>div {
     border: 0.1px solid rgba(255, 255, 255, 0.265);
     min-height: 400px;
     transition: .5s;
 }
 
-.ServicesGridContainer>div:hover{
+.ServicesGridContainer .ServicesGridItem:nth-child(odd){
   border: 0.1px solid var(--BrandColor);
   transition: .5s;
 }
