@@ -27,67 +27,8 @@ const AboutUs = () => {
                                 />
                             </div>
                         </div>
-                        <div className='AboutUsRightSideGridSystem'>
-                            <div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                                <div>
-
-                                </div>
-                                <div>
-
-                                </div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                            </div>
-                            <div>
-                                <img src="/Images/TeamPhoto/AlokImage.jpg" alt="" />
-                            </div>
-                            <div>
-                                <div>
-
-                                </div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <div>
-                                <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553ceece6ab5502d275_about-hero-image4.webp" alt="" />
-                            </div>
-                            <div>
-
-                            </div>
-                            <div>
-                                <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553f729022091570393_about-hero-image5.webp" alt="" />
-                            </div>
-                            <div>
-
-                            </div>
-                            <div>
-                                <div>
-
-                                </div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                                <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <div>
-
-                            </div>
+                        <div className='BrandingImageContainer'>
+                            <img src="/Images/SectionImages/BrandingImage.png" alt="" />
                         </div>
                     </div>
                 </div>

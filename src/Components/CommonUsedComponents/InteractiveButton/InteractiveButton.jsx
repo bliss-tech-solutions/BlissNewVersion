@@ -6,6 +6,7 @@ import "./InteractiveButton.css";
  * 
  * @param {string} buttonText - Main button text (e.g., "Explore Pricing Plan")
  * @param {string} arrowText - Optional text shown with arrow (e.g., "Got a concept? Let's design it right.")
+ * @param {string} arrowImage - Optional image path/URL for the arrow (defaults to branded arrow icon)
  * @param {function} onClick - Click handler
  * @param {string} className - Additional CSS classes
  */
@@ -13,6 +14,7 @@ import "./InteractiveButton.css";
 const InteractiveButton = ({
     buttonText = "Click Here",
     arrowText = null,
+    arrowImage = "/Images/Icons/SmallArrowToUserIntactButtonSign.svg",
     onClick,
     className = "",
     ...props
@@ -26,7 +28,7 @@ const InteractiveButton = ({
             {arrowText && (
                 <div className="button-arrow-section">
                     <img
-                        src="/Images/Icons/SmallArrowToUserIntactButtonSign.svg"
+                        src={arrowImage}
                         alt="arrow"
                         className="button-arrow-icon"
                     />

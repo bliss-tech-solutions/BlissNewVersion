@@ -23,12 +23,12 @@ const NavigationData = [
     {
         id: 4,
         name: 'About Us',
-        path: '/aboutus',
+        path: '',
         sublinks: [
             {
                 id: 'about-story',
                 name: 'Our Story',
-                path: '/about/our-story'
+                path: '/ourstory'
             },
             {
                 id: 'about-work',

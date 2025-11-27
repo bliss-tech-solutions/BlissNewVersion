@@ -47,7 +47,7 @@ const HomeWorkFlowComponent = () => {
         <div id="home-work-flow-component">
             <div className="Container SectionLargeTopPadding">
                 <FlexBetweenHeader
-                    tagText="our process"
+                    tagText="Our WorkFlow"
                     heading="How We Transform Properties Into Market Leaders"
                     description="Our proven workflow combines strategic insight, creative excellence, and performance marketing to deliver results that matter. From foundation to expansion, every step is designed to maximize your market impact."
                     buttonLabel="Start your project"
