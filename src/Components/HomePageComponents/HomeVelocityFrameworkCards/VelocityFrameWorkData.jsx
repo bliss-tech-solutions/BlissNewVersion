@@ -1,7 +1,7 @@
 const VelocityFrameWorkData = [
     {
         title: "Top Velocity Framework",
-        img: "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/689063f6f62ad5cf0d26db63_service1-p-2000.webp",
+        img: "/Images/BackgroundImages/TopVelocityDummyImage.png",
         tagline: "Creating Buzz & Attracting Serious Eyeballs",
         description: "At this stage, it's all about making your project the talk of the town and driving high-quality discovery.",
         points: [

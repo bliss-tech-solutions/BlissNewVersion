@@ -185,7 +185,18 @@ button {
   height: 100%;
 }
 
+.OnlyMobileDevicesLargePaddingTop{
+  padding-top: 120px !important;
+}
+
+.PCCenterMobileStart{
+  text-align: center !important;
+}
+
 @media (max-width: 768px) {
+  .PCCenterMobileStart{
+    text-align: start !important;
+  }
   h1 {
     font-size: 42px;
   }

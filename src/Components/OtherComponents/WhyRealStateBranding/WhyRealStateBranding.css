@@ -1,7 +1,10 @@
 .WhyRealStateBrandingGridSystemContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 30px;
+}
+
+.WhyRealStateBrandingGridSystemContainer>div {
+    width: 50%;
 }
 
 .WhyRealStateBrandingGridSystemContainerLeftSide {
@@ -21,10 +24,159 @@
     text-align: start;
 }
 
+.WhyRealStateBrandingGridSystemContainerRightSide {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
 .WhyRealStateBrandingGridSystemContainerRightSide>div {
     min-height: 500px;
-    background-color: red;
-    margin-bottom: 20px;
+
+    /* background-color: red; */
+}
+
+.WhyRealStateBrandingCard {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.WhyRealStateBrandingCard:hover {
+    transform: translateY(-5px);
+    opacity: 0.95;
+}
+
+/* PDF Modal Styles */
+.PdfModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.PdfModalContent {
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    background: #282828;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.PdfModalIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #282828;
+    flex: 1;
+}
+
+.PdfModalClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    line-height: 1;
+}
+
+.PdfModalClose:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide>div>div {
+    margin-bottom: 10px;
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide .WhyRealStateBrandingGridSystemContainerRightSideImage {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    /* box-shadow: 
+        0 0 60px rgba(0, 0, 0, 0.4),
+        0 0 120px rgba(0, 0, 0, 0.2),
+        inset 0 0 100px rgba(0, 0, 0, 0.1); */
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide>div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+    filter: brightness(0.95) contrast(1.05);
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide>div:hover img {
+    transform: scale(1.02);
+    filter: brightness(1) contrast(1.1);
+}
+
+.WhyRealStateBrandingGridSystemContainerRightSide>div:hover .WhyRealStateBrandingGridSystemContainerRightSideImage::before,
+.WhyRealStateBrandingGridSystemContainerRightSide>div:hover .WhyRealStateBrandingGridSystemContainerRightSideImage::after {
+    opacity: 0.6;
+}
+
+.taglineStyle {
+    color: #ffffff80;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.descriptionStyle p {
+    color: white;
+}
+
+.descriptionStyle p span {
+    color: #ffffff80;
 }
 
 @media screen and (max-width: 768px) {
@@ -34,5 +186,14 @@
 
     .WhyRealStateBrandingGridSystemContainerLeftSide {
         position: static;
+    }
+
+    .WhyRealStateBrandingGridSystemContainer {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .WhyRealStateBrandingGridSystemContainer>div {
+        width: 100%;
     }
 }

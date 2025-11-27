@@ -1,0 +1,109 @@
+.ClientCategoriesTabs {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ClientCategoriesTab {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 12px 28px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ClientCategoriesTab:is(:hover, :focus-visible) {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.ClientCategoriesTab.is-active {
+    background: var(--BrandColor);
+    border-color: transparent;
+    color: #fff;
+}
+
+.ClientLogosGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.ClientLogoCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 140px;
+}
+
+.ClientLogoCardInner {
+    width: 100%;
+    aspect-ratio: 4 / 2;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ClientLogoCardInner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ClientLogoCard img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(1.2);
+    transition: filter 0.3s ease;
+}
+
+.ClientLogoCard span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.ClientLogoCard:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.ClientLogoCard:hover .ClientLogoCardInner::after {
+    opacity: 0.8;
+}
+
+.ClientLogoCard:hover img {
+    filter: grayscale(0) brightness(1);
+}
+@media screen and (max-width: 768px) {
+    .ClientCategoriesTab {
+        flex: 1 1 calc(50% - 12px);
+        text-align: center;
+    }
+}

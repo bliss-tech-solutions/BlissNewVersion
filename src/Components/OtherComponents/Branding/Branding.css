@@ -37,11 +37,6 @@
     max-width: 100% !important;
 }
 
-#About-us .CenteredHeaderContent h2,
-.CenteredHeaderContent p {
-    text-align: start;
-}
-
 .AboutUsRightSideGridSystem>div:first-child,
 .AboutUsRightSideGridSystem>div:nth-child(8),
 .AboutUsRightSideGridSystem>div:nth-child(3) {
@@ -79,4 +74,16 @@
     transform: scaleX(-1);
     opacity: 0.2;
     z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+    .AboutUsHeaderGridSystem {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .AboutUsRightSideGridSystem>div {
+        min-height: 130px !important;
+    }
+
 }

@@ -1,0 +1,66 @@
+.ServicesGridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+}
+
+.ServicesGridContainer>div {
+    border: 0.1px solid rgba(255, 255, 255, 0.265);
+    min-height: 400px;
+    transition: .5s;
+}
+
+.ServicesGridContainer>div:hover{
+  border: 0.1px solid var(--BrandColor);
+  transition: .5s;
+}
+
+.ServicesGridItem {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ServicesTagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ServicesTagsContainer div {
+    background-color: #ffffffd1;
+    color: black;
+    padding: 7px 13px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight:600;
+}
+
+.ServicesTagsContainer div div{
+    background-color: #e6b03587;
+    color:black;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--BrandColor);
+    font-weight:600;
+    
+}
+@media (min-width:800px) and (max-width: 1200px) {
+    .ServicesGridContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ServicesGridContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

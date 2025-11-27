@@ -14,15 +14,21 @@ const CenteredHeader = ({
     description = "We team up with startups, SaaS companies, and digital brands to create design-driven solutions that look great — and perform even better.",
     id,
     className,
+    textAlign = "center", // 'center' | 'start'
 }) => {
     const rootId = id || "centered-header";
     const RootIcon = tagIcon || DefaultSparkIcon;
+    const normalizedAlign = textAlign === "start" ? "start" : "center";
+    const alignmentClass =
+        normalizedAlign === "start"
+            ? "CenteredHeaderContent--alignStart"
+            : "CenteredHeaderContent--alignCenter";
 
     return (
         <div id={rootId} className={className}>
             <div className="CenteredHeaderContainer">
                 <div className="Container">
-                    <div className="CenteredHeaderContent">
+                    <div className={`CenteredHeaderContent ${alignmentClass}`}>
                         {tagText && (
                             <div className="tagParagraphVersion2">
                                 <RootIcon />

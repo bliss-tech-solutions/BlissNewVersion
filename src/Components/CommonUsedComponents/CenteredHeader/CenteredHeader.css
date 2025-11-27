@@ -9,7 +9,6 @@
 .CenteredHeaderContent {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 15px;
     max-width: 800px;
     margin: 0 auto;
@@ -19,7 +18,34 @@
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.CenteredHeaderContent--alignCenter {
+    align-items: center;
+    text-align: center;
+}
+
+.CenteredHeaderContent--alignCenter .tagParagraphVersion2 {
     justify-content: center;
+}
+
+.CenteredHeaderContent--alignCenter h2,
+.CenteredHeaderContent--alignCenter .CenteredDescription p {
+    text-align: center;
+}
+
+.CenteredHeaderContent--alignStart {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.CenteredHeaderContent--alignStart .tagParagraphVersion2 {
+    justify-content: flex-start;
+}
+
+.CenteredHeaderContent--alignStart h2,
+.CenteredHeaderContent--alignStart .CenteredDescription p {
+    text-align: left;
 }
 
 .CenteredHeaderContent .tagParagraphVersion2 svg {
@@ -28,16 +54,11 @@
     color: #E6B035;
 }
 
-.CenteredHeaderContent h2 {
-    text-align: center;
-}
-
 .CenteredDescription {
     max-width: 600px;
 }
 
 .CenteredDescription p {
-    text-align: center;
     line-height: 160%;
 }
 
@@ -49,5 +70,22 @@
     }
     .CenteredHeaderContainer .Container{
         padding: 0 0px;
+    }
+    .CenteredHeaderContainer .CenteredHeaderContent {
+        max-width: 100%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .CenteredHeaderContent--alignCenter .tagParagraphVersion2,
+    .CenteredHeaderContent--alignStart .tagParagraphVersion2 {
+        justify-content: flex-start;
+    }
+
+    .CenteredHeaderContent--alignCenter h2,
+    .CenteredHeaderContent--alignStart h2,
+    .CenteredHeaderContent--alignCenter .CenteredDescription p,
+    .CenteredHeaderContent--alignStart .CenteredDescription p {
+        text-align: left;
     }
 }
