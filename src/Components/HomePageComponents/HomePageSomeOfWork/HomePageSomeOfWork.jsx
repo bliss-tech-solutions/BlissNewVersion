@@ -57,8 +57,8 @@ const HomePageSomeOfWork = () => {
                             <SwiperSlide key={index}>
                                 <div className="WorkSlideCard">
                                     <div className="WorkSlideImageContainer">
-                                        <RevealImage 
-                                            src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"} 
+                                        <RevealImage
+                                            src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"}
                                             alt={item.title}
                                             threshold={0.3}
                                             duration={1.2}
@@ -85,6 +85,9 @@ const HomePageSomeOfWork = () => {
                             <div className="buttonContainer">
                                 <InteractiveButton
                                     buttonText="View all projects"
+                                    onClick={() => {
+                                        window.location.href = "/ourwork";
+                                    }}
                                     arrowText="Got a concept? Let's design it right."
                                 />
                             </div>

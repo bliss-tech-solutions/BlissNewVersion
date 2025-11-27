@@ -1,90 +1,129 @@
+const clientLogoFiles = [
+    "samruddh.png",
+    "pravish.png",
+    "oringroup.png",
+    "Vraj.png",
+    "VrBuildcon.png",
+    "VisionCreativeGroup.png",
+    "Vinayak.png",
+    "Verdana.png",
+    "VRGroup.png",
+    "Trisha.png",
+    "TimesSquareArcadeGroup.png",
+    "TheOrion.png",
+    "TheAurohgroup.png",
+    "The1st.png",
+    "TheAdress.png",
+    "TNTC.png",
+    "TGS.png",
+    "SwarnimShrushti.png",
+    "SwastikRise.png",
+    "SwaraBuildingHarmony.png",
+    "SwamiNaraynGroup.png",
+    "Sunwoods.png",
+    "Sundaramgroup.png",
+    "Sohamgroup.png",
+    "Solitaire.png",
+    "SparshVilla.png",
+    "Skydeck78.png",
+    "Shypram.png",
+    "Shyam.png",
+    "Shyamal.png",
+    "ShrimayPulence.png",
+    "ShrimadGlory.png",
+    "ShreemMaxima.png",
+    "ShreemaLuxuria.png",
+    "ShreeHari.png",
+    "ShreemAvdhesh.png",
+    "Shivanta.png",
+    "ShivantaGroup.png",
+    "Shivana.png",
+    "ShivalikSky.png",
+    "Shilpgroup.png",
+    "ShineSwasti.png",
+    "Shashwatgroup.png",
+    "Shashvat.png",
+    "Sattva.png",
+    "Sharanya.png",
+    "SarthakPulse.png",
+    "SaralBuildCon.png",
+    "SamdevAmara.png",
+    "Sahashya.png",
+    "Sakargroup.png",
+    "SamanvayRealty.png",
+    "SafalBlisss.png",
+    "SWCSkyLight.png",
+    "RandRGroup.png",
+    "Regalia.png",
+    "RoyalRevanta3.png",
+    "PushkarLuxuria.png",
+    "PushkarGold.png",
+    "PushkarIndstrialHub.png",
+    "Proxima.png",
+    "Praharsh.png",
+    "PrathanaGroup.png",
+    "OrynGroup.png",
+    "NysaGroup.png",
+    "OmElegance.png",
+    "Nyalkaran.png",
+    "Nest.png",
+    "NirgunTrust.png",
+    "MoneyPlantJunction.png",
+    "MadhuvanGroup.png",
+    "MarsArise.png",
+    "Maruti.png",
+    "LoveKuchVilla.png",
+    "Lilleria.png",
+    "LaxmiSkycity.png",
+    "LaxmiDevelopers.png",
+    "Kalashgroup.png",
+    "KasperGenesis.png",
+    "Happygroup.png",
+    "HarmonyHarikesh.png",
+    "ImperialSky.png",
+    "GrandCity.png",
+    "GoodEarth.png",
+    "Elevate.png",
+    "Elite.png",
+    "Ganesha48.png",
+    "DurgaDeveloper.png",
+    "EarthEleanor.png",
+    "EktaDevelopers.png",
+    "DhartiSaket.png",
+    "Dhanani.png",
+    "DevLifeSpaces.png",
+    "DesignStudio.png",
+    "DHSOrbit.png",
+    "D&CDevelopers.png",
+    "CourtYard.png",
+    "BinoriLogo.png",
+    "AyanamHappiness.png",
+    "BREnterprices.png",
+];
+
+const formatClientName = (fileName) => {
+    const baseName = fileName.replace(/\.[^/.]+$/, "");
+    const withSpaces = baseName
+        .replace(/([a-z])([A-Z])/g, "$1 $2")
+        .replace(/[-_]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    return withSpaces
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+};
+
+const clients = clientLogoFiles.map((file) => ({
+    name: formatClientName(file),
+    logo: `/Images/ClientsLogos/${file}`,
+}));
+
 const AllClientsByCategoriesData = [
     {
-        category: "AI",
-        clients: [
-            {
-                name: "NeuroLink Labs",
-                logo: "https://dummyimage.com/160x90/1f1f1f/ffffff&text=NL",
-            },
-            {
-                name: "Atlas Vision",
-                logo: "https://dummyimage.com/160x90/1a1a1a/ffffff&text=AV",
-            },
-            {
-                name: "PulseMind",
-                logo: "https://dummyimage.com/160x90/111111/ffffff&text=PM",
-            },
-        ],
-    },
-    {
-        category: "Fintech",
-        clients: [
-            {
-                name: "Ledgerly",
-                logo: "https://dummyimage.com/160x90/1f1f1f/ffffff&text=LG",
-            },
-            {
-                name: "Coincrest",
-                logo: "https://dummyimage.com/160x90/1a1a1a/ffffff&text=CC",
-            },
-            {
-                name: "MintRoute",
-                logo: "https://dummyimage.com/160x90/111111/ffffff&text=MR",
-            },
-        ],
-    },
-    {
-        category: "SaaS",
-        clients: [
-            {
-                name: "Stackforge",
-                logo: "https://dummyimage.com/160x90/1f1f1f/ffffff&text=SF",
-            },
-            {
-                name: "Cloudwell",
-                logo: "https://dummyimage.com/160x90/1a1a1a/ffffff&text=CW",
-            },
-            {
-                name: "Flowmatic",
-                logo: "https://dummyimage.com/160x90/111111/ffffff&text=FM",
-            },
-        ],
-    },
-    {
-        category: "Healthcare",
-        clients: [
-            {
-                name: "Novacare",
-                logo: "https://dummyimage.com/160x90/1f1f1f/ffffff&text=NC",
-            },
-            {
-                name: "Pulsepoint",
-                logo: "https://dummyimage.com/160x90/1a1a1a/ffffff&text=PP",
-            },
-            {
-                name: "Zenith Bio",
-                logo: "https://dummyimage.com/160x90/111111/ffffff&text=ZB",
-            },
-        ],
-    },
-    {
-        category: "Ecommerce",
-        clients: [
-            {
-                name: "Cartsmith",
-                logo: "https://dummyimage.com/160x90/1f1f1f/ffffff&text=CS",
-            },
-            {
-                name: "Mosaic Market",
-                logo: "https://dummyimage.com/160x90/1a1a1a/ffffff&text=MM",
-            },
-            {
-                name: "Northlane",
-                logo: "https://dummyimage.com/160x90/111111/ffffff&text=NL",
-            },
-        ],
+        category: "Featured",
+        clients,
     },
 ];
 
 export default AllClientsByCategoriesData;
-

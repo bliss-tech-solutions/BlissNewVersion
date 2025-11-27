@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import HeroComponent from "./HeroComponent/HeroComponent";
 import AboutHomeComponent from "./AboutHomeComponent/AboutHomeComponent";
@@ -10,6 +10,11 @@ import HomeVelocityFrameworkCards from "./HomeVelocityFrameworkCards/HomeVelocit
 import HomePageSomeOfWork from "./HomePageSomeOfWork/HomePageSomeOfWork";
 import ROICalculator from "../ROICalculator/ROICalculator";
 const HomeRoutes = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <HeroComponent />
