@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./WhyRealStateBranding.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import WhyRealStateBrandingData from "./WhyRealStateBrandingData";
-
+import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 const WhyRealStateBranding = () => {
     const [selectedPdf, setSelectedPdf] = useState(null);
 
@@ -69,9 +69,9 @@ const WhyRealStateBranding = () => {
                                     <h4 style={{ textTransform: "uppercase" }}>{item.title}</h4>
                                 </div>
                                 <div className="WhyRealStateBrandingGridSystemContainerRightSideImage">
-                                    <img 
+                                    <RevealImage        
                                         src={item.img} 
-                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution`} 
+                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency `} 
                                         loading="lazy"
                                     />
                                 </div>

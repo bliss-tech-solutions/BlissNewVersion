@@ -4,7 +4,7 @@ import "./CareerPosition.css";
 import { getPositionData } from "./CareerPositionData";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
-
+import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 const CareerPosition = () => {
     const { positionName } = useParams();
     const navigate = useNavigate();
@@ -65,7 +65,7 @@ const CareerPosition = () => {
                 <div className="CareerPositionMainLayout">
                     {/* Left Side: Image */}
                     <div className="CareerPositionImageContainer">
-                        <img 
+                        <RevealImage         
                             src={positionData.image || "/Images/CareerImages/Developer.jpg"} 
                             alt={`${positionData.title} career opportunity at The Bliss Solution real estate branding agency`}
                             loading="eager"

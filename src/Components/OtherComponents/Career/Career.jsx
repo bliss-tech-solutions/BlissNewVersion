@@ -1,7 +1,7 @@
 import React from "react";
 import "./Career.css";
 import { useNavigate } from "react-router-dom";
-
+import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 const Career = () => {
     const navigate = useNavigate();
 
@@ -75,7 +75,7 @@ const Career = () => {
                 <div className="CareerPositionsContainer MarginTop60">
                     {CareerPositionsNames.map((position, index) => (
                         <div key={index} className="CareerPositionCard">
-                            <img
+                            <RevealImage
                                 src={position.img}
                                 alt={`${position.name} career opportunity at The Bliss Solution real estate branding agency in Gujarat`}
                                 loading="lazy"
