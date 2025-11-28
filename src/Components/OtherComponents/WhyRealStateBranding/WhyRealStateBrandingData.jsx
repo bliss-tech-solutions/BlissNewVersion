@@ -3,7 +3,7 @@ const WhyRealStateBrandingData = [
         tagline: "Skyline Rera",
         title: "Skyline Rera with Mts",
         img: "/Images/PdfDocuments/Card1/SkylineThumnail.png",
-        pdfDocument: "/Images/PdfDocuments/Card1/Skyline Rera with Mts.pdf",
+        pdfDocument: "/Images/PdfDocuments/Card1/SkylineRerawithMts.pdf",
         description: <><p>Expanded market presence <span>through multilingual</span> launch strategy.</p></>
     },
     {

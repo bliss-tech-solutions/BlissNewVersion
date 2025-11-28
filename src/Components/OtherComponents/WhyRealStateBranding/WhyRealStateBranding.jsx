@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./WhyRealStateBranding.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import WhyRealStateBrandingData from "./WhyRealStateBrandingData";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 const WhyRealStateBranding = () => {
     const [selectedPdf, setSelectedPdf] = useState(null);
+    const [pdfSrc, setPdfSrc] = useState("");
+    const [isPdfLoading, setIsPdfLoading] = useState(false);
+    const [pdfError, setPdfError] = useState("");
+    const pdfObjectUrlRef = useRef(null);
 
     const handleCardClick = (pdfPath) => {
         if (!pdfPath) return;
@@ -15,14 +19,86 @@ const WhyRealStateBranding = () => {
         setSelectedPdf(null);
     };
 
-    const getPdfUrl = (pdfPath) => {
-        // If it's a local path, return it directly
-        if (pdfPath.startsWith('/')) {
-            return pdfPath;
+    const getPdfUrl = (pdfPath = "") => {
+        if (!pdfPath) return "";
+
+        const trimmedPath = pdfPath.trim();
+
+        // Absolute URLs: encode and return
+        if (/^https?:\/\//i.test(trimmedPath)) {
+            return encodeURI(trimmedPath);
         }
-        // If it's a full URL, return it
-        return pdfPath;
+
+        // Normalize local paths and encode to handle spaces/special chars
+        const normalizedPath = trimmedPath.startsWith("/")
+            ? trimmedPath
+            : `/${trimmedPath}`;
+
+        try {
+            const url = new URL(normalizedPath, window.location.origin);
+            return url.href;
+        } catch (error) {
+            return encodeURI(normalizedPath);
+        }
     };
+
+    useEffect(() => {
+        if (!selectedPdf) {
+            if (pdfObjectUrlRef.current) {
+                URL.revokeObjectURL(pdfObjectUrlRef.current);
+                pdfObjectUrlRef.current = null;
+            }
+            setPdfSrc("");
+            setPdfError("");
+            setIsPdfLoading(false);
+            return;
+        }
+
+        const controller = new AbortController();
+
+        const loadPdf = async () => {
+            try {
+                setIsPdfLoading(true);
+                setPdfError("");
+                const pdfUrl = getPdfUrl(selectedPdf);
+                const response = await fetch(pdfUrl, { signal: controller.signal });
+
+                if (!response.ok) {
+                    throw new Error(`Failed to load PDF (${response.status})`);
+                }
+
+                const blob = await response.blob();
+
+                if (pdfObjectUrlRef.current) {
+                    URL.revokeObjectURL(pdfObjectUrlRef.current);
+                }
+
+                const objectUrl = URL.createObjectURL(blob);
+                pdfObjectUrlRef.current = objectUrl;
+                setPdfSrc(objectUrl);
+            } catch (error) {
+                if (error.name !== "AbortError") {
+                    console.error("PDF load error:", error);
+                    setPdfError("Unable to preview this PDF. Please use the download option instead.");
+                    setPdfSrc("");
+                }
+            } finally {
+                if (!controller.signal.aborted) {
+                    setIsPdfLoading(false);
+                }
+            }
+        };
+
+        loadPdf();
+
+        return () => {
+            controller.abort();
+            if (pdfObjectUrlRef.current) {
+                URL.revokeObjectURL(pdfObjectUrlRef.current);
+                pdfObjectUrlRef.current = null;
+            }
+        };
+    }, [selectedPdf]);
 
     // Handle ESC key to close modal
     useEffect(() => {
@@ -69,9 +145,9 @@ const WhyRealStateBranding = () => {
                                     <h4 style={{ textTransform: "uppercase" }}>{item.title}</h4>
                                 </div>
                                 <div className="WhyRealStateBrandingGridSystemContainerRightSideImage">
-                                    <RevealImage        
-                                        src={item.img} 
-                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency `} 
+                                    <RevealImage
+                                        src={item.img}
+                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency `}
                                         loading="lazy"
                                     />
                                 </div>
