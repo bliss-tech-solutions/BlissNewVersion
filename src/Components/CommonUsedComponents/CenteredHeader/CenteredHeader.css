@@ -68,24 +68,42 @@
     .CenteredHeaderContainer {
         max-width: 100%;
     }
-    .CenteredHeaderContainer .Container{
+
+    .CenteredHeaderContainer .Container {
         padding: 0 0px;
     }
+
     .CenteredHeaderContainer .CenteredHeaderContent {
         max-width: 100%;
-        align-items: flex-start;
-        text-align: left;
+        align-items: start;
+        text-align: start;
     }
 
     .CenteredHeaderContent--alignCenter .tagParagraphVersion2,
     .CenteredHeaderContent--alignStart .tagParagraphVersion2 {
-        justify-content: flex-start;
+        justify-content: start;
     }
 
     .CenteredHeaderContent--alignCenter h2,
     .CenteredHeaderContent--alignStart h2,
     .CenteredHeaderContent--alignCenter .CenteredDescription p,
     .CenteredHeaderContent--alignStart .CenteredDescription p {
-        text-align: left;
+        text-align: start;
     }
+
+    #contact-bottom-common .CenteredDescription p {
+        text-align: center;
+    }
+
+    #contact-bottom-common .CenteredHeaderContainer .CenteredHeaderContent {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contact-bottom-common .CenteredHeaderContent--alignCenter .tagParagraphVersion2,
+    #contact-bottom-common .CenteredHeaderContent--alignStart .tagParagraphVersion2 {
+        justify-content: center;
+    }
+
 }

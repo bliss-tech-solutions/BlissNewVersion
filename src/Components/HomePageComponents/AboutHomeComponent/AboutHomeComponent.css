@@ -263,4 +263,8 @@
     #about-home-component h2, #about-home-component p{
         text-align: start;
     }
+    #about-home-component .ContainerGridSystem p {
+        text-align: center;
+    }
+    
 }

@@ -215,6 +215,9 @@
 }
 
 @media (max-width: 768px) {
+    .HeroContentContainer .SmallParagraph{
+        padding: 7px 15px;
+    }
     .HeroContentContainer {
         flex-direction: column;
         gap: 30px;

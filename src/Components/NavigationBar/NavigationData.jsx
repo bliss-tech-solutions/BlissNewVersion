@@ -38,7 +38,7 @@ const NavigationData = [
             {
                 id: 'about-careers',
                 name: 'Career',
-                path: '/about/careers'
+                path: '/career'
             },
             {
                 id: 'about-contact',

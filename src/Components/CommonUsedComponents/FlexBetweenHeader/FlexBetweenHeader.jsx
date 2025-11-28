@@ -1,5 +1,6 @@
 import React from "react";
 import "./FlexBetweenHeader.css";
+import { motion } from "framer-motion";
 
 const DefaultSparkIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -12,6 +13,78 @@ const DefaultArrowIcon = () => (
         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
     </svg>
 );
+
+// Animation variants
+const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            delayChildren: 0.2,
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const tagVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
+const headingVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
+const descriptionVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
+const buttonVariant = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeOut",
+        },
+    },
+};
+
+const rightContentVariant = {
+    hidden: { opacity: 0, x: 30 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
 
 const FlexBetweenHeader = ({
     tagText = "our work",
@@ -32,35 +105,52 @@ const FlexBetweenHeader = ({
     return (
         <div id={rootId} className={className}>
             <div className="Container ">
-                <div className="FlexHeaderGridContainer">
+                <motion.div
+                    className="FlexHeaderGridContainer"
+                    variants={containerVariant}
+                    initial="hidden"
+                    animate="visible"
+                >
                     <div className="HeaderGridItem">
-                        <div className="gapAdjustment">
+                        <motion.div className="gapAdjustment" variants={containerVariant}>
                             {tagText && (
-                                <div className="tagParagraphVersion2">
+                                <motion.div
+                                    className="tagParagraphVersion2"
+                                    variants={tagVariant}
+                                >
                                     <RootIcon />
                                     {tagText}
-                                </div>
+                                </motion.div>
                             )}
-                            {heading && <h2>{heading}</h2>}
-                        </div>
+                            {heading && (
+                                <motion.h2 variants={headingVariant}>
+                                    {heading}
+                                </motion.h2>
+                            )}
+                        </motion.div>
                         {description && (
-                            <div>
+                            <motion.div variants={descriptionVariant}>
                                 <p>{description}</p>
                                 {buttonLabel && (
-                                    <div className="buttonContainer MarginTop30">
+                                    <motion.div
+                                        className="buttonContainer MarginTop30"
+                                        variants={buttonVariant}
+                                    >
                                         <button type="button" onClick={onButtonClick}>
                                             {buttonLabel}
                                             <CtaIcon />
                                         </button>
-                                    </div>
+                                    </motion.div>
                                 )}
-                            </div>
+                            </motion.div>
                         )}
                     </div>
-                    <div>
-                        {rightContent}
-                    </div>
-                </div>
+                    {rightContent && (
+                        <motion.div variants={rightContentVariant}>
+                            {rightContent}
+                        </motion.div>
+                    )}
+                </motion.div>
             </div>
         </div>
     );

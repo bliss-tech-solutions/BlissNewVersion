@@ -10,7 +10,11 @@ import OurStory from './Components/OtherComponents/AboutUs/OurStory/OurStory'
 import Footer from './Components/OtherComponents/Footer/Footer'
 import ContactBottomCommon from './Components/OtherComponents/ContactBottomCommon/ContactBottomCommon'
 import OurWorkGrid from './Components/OtherComponents/OurWorkGrid/OurWorkGrid'
+import usePageTitle from './hooks/usePageTitle'
+import Career from './Components/OtherComponents/Career/Career'
 function App() {
+  usePageTitle(); // Automatically update page title on route change
+  
   return (
     <>
       <NavigationBar />
@@ -20,6 +24,7 @@ function App() {
         <Route path="/branding" element={<Branding />} />
         <Route path="/ourstory" element={<OurStory />} />
         <Route path="/ourwork" element={<OurWorkGrid />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
       <ContactBottomCommon />
       <Footer />
