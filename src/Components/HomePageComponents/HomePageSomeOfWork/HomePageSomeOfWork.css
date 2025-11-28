@@ -1,101 +1,49 @@
-.WorkSwiperContainer {
-    width: 100%;
-    overflow: visible;
-}
-
-.workSwiper {
-    padding: 50px 0 80px 0;
-    overflow: visible;
-}
-
-.workSwiper .swiper-slide {
-    opacity: 0.5;
-    transform: scale(0.85);
-    transition: all 0.5s ease;
-}
-
-.workSwiper .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 2;
-}
-
-.workSwiper .swiper-slide:not(.swiper-slide-active) .WorkSlideCard {
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
-}
-
-.WorkSlideCard {
-    background: black;
-    /* border-radius: 30px; */
-    overflow: hidden;
+/* Grid Layout - 3 rows x 2 columns */
+.WorkGridContainer {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 0;
-    min-height: 300px;
-    height: 350px;
-    transition: all 0.5s ease;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
-.WorkSlideImageContainer {
+.WorkGridCard {
+    background: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    /* border-radius: 20px; */
+}
+
+.WorkGridCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.WorkGridImageContainer {
     width: 100%;
-    height: 100%;
+    height: 500px;
     overflow: hidden;
 }
 
-.WorkSlideImageContainer img {
+.WorkGridImageContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 30px;
+    /* border-radius: 20px 20px 0 0; */
 }
 
-.WorkSlideContent {
-    padding: 30px;
+.WorkGridContent {
+    padding: 24px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.WorkSlideContent h3 {
+.WorkGridContent h3 {
     color: white;
-    font-size: 32px;
-    line-height: 120%;
+    font-size: 24px;
+    line-height: 130%;
     margin: 0;
-}
-
-.WorkSlideTags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.WorkTag {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.workSwiper .swiper-pagination {
-    bottom: 20px;
-}
-
-.workSwiper .swiper-pagination-bullet {
-    background: white;
-    opacity: 0.5;
-    width: 7px;
-    height: 7px;
-    transition: .5s;
-}
-
-.workSwiper .swiper-pagination-bullet-active {
-    opacity: 1;
-    width: 20px;
-    background: var(--BrandColor);
-    border-radius: 4px;
-    transition: .5s;
 }
 
 #home-page-some-of-work-button .buttonContainer {
@@ -109,31 +57,22 @@
 }
 
 @media screen and (max-width: 768px) {
-
-    .WorkSlideCard {
+    .WorkGridContainer {
         grid-template-columns: 1fr;
-        height: 100% !important;
+        gap: 24px;
     }
 
-    .WorkSlideContent {
-        padding: 10px;
+    .WorkGridImageContainer {
+        height: 100%;
     }
 
-    .workSwiper {
-        padding: 0px 0 0px 0;
+    .WorkGridContent {
+        padding: 20px;
     }
 
-    .WorkSlideContent {
-        gap: 20px;
+    .WorkGridContent h3 {
+        font-size: 20px;
     }
-
-    .workSwiper .swiper-pagination {
-        bottom: -20px;
-        display: flex;
-        justify-content: start;
-        padding-left: 8px;
-    }
-
 
     #home-page-some-of-work-button .buttonContainer {
         display: flex;

@@ -19,11 +19,11 @@ const HomePageSomeOfWorkData = [
         image: "/Images/HordingImages/Hoarding1.jpg",
         tags: ["Real Estate Marketing", "Creative Content", "Lead Generation"]
     },
-    {
-        title: "Luxury Villa Development",
-        image: "/Images/HordingImages/Hoarding2.jpg",
-        tags: ["Branding", "Digital Presence", "Sales Activation"]
-    },
+    // {
+    //     title: "Luxury Villa Development",
+    //     image: "/Images/HordingImages/Hoarding2.jpg",
+    //     tags: ["Branding", "Digital Presence", "Sales Activation"]
+    // },
 ];
 
 export default HomePageSomeOfWorkData;
