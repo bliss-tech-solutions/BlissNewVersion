@@ -83,7 +83,7 @@
 }
 
 .roi-input-label {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 4px;
     display: block;
     color: rgba(255, 255, 255, 0.7);
@@ -168,7 +168,7 @@
 }
 
 .roi-kpi-title {
-    font-size: 11px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 4px;
 }
@@ -181,7 +181,7 @@
 }
 
 .roi-kpi-subtitle {
-    font-size: 13px;
+    font-size: 16px;
     color: #E6B035;
 }
 

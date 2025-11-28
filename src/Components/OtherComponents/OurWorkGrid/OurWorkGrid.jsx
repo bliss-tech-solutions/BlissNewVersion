@@ -1,4 +1,4 @@
-import React, {  useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import "./OurWorkGrid.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
@@ -61,12 +61,12 @@ const OurWorkGrid = () => {
         return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
     };
 
-useEffect(() => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}, []);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, []);
 
     const videoModal = activeVideo
         ? createPortal(

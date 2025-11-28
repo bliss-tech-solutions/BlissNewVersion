@@ -272,7 +272,7 @@ const RoiCalculator = () => {
                                         } else {
                                             const numValue = Number(value);
                                             setSellUnits(numValue);
-                                            
+
                                             if (numValue < 50) {
                                                 setSellUnitsError('Minimum 50 units required');
                                             } else {
