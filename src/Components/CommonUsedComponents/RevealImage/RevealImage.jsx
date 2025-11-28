@@ -9,6 +9,7 @@ import "./RevealImage.css";
  * @param {number} threshold - Intersection observer threshold (default: 0.3)
  * @param {number} duration - Animation duration in seconds (default: 1.2)
  * @param {string} className - Additional CSS classes
+ * @param {number} stripeCount - Number of overlay stripes for reveal animation
  */
 
 const RevealImage = ({
@@ -17,10 +18,12 @@ const RevealImage = ({
     threshold = 0.3,
     duration = 1.2,
     className = "",
+    stripeCount = 5,
     ...props
 }) => {
     const [isRevealed, setIsRevealed] = useState(false);
     const imageRef = useRef(null);
+    const stripesArray = Array.from({ length: Math.max(1, stripeCount) });
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -44,23 +47,29 @@ const RevealImage = ({
     }, [threshold]);
 
     return (
-        <div 
+        <div
             ref={imageRef}
             className={`reveal-image-wrapper ${className}`}
             {...props}
         >
-            <img 
-                src={src} 
-                alt={alt} 
+            <img
+                src={src}
+                alt={alt}
                 className="reveal-image"
                 loading="lazy"
             />
-            <div 
-                className={`reveal-overlay ${isRevealed ? 'reveal' : ''}`}
-                style={{
-                    animationDuration: `${duration}s`
-                }}
-            ></div>
+            <div className="reveal-overlay-grid">
+                {stripesArray.map((_, index) => (
+                    <span
+                        key={index}
+                        className={`reveal-stripe ${isRevealed ? 'reveal' : ''}`}
+                        style={{
+                            '--stripe-duration': `${duration}s`,
+                            '--stripe-delay': `${index * 0.12}s`
+                        }}
+                    ></span>
+                ))}
+            </div>
         </div>
     );
 };

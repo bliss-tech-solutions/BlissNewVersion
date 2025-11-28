@@ -5,6 +5,7 @@ import './Branding.css'
 import WhyRealStateBranding from '../WhyRealStateBranding/WhyRealStateBranding'
 import ServicesExplainComponent from '../ServicesExplainComponent/ServicesExplainComponent'
 import AllClientsByCategories from '../AllClientsByCategories/AllClientsByCategories'
+import RevealImage from '../../CommonUsedComponents/RevealImage/RevealImage'
 const AboutUs = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -31,7 +32,7 @@ const AboutUs = () => {
                             </div>
                         </div>
                         <div className='BrandingImageContainer'>
-                            <img 
+                            <RevealImage
                                 src="/Images/SectionImages/BrandingImage.png" 
                                 alt="Premium real estate branding and identity design services by The Bliss Solution agency in Gujarat" 
                                 loading="lazy"

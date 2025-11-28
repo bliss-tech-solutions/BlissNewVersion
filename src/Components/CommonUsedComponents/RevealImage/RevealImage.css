@@ -13,35 +13,38 @@
     display: block;
 }
 
-/* Black Overlay - Starts covering the entire image */
-.reveal-overlay {
+/* Multi-stripe overlay for advanced reveal */
+.reveal-overlay-grid {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
+    inset: 0;
+    display: flex;
     z-index: 1;
-    transform-origin: bottom;
+    pointer-events: none;
 }
 
-/* Animation - Overlay slides up from bottom to top */
-.reveal-overlay.reveal {
-    animation: revealFromBottom 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
-@keyframes revealFromBottom {
-    0% {
-        transform: translateY(0%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
-}
-
-/* Optional: Add subtle fade effect during reveal */
-.reveal-image-wrapper .reveal-image {
+.reveal-stripe {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(10, 10, 14, 0.95), rgba(10, 10, 14, 0.4));
+    transform: translateX(0) rotateY(0deg) skewX(0deg);
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transform-origin: right center;
+    margin-right: 1px;
+    filter: drop-shadow(-12px 0px 15px rgba(0, 0, 0, 0.25));
+}
+
+.reveal-stripe:last-child {
+    margin-right: 0;
+}
+
+.reveal-stripe.reveal {
+    animation: stripeReveal var(--stripe-duration, 1s) cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: var(--stripe-delay, 0s);
+}
+
+@keyframes stripeReveal {
+    100% {
+        transform: translateX(-120%) rotateY(-12deg) skewX(-4deg);
+        opacity: 0;
+    }
 }
 
