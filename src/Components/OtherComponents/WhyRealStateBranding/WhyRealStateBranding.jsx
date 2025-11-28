@@ -69,7 +69,11 @@ const WhyRealStateBranding = () => {
                                     <h4 style={{ textTransform: "uppercase" }}>{item.title}</h4>
                                 </div>
                                 <div className="WhyRealStateBrandingGridSystemContainerRightSideImage">
-                                    <img src={item.img} alt={item.title} />
+                                    <img 
+                                        src={item.img} 
+                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution`} 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div className="descriptionStyle">
                                     <p>{item.description}</p>

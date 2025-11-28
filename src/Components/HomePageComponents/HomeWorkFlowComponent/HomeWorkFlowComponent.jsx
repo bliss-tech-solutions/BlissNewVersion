@@ -121,7 +121,11 @@ const HomeWorkFlowComponent = () => {
                                     <span className="Tag">Performance Marketing</span>
                                 </div>
                                 <div className="processImageContainer">
-                                    <img src="/Images/BackgroundImages/OurApporchImageDummy.jpeg" alt="" />
+                                    <img 
+                                        src="/Images/BackgroundImages/OurApporchImageDummy.jpeg" 
+                                        alt="Real estate marketing workflow and strategic approach process at The Bliss Solution branding agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                             </motion.div>
                         </motion.div>

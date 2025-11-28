@@ -31,7 +31,11 @@ const AboutUs = () => {
                             </div>
                         </div>
                         <div className='BrandingImageContainer'>
-                            <img src="/Images/SectionImages/BrandingImage.png" alt="" />
+                            <img 
+                                src="/Images/SectionImages/BrandingImage.png" 
+                                alt="Premium real estate branding and identity design services by The Bliss Solution agency in Gujarat" 
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </div>

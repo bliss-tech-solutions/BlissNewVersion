@@ -53,6 +53,7 @@ const RevealImage = ({
                 src={src} 
                 alt={alt} 
                 className="reveal-image"
+                loading="lazy"
             />
             <div 
                 className={`reveal-overlay ${isRevealed ? 'reveal' : ''}`}

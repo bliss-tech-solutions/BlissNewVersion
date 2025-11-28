@@ -168,7 +168,11 @@ const HeroComponent = () => {
                     <div className="LeftCircleContainer">
 
                     </div>
-                    <img src="/Images/BackgroundImages/HeroBackgroundRoughBack.webp" alt="" />
+                    <img 
+                        src="/Images/BackgroundImages/HeroBackgroundRoughBack.webp" 
+                        alt="Modern real estate branding agency hero background showcasing premium property marketing services" 
+                        loading="eager"
+                    />
                     <div className="RightCircleContainer">
 
                     </div>
@@ -252,7 +256,11 @@ const HeroComponent = () => {
                         {/* Render logos twice for seamless infinite loop */}
                         {[...clientLogos, ...clientLogos].map((client, index) => (
                             <div key={`logo-${index}`} className="client-logo-item">
-                                <img src={client.logo} alt={client.name} loading="lazy" />
+                                <img 
+                                    src={client.logo} 
+                                    alt={`${client.name} real estate developer client of The Bliss Solution branding agency Gujarat`} 
+                                    loading="lazy"
+                                />
                             </div>
                         ))}
                     </div>

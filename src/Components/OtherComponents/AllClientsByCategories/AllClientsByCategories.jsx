@@ -64,7 +64,11 @@ const AllClientsByCategories = () => {
                             data-category={client.category}
                         >
                             <div className="ClientLogoCardInner">
-                                <img src={client.logo} alt={client.name} loading="lazy" />
+                                <img 
+                                    src={client.logo} 
+                                    alt={`${client.name} real estate developer client logo trusted partner of The Bliss Solution branding agency`} 
+                                    loading="lazy"
+                                />
                             </div>
                             <span>{client.name}</span>
                         </div>

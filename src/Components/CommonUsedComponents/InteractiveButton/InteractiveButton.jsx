@@ -29,8 +29,9 @@ const InteractiveButton = ({
                 <div className="button-arrow-section">
                     <img
                         src={arrowImage}
-                        alt="arrow"
+                        alt="Call to action arrow icon for real estate branding services"
                         className="button-arrow-icon"
+                        loading="lazy"
                     />
                     <p className="button-arrow-text">{arrowText}</p>
                 </div>

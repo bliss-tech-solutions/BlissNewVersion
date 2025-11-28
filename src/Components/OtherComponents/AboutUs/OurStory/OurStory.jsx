@@ -70,35 +70,63 @@ const OurStory = () => {
                         <motion.div className='AboutUsRightSideGridSystem' variants={gridVariant}>
                             <motion.div variants={gridItemVariant}>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div></div>
                                 <div></div>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
-                                <img src="/Images/TeamPhoto/AlokImage.jpg" alt="" />
+                                <img 
+                                    src="/Images/TeamPhoto/AlokImage.jpg" 
+                                    alt="Alok team member at The Bliss Solution real estate branding and marketing agency" 
+                                    loading="lazy"
+                                />
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <div></div>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div></div>
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
-                                <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553ceece6ab5502d275_about-hero-image4.webp" alt="" />
+                                <img 
+                                    src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553ceece6ab5502d275_about-hero-image4.webp" 
+                                    alt="Creative design process for real estate branding projects at The Bliss Solution" 
+                                    loading="lazy"
+                                />
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <div></div>
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
-                                <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553f729022091570393_about-hero-image5.webp" alt="" />
+                                <img 
+                                    src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553f729022091570393_about-hero-image5.webp" 
+                                    alt="Real estate marketing strategy session and brand development workshop at The Bliss Solution" 
+                                    loading="lazy"
+                                />
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <div></div>
@@ -106,10 +134,18 @@ const OurStory = () => {
                             <motion.div variants={gridItemVariant}>
                                 <div></div>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div>
-                                    <img src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" alt="" />
+                                    <img 
+                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp" 
+                                        alt="Real estate branding team collaboration workspace at The Bliss Solution agency" 
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div></div>
                             </motion.div>

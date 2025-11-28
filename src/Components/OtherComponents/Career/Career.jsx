@@ -1,7 +1,15 @@
 import React from "react";
 import "./Career.css";
+import { useNavigate } from "react-router-dom";
 
 const Career = () => {
+    const navigate = useNavigate();
+
+    const handlePositionClick = (positionName) => {
+        // Convert position name to URL-friendly format
+        const urlFriendlyName = positionName.toLowerCase().replace(/\s+/g, '-');
+        navigate(`/career/${urlFriendlyName}`);
+    };
 
     const CareerPositionsNames = [
 
@@ -29,7 +37,7 @@ const Career = () => {
 
 
     const WeHirePositionCards = [
-       
+
         {
             name: "Graphics Designer",
         },
@@ -67,14 +75,29 @@ const Career = () => {
                 <div className="CareerPositionsContainer MarginTop60">
                     {CareerPositionsNames.map((position, index) => (
                         <div key={index} className="CareerPositionCard">
-                            <img src={position.img} alt={position.name} />
+                            <img
+                                src={position.img}
+                                alt={`${position.name} career opportunity at The Bliss Solution real estate branding agency in Gujarat`}
+                                loading="lazy"
+                            />
                             {/* <h4>{position.name}</h4> */}
                         </div>
                     ))}
                 </div>
                 <div className="WeHirePositionCards MarginTop60">
                     {WeHirePositionCards.map((position, index) => (
-                        <div key={index} className="WeHirePositionCard">
+                        <div
+                            key={index}
+                            className="WeHirePositionCard"
+                            onClick={() => handlePositionClick(position.name)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    handlePositionClick(position.name);
+                                }
+                            }}
+                        >
                             {position.name}
                         </div>
                     ))}

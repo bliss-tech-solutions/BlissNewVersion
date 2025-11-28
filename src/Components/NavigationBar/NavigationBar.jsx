@@ -79,7 +79,13 @@ const NavigationBar = () => {
             <div className="NavigationBarContainer">
                 <div className="Container">
                     <div className="LogoContainer">
-                           <Link to="/"> <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" /></Link>
+                           <Link to="/"> 
+                               <img 
+                                   src="/Images/TBSLogos/BlissWhiteLogo.webp" 
+                                   alt="The Bliss Solution logo real estate branding agency Gujarat India" 
+                                   loading="eager"
+                               />
+                           </Link>
                     </div>
                         <div className="desktop-menu">
                         <ul className="nav-menu-div">
@@ -183,7 +189,11 @@ const NavigationBar = () => {
             <div className={`drawer-menu ${isDrawerOpen ? 'open' : ''}`}>
                 <div className="drawer-content">
                     <div className="drawer-header">
-                        <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="Bliss Logo" />
+                        <img 
+                            src="/Images/TBSLogos/BlissWhiteLogo.webp" 
+                            alt="The Bliss Solution logo real estate branding agency Gujarat India" 
+                            loading="eager"
+                        />
                         <button
                             className="drawer-close-btn"
                             onClick={toggleDrawer}

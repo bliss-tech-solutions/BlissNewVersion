@@ -11,6 +11,7 @@ const titleMap = {
     '/ourwork': 'Our Work Portfolio | Real Estate Marketing Projects by The Bliss Solution',
     '/performance': 'Performance Marketing | Real Estate Digital Marketing Services | The Bliss Solution',
     '/influencer': 'Influencer Marketing | Real Estate Influencer Campaigns | The Bliss Solution',
+    '/career': 'Careers | Join The Bliss Solution - Real Estate Marketing Agency',
     '/about/careers': 'Careers | Join The Bliss Solution - Real Estate Marketing Agency',
     '/contact': 'Contact Us | Get in Touch with The Bliss Solution',
 };
@@ -21,6 +22,18 @@ const titleMap = {
  * @returns {string} SEO-optimized page title
  */
 export const getPageTitle = (pathname) => {
+    // Handle dynamic career position routes
+    if (pathname.startsWith('/career/')) {
+        const positionName = pathname.split('/career/')[1]?.replace(/-/g, ' ');
+        if (positionName) {
+            const formattedName = positionName
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+            return `${formattedName} Career Opportunity | The Bliss Solution Real Estate Branding Agency`;
+        }
+    }
+    
     return titleMap[pathname] || defaultTitle;
 };
 

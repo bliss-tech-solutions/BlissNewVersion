@@ -59,7 +59,7 @@ const HomePageSomeOfWork = () => {
                                     <div className="WorkSlideImageContainer">
                                         <RevealImage
                                             src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"}
-                                            alt={item.title}
+                                            alt={`${item.title} real estate marketing project portfolio showcase by The Bliss Solution branding agency in Gujarat`}
                                             threshold={0.3}
                                             duration={1.2}
                                         />

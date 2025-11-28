@@ -41,7 +41,11 @@ const Footer = () => {
                 </div>
                 <div className="FooterBottomContainer MarginTop30">
                     <div>
-                        <img src="/Images/TBSLogos/BlissWhiteLogo.webp" alt="" />
+                        <img 
+                            src="/Images/TBSLogos/BlissWhiteLogo.webp" 
+                            alt="The Bliss Solution logo leading real estate branding and marketing agency in Gujarat India" 
+                            loading="lazy"
+                        />
                     </div> |
                     <p>© 2025 Branding Agency. All rights reserved.</p>
                 </div>

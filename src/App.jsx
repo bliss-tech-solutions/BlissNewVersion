@@ -12,6 +12,7 @@ import ContactBottomCommon from './Components/OtherComponents/ContactBottomCommo
 import OurWorkGrid from './Components/OtherComponents/OurWorkGrid/OurWorkGrid'
 import usePageTitle from './hooks/usePageTitle'
 import Career from './Components/OtherComponents/Career/Career'
+import CareerPosition from './Components/OtherComponents/Career/CareerPosition'
 function App() {
   usePageTitle(); // Automatically update page title on route change
   
@@ -25,6 +26,7 @@ function App() {
         <Route path="/ourstory" element={<OurStory />} />
         <Route path="/ourwork" element={<OurWorkGrid />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/career/:positionName" element={<CareerPosition />} />
       </Routes>
       <ContactBottomCommon />
       <Footer />

@@ -82,6 +82,7 @@
     font-weight: 600;
     border: 1px solid var(--BrandColor);
     transition: .5s;
+    cursor: pointer;
 }
 
 .WeHirePositionCards .WeHirePositionCard:hover {

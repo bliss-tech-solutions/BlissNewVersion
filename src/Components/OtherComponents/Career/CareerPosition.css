@@ -1,0 +1,352 @@
+#career-position {
+    min-height: 100vh;
+}
+
+/* Main Layout: Image Left, Details Right */
+.CareerPositionMainLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+/* Left Side: Image */
+.CareerPositionImageContainer {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.CareerPositionImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+}
+
+.CareerPositionImageContainer:hover img {
+    transform: scale(1.02);
+}
+
+/* Right Side: Position Details */
+.CareerPositionDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.PositionTitleSmall {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+}
+
+.PositionTitleLarge {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.PositionDescription {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Contact Information */
+.PositionContactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.ContactInfoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ContactLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.ContactValue {
+    font-size: 0.95rem;
+    color: #E6B035;
+    font-weight: 500;
+}
+
+/* Experience Profile Section */
+.ExperienceProfileSection {
+    max-width: 100%;
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ExperienceProfileTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E6B035;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+.ExperienceProfileText {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.8);
+    /* max-width: 800px; */
+    margin: 0 auto;
+    text-align: start;
+}
+
+/* Additional Details */
+.CareerPositionDetails {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.PositionMetaInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+.MetaInfoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.MetaLabel {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.MetaValue {
+    font-size: 1.1rem;
+    color: #E6B035;
+    font-weight: 600;
+}
+
+.PositionSection {
+    margin-bottom: 32px;
+}
+
+.PositionSection h3 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: #E6B035;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.PositionSection p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.PositionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.PositionList li {
+    padding: 5px 0;
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.PositionList li:last-child {
+    border-bottom: none;
+}
+
+.PositionList li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #E6B035;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.SkillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.SkillTag {
+    padding: 8px 16px;
+    background: rgba(230, 176, 53, 0.12);
+    border: 1px solid rgba(230, 176, 53, 0.25);
+    border-radius: 999px;
+    color: #F4D99F;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.ApplyButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.BackButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.BackButton {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.BackButton:hover {
+    border-color: #E6B035;
+    color: #E6B035;
+    transform: translateX(-3px);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 992px) {
+    .CareerPositionMainLayout {
+        gap: 32px;
+    }
+
+    .CareerPositionImageContainer {
+        height: 400px;
+    }
+
+    .PositionTitleLarge {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CareerPositionMainLayout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+
+    .CareerPositionImageContainer {
+        height: 320px;
+    }
+
+    .PositionTitleLarge {
+        font-size: 1.75rem;
+    }
+
+    .PositionDescription {
+        font-size: 0.9rem;
+    }
+
+    .PositionContactInfo {
+        gap: 16px;
+    }
+
+    .ExperienceProfileSection {
+        padding: 24px 0;
+    }
+
+    .ExperienceProfileTitle {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+
+    .ExperienceProfileText {
+        font-size: 0.9rem;
+        text-align: left;
+        line-height: 1.7;
+    }
+
+    .PositionSection {
+        margin-bottom: 28px;
+    }
+
+    .PositionSection h3 {
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+
+    .PositionSection p,
+    .PositionList li {
+        font-size: 0.9rem;
+    }
+
+    .PositionList li {
+        padding: 10px 0;
+        padding-left: 20px;
+    }
+
+    .SkillTag {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    #career-position .Container {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .CareerPositionImageContainer {
+        height: 280px;
+    }
+
+    .PositionTitleLarge {
+        font-size: 1.5rem;
+    }
+
+    .PositionTitleSmall {
+        font-size: 0.75rem;
+    }
+
+    .ContactLabel {
+        font-size: 0.7rem;
+    }
+
+    .ContactValue {
+        font-size: 0.85rem;
+    }
+}

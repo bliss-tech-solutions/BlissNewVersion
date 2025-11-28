@@ -53,7 +53,11 @@ const OurWorkGrid = () => {
                                 {item.description && <p>{item.description}</p>}
                             </div>
                             <div className="OurWorkGridItemImage">
-                                <img src={item.image} alt={item.title} loading="lazy" />
+                                <img 
+                                    src={item.image} 
+                                    alt={`${item.title} real estate marketing project portfolio by The Bliss Solution branding agency`} 
+                                    loading="lazy"
+                                />
                             </div>
                         </article>
                     ))}
