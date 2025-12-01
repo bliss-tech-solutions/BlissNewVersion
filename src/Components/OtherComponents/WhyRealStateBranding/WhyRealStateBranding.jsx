@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { Modal } from "antd";
 import "./WhyRealStateBranding.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 import WhyRealStateBrandingData from "./WhyRealStateBrandingData";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 const WhyRealStateBranding = () => {
-    const [selectedPdf, setSelectedPdf] = useState(null);
-    const [pdfSrc, setPdfSrc] = useState("");
-    const [isPdfLoading, setIsPdfLoading] = useState(false);
-    const [pdfError, setPdfError] = useState("");
-    const pdfObjectUrlRef = useRef(null);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleCardClick = (pdfPath) => {
-        if (!pdfPath) return;
-        setSelectedPdf(pdfPath);
+    const handleCardClick = (item) => {
+        if (!item || !item.pdfDocument) return;
+        setSelectedItem(item);
+        setIsModalOpen(true);
     };
 
     const closePdfModal = () => {
-        setSelectedPdf(null);
+        setIsModalOpen(false);
+        setSelectedItem(null);
     };
 
     const getPdfUrl = (pdfPath = "") => {
@@ -42,82 +42,18 @@ const WhyRealStateBranding = () => {
         }
     };
 
+    // Handle body scroll when modal is open
     useEffect(() => {
-        if (!selectedPdf) {
-            if (pdfObjectUrlRef.current) {
-                URL.revokeObjectURL(pdfObjectUrlRef.current);
-                pdfObjectUrlRef.current = null;
-            }
-            setPdfSrc("");
-            setPdfError("");
-            setIsPdfLoading(false);
-            return;
-        }
-
-        const controller = new AbortController();
-
-        const loadPdf = async () => {
-            try {
-                setIsPdfLoading(true);
-                setPdfError("");
-                const pdfUrl = getPdfUrl(selectedPdf);
-                const response = await fetch(pdfUrl, { signal: controller.signal });
-
-                if (!response.ok) {
-                    throw new Error(`Failed to load PDF (${response.status})`);
-                }
-
-                const blob = await response.blob();
-
-                if (pdfObjectUrlRef.current) {
-                    URL.revokeObjectURL(pdfObjectUrlRef.current);
-                }
-
-                const objectUrl = URL.createObjectURL(blob);
-                pdfObjectUrlRef.current = objectUrl;
-                setPdfSrc(objectUrl);
-            } catch (error) {
-                if (error.name !== "AbortError") {
-                    console.error("PDF load error:", error);
-                    setPdfError("Unable to preview this PDF. Please use the download option instead.");
-                    setPdfSrc("");
-                }
-            } finally {
-                if (!controller.signal.aborted) {
-                    setIsPdfLoading(false);
-                }
-            }
-        };
-
-        loadPdf();
-
-        return () => {
-            controller.abort();
-            if (pdfObjectUrlRef.current) {
-                URL.revokeObjectURL(pdfObjectUrlRef.current);
-                pdfObjectUrlRef.current = null;
-            }
-        };
-    }, [selectedPdf]);
-
-    // Handle ESC key to close modal
-    useEffect(() => {
-        const handleEscape = (e) => {
-            if (e.key === 'Escape' && selectedPdf) {
-                setSelectedPdf(null);
-            }
-        };
-
-        if (selectedPdf) {
-            document.addEventListener('keydown', handleEscape);
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
         }
 
         return () => {
-            document.removeEventListener('keydown', handleEscape);
             document.body.style.overflow = 'unset';
         };
-    }, [selectedPdf]);
+    }, [isModalOpen]);
 
     return (
         <div id="why-real-state-branding">
@@ -136,7 +72,7 @@ const WhyRealStateBranding = () => {
                             <div
                                 key={index}
                                 className="WhyRealStateBrandingCard"
-                                onClick={() => handleCardClick(item.pdfDocument)}
+                                onClick={() => handleCardClick(item)}
                             >
                                 <div>
                                     <div className="taglineStyle">
@@ -160,28 +96,56 @@ const WhyRealStateBranding = () => {
                 </div>
             </div>
 
-            {/* PDF Modal Viewer */}
-            {selectedPdf && (
-                <div className="PdfModalOverlay" onClick={closePdfModal}>
-                    <div className="PdfModalContent" onClick={(e) => e.stopPropagation()}>
-                        <iframe
-                            src={getPdfUrl(selectedPdf)}
-                            className="PdfModalIframe"
-                            id={`pdf_iframe_${selectedPdf.replace(/\//g, '_')}`}
-                            allow="autoplay; fullscreen"
-                            scrolling="auto"
-                            title="PDF Viewer"
-                        />
-                        <button
-                            className="PdfModalClose"
-                            onClick={closePdfModal}
-                            title="Close"
-                        >
-                            ×
-                        </button>
+            {/* PDF Modal Viewer using Ant Design */}
+            <Modal
+                open={isModalOpen}
+                onCancel={closePdfModal}
+                footer={null}
+                width="95%"
+                style={{ maxWidth: '1400px', top: 20 }}
+                styles={{
+                    body: {
+                        padding: 0,
+                        height: '90vh',
+                        overflow: 'hidden',
+                        background: '#282828',
+                    },
+                    content: {
+                        background: '#282828',
+                        borderRadius: '12px',
+                    },
+                }}
+                closeIcon={
+                    <span className="PdfModalCloseIcon">×</span>
+                }
+                destroyOnClose={true}
+                title={selectedItem ? (
+                    <div className="PdfModalHeader">
+                        {/* <div className="PdfModalHeaderImage">
+                            <img
+                                src={selectedItem.img}
+                                alt={selectedItem.title}
+                                loading="eager"
+                            />
+                        </div> */}
+                        <div className="PdfModalHeaderContent">
+                            {/* <p className="PdfModalTagline">{selectedItem.tagline}</p> */}
+                            <h3 className="PdfModalTitle" style={{color: 'black'}}>{selectedItem.title}</h3>
+                        </div>
                     </div>
-                </div>
-            )}
+                ) : null}
+            >
+                {selectedItem && (
+                    <iframe
+                        src={getPdfUrl(selectedItem.pdfDocument)}
+                        className="PdfModalIframe"
+                        id={`pdf_iframe_${selectedItem.pdfDocument.replace(/\//g, '_')}`}
+                        allow="autoplay; fullscreen"
+                        scrolling="auto"
+                        title={`${selectedItem.title} PDF Viewer`}
+                    />
+                )}
+            </Modal>
         </div>
     )
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import "./HomePageSomeOfWork.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
-import HomePageSomeOfWorkData from "./HomePageSomeOfWorkData";
+// import HomePageSomeOfWorkData from "./HomePageSomeOfWorkData";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
+import OurWorkGridData from "../../OtherComponents/OurWorkGrid/OurWorkGridData";
 // Swiper imports (commented out for future use)
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
@@ -12,8 +13,9 @@ import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/Inte
 // import { Pagination, Autoplay } from 'swiper/modules';
 
 const HomePageSomeOfWork = () => {
-    // Show only first 6 items (3 rows x 2 columns)
-    const displayedItems = HomePageSomeOfWorkData.slice(0, 6);
+    // Flatten all works from all categories and show only first 6 items (3 rows x 2 columns)
+    const allWorks = OurWorkGridData.flatMap(category => category.works);
+    const displayedItems = allWorks.slice(0, 6);
 
     return (
         <div id="home-page-some-of-work">
