@@ -201,6 +201,8 @@ const OurWorkGrid = () => {
                                 <div className="OurWorkGridItemImage">
                                     <img
                                         src={
+                                            // For videos: use YouTube thumbnail, fallback to item.image
+                                            // For PDFs (brochures): always use item.image from data
                                             item.type === "video" && item.videoUrl
                                                 ? getVideoThumbnailUrl(item.videoUrl) || item.image
                                                 : item.image
