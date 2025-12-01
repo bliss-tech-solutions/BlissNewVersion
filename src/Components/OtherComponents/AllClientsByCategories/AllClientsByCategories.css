@@ -49,7 +49,7 @@
     align-items: center;
     gap: 12px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    min-height: 140px;
+    min-height: 120px;
     justify-content: space-between;
 }
 
@@ -85,9 +85,10 @@
 
 .ClientLogoCard span {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.75rem;
+    font-size: 0.60rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .ClientLogosGrid:hover .ClientLogoCard {

@@ -56,7 +56,7 @@ function App() {
           <Route path="/career/:positionName" element={<PageTransition><CareerPosition /></PageTransition>} />
         </Routes>
       </AnimatePresence>
-      <ContactBottomCommon />
+      {/* <ContactBottomCommon /> */}
       <Footer />
     </>
   )

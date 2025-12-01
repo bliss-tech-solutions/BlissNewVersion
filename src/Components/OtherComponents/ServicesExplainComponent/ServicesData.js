@@ -1,29 +1,34 @@
 const ServicesData = [
     {
-        title: "Static options",
+        title: "Social Media Management",
         servicesTags: ["Social Media", "Website", "Performance", "Branding", "Creative"],
-        description: "We create powerful digital identities using strategic social media, website design, and branding to boost performance and trust. Our creative approach helps businesses stand out and attract premium recognition. We build lasting digital brands that engage customers and investors.",
+        description: "From trend-setting campaigns to community engagement, we ensure your brand stays relevant, visible, and impactful across all platforms.",
     },
     {
-        title: "Branding",
+        title: "Original Content & Copywriting",
         servicesTags: ["Brand Strategy", "Influencer Marketing", "Social Media", "Digital Identity"],
-        description: "We craft impactful brand identities through influencer partnerships and strategic marketing. Our branding solutions build emotional connections and memorable digital presence. We help businesses gain recognition and foster audience loyalty.",
+        description: "Words that sell, inspire, and persuade—our strategic storytelling turns real estate projects into desirable destinations.",
     },
     {
-        title: "Influence",
+        title: "Graphic Design, Iconography & Illustrations",
         servicesTags: ["Influence Marketing", "Performance", "Social Media Strategy", "Brand Engagement"],
-        description: "We develop data-driven influence strategies that enhance social media reach and boost marketing performance. Our approach transforms digital presence into genuine engagement. We deliver results that support sustainable growth for your brand.",
+        description: "Striking visual identities that make your brand instantly recognizable and resonate with the right audience.",
     },
     {
-        title: "Performance",
+        title: "Video Editing & Animation",
         servicesTags: ["Performance Marketing", "Tech Solutions", "Social Media", "Campaign Analytics"],
-        description: "We optimize campaigns with tech-driven marketing to maximize impact and efficiency. Our strategies convert digital efforts into measurable growth. We focus on results that drive consistent business performance.",
+        description: "Dynamic videos and high-impact animations that bring your projects to life and create immersive experiences for potential buyers.",
     },
     {
-        title: "Tech Solutions",
+        title: "Print, OOH & Mainline Advertising",
         servicesTags: ["Creative Tech", "Marketing Tech", "Social Media Integration", "Scalable Systems"],
-        description: "We build scalable tech systems that enhance your digital presence and marketing. Our robust solutions support business growth and performance optimization. We integrate technology creatively to empower your brand.",
+        description: "Billboards that grab eyeballs, brochures that command attention, and print ads that drive action—we make sure your brand dominates every medium.",
     },
+    {
+        title:"New Brand Launch & Rebranding",
+        servicesTags: ["Brand Strategy", "Influencer Marketing", "Social Media", "Digital Identity"],
+        description: "From defining your identity to repositioning for success, we create brands that stand tall, evolve, and thrive in a competitive market.",
+    }
 ]
 
 export default ServicesData;
