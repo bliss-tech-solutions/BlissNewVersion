@@ -1,7 +1,7 @@
 const clientLogoFiles = [
     "samruddh.png",
     "pravish.png",
-    "oringroup.png",
+    "origingroup.png",
     "Vraj.png",
     "VrBuildcon.png",
     "VisionCreativeGroup.png",
@@ -99,6 +99,9 @@ const clientLogoFiles = [
     "BinoriLogo.png",
     "AyanamHappiness.png",
     "BREnterprices.png",
+    "AmarGroup.png",
+    "Aatmiya.png",
+    "AtharvLandmark.png",
 ];
 
 const formatClientName = (fileName) => {
@@ -114,15 +117,103 @@ const formatClientName = (fileName) => {
         .join(" ");
 };
 
-const clients = clientLogoFiles.map((file) => ({
+// Helper function to find logo file by client name
+const findLogoFile = (clientName) => {
+    const normalizedName = clientName.toLowerCase().replace(/\s+/g, "");
+    
+    // Direct mappings for Vadodara clients
+    const vadodaraLogoMap = {
+        "kaspergenesis": "KasperGenesis.png",
+        "nysagroup": "NysaGroup.png",
+        "associatedesignstudio": "DesignStudio.png",
+        "amargroup": "AmarGroup.png",
+        "sparshvilla": "SparshVilla.png",
+        "aatmiyaheights": "Aatmiya.png",
+        "aatmiya15grandvilla": "Aatmiya.png",
+        "aatmiya18grandvilla": "Aatmiya.png",
+        "aatmiya10grandvilla": "Aatmiya.png",
+        "lilleria": "Lilleria.png",
+        "shrimaygroup": "ShrimayPulence.png",
+        "atharvagroup": "AtharvLandmark.png",
+        "sundaramstatus": "Sundaramgroup.png",
+    };
+
+    const mappedLogo = vadodaraLogoMap[normalizedName];
+    if (mappedLogo) {
+        return mappedLogo;
+    }
+
+    // Try to find in existing files
+    const found = clientLogoFiles.find((file) => {
+        const fileBase = file.replace(/\.[^/.]+$/, "").toLowerCase();
+        return normalizedName.includes(fileBase) || fileBase.includes(normalizedName);
+    });
+
+    return found || null;
+};
+
+// All clients (for Ahmedabad and Gandhinagar)
+const allClients = clientLogoFiles.map((file) => ({
     name: formatClientName(file),
     logo: `/Images/ClientsLogos/${file}`,
 }));
 
+// Vadodara specific clients
+const vadodaraClientsList = [
+    "KASPER GENESIS",
+    "JUNIPPER",
+    "NYSA GROUP",
+    "SAMYAK MIDTOWN",
+    "ASSOCIATE DESIGN STUDIO",
+    "PROPNET REALTY",
+    "JUNNIPER FINANCE",
+    "SAMBHAV GROUP",
+    "SAMARTHA SPRINGS",
+    "SUNDARAM STATUS",
+    "SAMARTHA MEADOWS",
+    "AMAR GROUP",
+    "SPARSH VILLA",
+    "AATMIYA HEIGHTS",
+    "AATMIYA 15 GRAND VILLA",
+    "AATMIYA 18 GRAND VILLA",
+    "AATMIYA 10 GRAND VILLA",
+    "PARK RESIDENCY",
+    "LILLERIA",
+    "KRISHIV INFRA",
+    "UNITY GROUP",
+    "Devashay Veronica",
+    "shrimay group",
+    "Shree Aarna Villa",
+    "Anaya Bunglows",
+    "Anaya Eternity",
+    "GT",
+    "Ar. Lixus Spaces",
+    "AURO PARADISE",
+    "Atharva Group",
+    "Dream 24",
+    "AVION LUXURIA",
+];
+
+const vadodaraClients = vadodaraClientsList.map((clientName) => {
+    const logoFile = findLogoFile(clientName);
+    return {
+        name: clientName,
+        logo: logoFile ? `/Images/ClientsLogos/${logoFile}` : null, // null if logo not found
+    };
+});
+
 const AllClientsByCategoriesData = [
     {
-        category: "Featured",
-        clients,
+        category: "Ahmedabad",
+        clients: allClients,
+    },
+    {
+        category: "Gandhinagar",
+        clients: allClients,
+    },
+    {
+        category: "Vadodara",
+        clients: vadodaraClients,
     },
 ];
 

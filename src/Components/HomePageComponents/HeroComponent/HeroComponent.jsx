@@ -162,6 +162,9 @@ const HeroComponent = () => {
     }, [isVisible]);
     return (
         <div id="hero-component">
+            <div className="HomePageBackgroundVideo">
+                <video src="/Images/BlisslandingPageVideo.mp4" autoPlay muted loop />
+            </div>
             {/* Background Layer - Fades in first */}
             <AnimatedElement animation="fade-in" duration={1} delay={0}>
                 <div className="HeroComponentContainer">
@@ -179,8 +182,9 @@ const HeroComponent = () => {
                 </div>
             </AnimatedElement>
 
-            <div className="HeroContentContainer MaxWidth-900">
-                <div className="ContainerGridSystem">
+            <div className="HeroContentContainer">
+               <div className="Container">
+               <div className="ContainerGridSystem ">
                     {/* Layer 1: Small tag - appears after background */}
                     <AnimatedElement animation="fade-down" duration={0.6} delay={0.3}>
                         <div>
@@ -214,6 +218,7 @@ const HeroComponent = () => {
                         />
                     </AnimatedElement>
                 </div>
+               </div>
 
                 {/* Layer 6: Stats Container - fades in from bottom */}
                 {/* <AnimatedElement 

@@ -266,5 +266,9 @@
     #about-home-component .ContainerGridSystem p {
         text-align: center;
     }
+
+    .backgroundOverlayImageSet{
+        width: 100%;
+    }
     
 }

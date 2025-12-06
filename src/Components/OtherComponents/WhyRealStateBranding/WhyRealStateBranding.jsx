@@ -101,12 +101,12 @@ const WhyRealStateBranding = () => {
                 open={isModalOpen}
                 onCancel={closePdfModal}
                 footer={null}
-                width="95%"
-                style={{ maxWidth: '1400px', top: 20 }}
+                width="85%"
+                style={{ maxWidth: '1000px', top: 40 }}
                 styles={{
                     body: {
                         padding: 0,
-                        height: '90vh',
+                        height: '75vh',
                         overflow: 'hidden',
                         background: '#282828',
                     },
@@ -130,7 +130,7 @@ const WhyRealStateBranding = () => {
                         </div> */}
                         <div className="PdfModalHeaderContent">
                             {/* <p className="PdfModalTagline">{selectedItem.tagline}</p> */}
-                            <h3 className="PdfModalTitle" style={{color: 'black'}}>{selectedItem.title}</h3>
+                            <h3 className="PdfModalTitle" style={{ color: 'black' }}>{selectedItem.title}</h3>
                         </div>
                     </div>
                 ) : null}

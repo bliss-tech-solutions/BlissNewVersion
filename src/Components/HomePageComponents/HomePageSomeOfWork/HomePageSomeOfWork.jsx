@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Modal } from "antd";
 import "./HomePageSomeOfWork.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 // import HomePageSomeOfWorkData from "./HomePageSomeOfWorkData";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
-import OurWorkGridData from "../../OtherComponents/OurWorkGrid/OurWorkGridData";
+import WhyRealStateBrandingData from "../../OtherComponents/WhyRealStateBranding/WhyRealStateBrandingData";
 // Swiper imports (commented out for future use)
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
@@ -13,9 +14,58 @@ import OurWorkGridData from "../../OtherComponents/OurWorkGrid/OurWorkGridData";
 // import { Pagination, Autoplay } from 'swiper/modules';
 
 const HomePageSomeOfWork = () => {
-    // Flatten all works from all categories and show only first 6 items (3 rows x 2 columns)
-    const allWorks = OurWorkGridData.flatMap(category => category.works);
-    const displayedItems = allWorks.slice(0, 6);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Use WhyRealStateBrandingData and show all items
+    const displayedItems = WhyRealStateBrandingData;
+
+    const handleCardClick = (item) => {
+        if (!item || !item.pdfDocument) return;
+        setSelectedItem(item);
+        setIsModalOpen(true);
+    };
+
+    const closePdfModal = () => {
+        setIsModalOpen(false);
+        setSelectedItem(null);
+    };
+
+    const getPdfUrl = (pdfPath = "") => {
+        if (!pdfPath) return "";
+
+        const trimmedPath = pdfPath.trim();
+
+        // Absolute URLs: encode and return
+        if (/^https?:\/\//i.test(trimmedPath)) {
+            return encodeURI(trimmedPath);
+        }
+
+        // Normalize local paths and encode to handle spaces/special chars
+        const normalizedPath = trimmedPath.startsWith("/")
+            ? trimmedPath
+            : `/${trimmedPath}`;
+
+        try {
+            const url = new URL(normalizedPath, window.location.origin);
+            return url.href;
+        } catch (error) {
+            return encodeURI(normalizedPath);
+        }
+    };
+
+    // Handle body scroll when modal is open
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
 
     return (
         <div id="home-page-some-of-work">
@@ -90,10 +140,15 @@ const HomePageSomeOfWork = () => {
                 <div className="Container MarginTop60">
                     <div className="WorkGridContainer">
                         {displayedItems.map((item, index) => (
-                            <div key={index} className="WorkGridCard">
+                            <div 
+                                key={index} 
+                                className="WorkGridCard"
+                                onClick={() => handleCardClick(item)}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <div className="WorkGridImageContainer">
                                     <RevealImage
-                                        src={item.image || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"}
+                                        src={item.img || "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/6889ad140c988deab69a716a_service-small5.webp"}
                                         alt={`${item.title} real estate marketing project portfolio showcase by The Bliss Solution branding agency in Gujarat`}
                                         threshold={0.3}
                                         duration={1.2}
@@ -125,6 +180,49 @@ const HomePageSomeOfWork = () => {
                 </AnimatedElement>
                 <br /><br />
             </div>
+
+            {/* PDF Modal Viewer using Ant Design */}
+            <Modal
+                open={isModalOpen}
+                onCancel={closePdfModal}
+                footer={null}
+                width="85%"
+                style={{ maxWidth: '1000px', top: 40 }}
+                styles={{
+                    body: {
+                        padding: 0,
+                        height: '75vh',
+                        overflow: 'hidden',
+                        background: '#282828',
+                    },
+                    content: {
+                        background: '#282828',
+                        borderRadius: '12px',
+                    },
+                }}
+                closeIcon={
+                    <span className="PdfModalCloseIcon">×</span>
+                }
+                destroyOnClose={true}
+                title={selectedItem ? (
+                    <div className="PdfModalHeader">
+                        <div className="PdfModalHeaderContent">
+                            <h3 className="PdfModalTitle" style={{color: 'black'}}>{selectedItem.title}</h3>
+                        </div>
+                    </div>
+                ) : null}
+            >
+                {selectedItem && (
+                    <iframe
+                        src={getPdfUrl(selectedItem.pdfDocument)}
+                        className="PdfModalIframe"
+                        id={`pdf_iframe_${selectedItem.pdfDocument.replace(/\//g, '_')}`}
+                        allow="autoplay; fullscreen"
+                        scrolling="auto"
+                        title={`${selectedItem.title} PDF Viewer`}
+                    />
+                )}
+            </Modal>
         </div>
     );
 };
