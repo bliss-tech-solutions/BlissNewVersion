@@ -93,7 +93,7 @@ const HomeOurSolutions = () => {
                                     <SwiperSlide key={index}>
                                         <div className="Our360SolutionsCard">
                                             <div className="Our360SolutionsCardImage">
-                                                <RevealImage src={item.image} alt={item.title} />
+                                                <RevealImage src={item.image} alt={item.alt || `${item.title} real estate marketing service by The Bliss Solution`} />
                                             </div>
                                             <div className="Our360SolutionsCardContent">
                                                 <h4>{item.title}</h4>

@@ -209,7 +209,7 @@ const OurWorkGrid = () => {
                                                 ? getVideoThumbnailUrl(item.videoUrl) || item.image
                                                 : item.image
                                         }
-                                        alt={`${item.title} real estate marketing project by The Bliss Solution`}
+                                        alt={item.alt || `${item.title} real estate marketing project by The Bliss Solution`}
                                         loading="lazy"
                                     />
                                     {item.type === "video" && (

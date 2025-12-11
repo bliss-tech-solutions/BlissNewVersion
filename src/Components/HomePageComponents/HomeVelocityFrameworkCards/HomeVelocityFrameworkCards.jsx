@@ -179,7 +179,7 @@ const HomeVelocityFrameworkCards = () => {
                                         </div>
                                     </div>
                                     <div className="VelocityContentSecondHalf">
-                                        <RevealImage src={item.img} alt="" />
+                                        <RevealImage src={item.img} alt={item.alt || `${item.title} real estate marketing framework visual by The Bliss Solution`} />
                                     </div>
                                 </div>
                             </div>

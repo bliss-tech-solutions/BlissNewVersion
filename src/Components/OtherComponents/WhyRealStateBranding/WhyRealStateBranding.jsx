@@ -21,6 +21,7 @@ const WhyRealStateBranding = () => {
             tagline: item.title,
             title: item.title,
             img: item.image,
+            alt: item.alt || `${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency`,
             pdfDocument: item.pdfUrl,
             description: item.description ? (
                 <p>{item.description}</p>
@@ -105,7 +106,7 @@ const WhyRealStateBranding = () => {
                                 <div className="WhyRealStateBrandingGridSystemContainerRightSideImage">
                                     <RevealImage
                                         src={item.img}
-                                        alt={`${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency `}
+                                        alt={item.alt || `${item.title} real estate branding case study and portfolio showcase by The Bliss Solution agency`}
                                         loading="lazy"
                                     />
                                 </div>
@@ -146,7 +147,7 @@ const WhyRealStateBranding = () => {
                         {/* <div className="PdfModalHeaderImage">
                             <img
                                 src={selectedItem.img}
-                                alt={selectedItem.title}
+                                alt={selectedItem.alt || `${selectedItem.title} real estate branding case study by The Bliss Solution`}
                                 loading="eager"
                             />
                         </div> */}

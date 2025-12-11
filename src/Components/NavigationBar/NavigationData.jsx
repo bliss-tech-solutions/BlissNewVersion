@@ -14,12 +14,12 @@ const NavigationData = [
         name: 'Performance',
         path: '/performance'
     },
-    {
-        id: 4,
-        name: 'Influencer',
-        path: '/influence',
-        sublinks: []
-    },
+    // {
+    //     id: 4,
+    //     name: 'Influencer',
+    //     path: '/influence',
+    //     sublinks: []
+    // },
     {
         id: 4,
         name: 'About Us',

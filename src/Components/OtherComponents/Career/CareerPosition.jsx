@@ -67,7 +67,7 @@ const CareerPosition = () => {
                     <div className="CareerPositionImageContainer">
                         <RevealImage         
                             src={positionData.image || "/Images/CareerImages/Developer.jpg"} 
-                            alt={`${positionData.title} career opportunity at The Bliss Solution real estate branding agency`}
+                            alt={positionData.alt || `${positionData.title} career opportunity at The Bliss Solution real estate branding agency`}
                             loading="eager"
                         />
                     </div>

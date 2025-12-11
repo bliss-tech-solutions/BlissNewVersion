@@ -1,0 +1,35 @@
+# robots.txt for The Bliss Solution
+# https://theblisssolution.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /
+Allow: /branding
+Allow: /ourstory
+Allow: /ourwork
+Allow: /career
+Allow: /influence
+
+# Sitemap location
+Sitemap: https://theblisssolution.com/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /Images/
+
+User-agent: Bingbot
+Allow: /
+
