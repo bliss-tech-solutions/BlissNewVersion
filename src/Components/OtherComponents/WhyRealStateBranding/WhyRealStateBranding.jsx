@@ -47,6 +47,12 @@ const WhyRealStateBranding = () => {
 
         const trimmedPath = pdfPath.trim();
 
+        // For S3 URLs (AWS S3), use Google Docs Viewer to prevent forced downloads
+        if (/^https?:\/\/.*\.s3\./i.test(trimmedPath) || /^https?:\/\/s3\./i.test(trimmedPath) || /s3\.amazonaws\.com/i.test(trimmedPath)) {
+            // Use Google Docs Viewer for S3 PDFs to display inline instead of downloading
+            return `https://docs.google.com/viewer?url=${encodeURIComponent(trimmedPath)}&embedded=true`;
+        }
+
         // Absolute URLs: encode and return
         if (/^https?:\/\//i.test(trimmedPath)) {
             return encodeURI(trimmedPath);

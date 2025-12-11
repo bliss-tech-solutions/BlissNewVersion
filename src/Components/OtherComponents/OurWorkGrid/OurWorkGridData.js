@@ -4,7 +4,7 @@ const OurWorkGridData = [
         works: [
             {
                 title: "The One — Signature Aerial Story",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "The One Signature Aerial Story drone video thumbnail showcasing real estate project aerial view by The Bliss Solution",
                 description: "A cinematic flythrough for The One, revealing the full vertical drama and skyline integration.",
                 videoUrl: "https://youtu.be/nKTIqJxweME",
@@ -36,7 +36,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Yash Terranova — Immersive Skyline Story",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Yash Terranova Immersive Skyline Story drone video thumbnail featuring real estate project architecture and city context by The Bliss Solution",
                 description: "A multi-angle drone narrative that stitches together Terranova's architecture, amenity decks, and city context.",
                 videoUrl: "https://youtu.be/NiDeTaderHY",
@@ -66,7 +66,7 @@ const OurWorkGridData = [
             {
                 title: "THE_METRO_PARK",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326200/THE_METRO_PARK_CGI_01_1_sow54g.mp4",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "THE METRO PARK CGI video thumbnail showcasing real estate project computer-generated imagery and marketing video by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -74,7 +74,7 @@ const OurWorkGridData = [
             {
                 title: "Vedant_calisto",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326201/Vedant_calisto_CGI_1_iyakbr.mp4",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Vedant Calisto CGI video thumbnail displaying real estate project 3D visualization and marketing content by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -82,7 +82,7 @@ const OurWorkGridData = [
             {
                 title: "Zade_Group_Diwali",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326201/Zade_Group_Diwali_CGI_1_pvfcry.mp4",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Zade Group Diwali CGI video thumbnail featuring festive real estate project marketing video and 3D animation by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -90,7 +90,7 @@ const OurWorkGridData = [
             {
                 title: "Samved_Statley",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326203/Samved_Statley_CGI_V1_1_uyrqv0.mp4",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Samved Statley CGI video thumbnail showcasing real estate project computer-generated imagery and promotional video by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -98,7 +98,7 @@ const OurWorkGridData = [
             {
                 title: "Times Trinity",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326201/TIMES_TRINITY_CGI-V1_1_glhmrz.mp4",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Times Trinity CGI video thumbnail displaying real estate project 3D visualization and marketing content by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -106,7 +106,7 @@ const OurWorkGridData = [
             {
                 title: "Vedant Skyway",
                 videoUrl: "https://res.cloudinary.com/dpjtupftc/video/upload/v1764326207/VEDANT_SKYWAY_CGI_1_zryq9x.mp4 ",
-                image: "/Images/HordingImages/Hoarding1.jpg",
+                image: "/Images/HordingImages/Hoarding1.jpeg",
                 alt: "Vedant Skyway CGI video thumbnail featuring real estate project computer-generated imagery and promotional video by The Bliss Solution",
                 description: "Sweeping drone passes capture the full scale of the township launch narrative.",
                 type: "video",
@@ -118,7 +118,7 @@ const OurWorkGridData = [
         works: [
             {
                 title: "Skyline Rera",
-                pdfUrl: "/Images/PdfDocuments/SkylinRera.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/SkylinRera.pdf",
                 image: "/Images/CoverPagesImages/skyline.jpg",
                 alt: "Skyline Rera premium residential project brochure cover page showcasing luxury living spaces and amenities by The Bliss Solution",
                 description: "Premium residential project brochure showcasing luxury living spaces and amenities.",
@@ -126,7 +126,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Tatva Bliss",
-                pdfUrl: "/Images/PdfDocuments/TatvaBlissBrochure.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/TatvaBlissBrochure.pdf",
                 image: "/Images/CoverPagesImages/tatva-bliss.jpg",
                 alt: "Tatva Bliss elite township project brochure cover page highlighting modern architecture and lifestyle by The Bliss Solution",
                 description: "Elite township project brochure highlighting modern architecture and lifestyle.",
@@ -134,7 +134,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Shyam Developer",
-                pdfUrl: "/Images/PdfDocuments/ShyamDeveloperBrochure.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/ShyamDeveloperBrochure.pdf",
                 image: "/Images/CoverPagesImages/shyam-devloper.jpg",
                 alt: "Shyam Developer comprehensive portfolio brochure cover page showcasing multiple residential projects by The Bliss Solution",
                 description: "Comprehensive developer portfolio showcasing multiple residential projects.",
@@ -142,7 +142,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Shreemad",
-                pdfUrl: "/Images/PdfDocuments/ShreemadBrochure.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/ShreemadBrochure.pdf",
                 image: "/Images/PdfDocuments/Images/ShreemadBrochure.png",
                 alt: "Shreemad luxury residential development brochure cover page featuring premium amenities and design by The Bliss Solution",
                 description: "Luxury residential development brochure featuring premium amenities and design.",
@@ -150,7 +150,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Shreeji",
-                pdfUrl: "/Images/PdfDocuments/SHREEJIBrocher.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/SHREEJIBrocher.pdf",
                 image: "/Images/PdfDocuments/Images/SHREEJIBrocher.png",
                 alt: "Shreeji premium real estate project brochure cover page with detailed floor plans and amenities by The Bliss Solution",
                 description: "Premium real estate project brochure with detailed floor plans and amenities.",
@@ -158,7 +158,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Keshvaa Pre Rera",
-                pdfUrl: "/Images/PdfDocuments/KeshvaaPreReraBrochure.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/KeshvaaPreReraBrochure.pdf",
                 image: "/Images/CoverPagesImages/keshav-narayan.jpg",
                 alt: "Keshvaa Pre Rera project documentation and marketing brochure cover page by The Bliss Solution",
                 description: "Pre-RERA project documentation and marketing brochure.",
@@ -166,7 +166,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Inara",
-                pdfUrl: "/Images/PdfDocuments/InaraBrochure.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/InaraBrochure.pdf",
                 image: "/Images/PdfDocuments/Images/InaraBrochure.png",
                 alt: "Inara luxury residential project brochure cover page showcasing premium living experience by The Bliss Solution",
                 description: "Luxury residential project brochure showcasing premium living experience.",
@@ -174,7 +174,7 @@ const OurWorkGridData = [
             },
             {
                 title: "Vertex Jade",
-                pdfUrl: "/Images/PdfDocuments/VertexJadeBroucher.pdf",
+                pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/VertexJadeBroucher.pdf",
                 image: "/Images/CoverPagesImages/jade-group.jpg",
                 alt: "Vertex Jade premium commercial and residential development brochure cover page by The Bliss Solution",
                 description: "Premium commercial and residential development brochure.",
