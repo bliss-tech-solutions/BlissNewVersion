@@ -1,12 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Modal } from "antd";
 import "./WhyRealStateBranding.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
-import WhyRealStateBrandingData from "./WhyRealStateBrandingData";
+import OurWorkGridData from "../OurWorkGrid/OurWorkGridData";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
+
 const WhyRealStateBranding = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Get top 5 items from Brochures category
+    const brochureData = useMemo(() => {
+        const brochuresCategory = OurWorkGridData.find(
+            (item) => item.category === "Brochures"
+        );
+        if (!brochuresCategory || !brochuresCategory.works) return [];
+
+        // Map the data structure to match component expectations
+        return brochuresCategory.works.slice(0, 3).map((item) => ({
+            tagline: item.title,
+            title: item.title,
+            img: item.image,
+            pdfDocument: item.pdfUrl,
+            description: item.description ? (
+                <p>{item.description}</p>
+            ) : (
+                <p>Premium real estate project brochure.</p>
+            ),
+        }));
+    }, []);
 
     const handleCardClick = (item) => {
         if (!item || !item.pdfDocument) return;
@@ -64,11 +86,11 @@ const WhyRealStateBranding = () => {
                             textAlign="start"
                             heading="Why Branding Matters in Real Estate"
                             tagText=""
-                            description="In a saturated market, a strong brand is the difference between interest and investment. Buyers don't just purchase properties—they buy into a vision, a lifestyle, a promise. We shape real estate brands that exude credibility, create emotional connections, and leave lasting impressions, ensuring your project rises above the noise and commands attention."
+                            description={<>Branding is the difference between being seen and being chosen. In a crowded real estate market, buyers don’t just select projects they choose the story, the lifestyle, and the trust behind them. A strong brand shapes perception, builds credibility, and turns curiosity into conviction. <br /> <br />We craft real estate brands that feel premium, trustworthy, and emotionally resonant. From brochures and ad campaigns to visual identity systems, our work ensures your project stands out, commands attention, and stays memorable long after the first impression.</>}
                         />
                     </div>
                     <div className="WhyRealStateBrandingGridSystemContainerRightSide">
-                        {WhyRealStateBrandingData.map((item, index) => (
+                        {brochureData.map((item, index) => (
                             <div
                                 key={index}
                                 className="WhyRealStateBrandingCard"
@@ -88,7 +110,7 @@ const WhyRealStateBranding = () => {
                                     />
                                 </div>
                                 <div className="descriptionStyle">
-                                    <p>{item.description}</p>
+                                    {item.description}
                                 </div>
                             </div>
                         ))}

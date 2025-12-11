@@ -17,7 +17,7 @@ const NavigationData = [
     {
         id: 4,
         name: 'Influencer',
-        path: '/influencer',
+        path: '/influence',
         sublinks: []
     },
     {

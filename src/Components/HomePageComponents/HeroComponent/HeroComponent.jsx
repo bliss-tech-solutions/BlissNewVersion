@@ -3,8 +3,48 @@ import "./HeroComponent.css";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 const AnimatedCounter = ({ target, duration, isVisible }) => {
+    const [currentValue, setCurrentValue] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        if (!isVisible) return;
+
+        setIsAnimating(true);
+        let startTime = null;
+        const startValue = 0;
+        let animationFrameId = null;
+
+        const animate = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            // Smoother easing function - easeOutCubic for more natural motion
+            const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(easeOutCubic * (target - startValue) + startValue);
+
+            setCurrentValue(current);
+
+            if (progress < 1) {
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                setCurrentValue(target);
+                setTimeout(() => setIsAnimating(false), 150);
+            }
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        };
+    }, [isVisible, target, duration]);
+
+    // Convert current value to string and pad to match target length
     const targetString = target.toString();
-    const digits = targetString.split('');
+    const currentString = currentValue.toString().padStart(targetString.length, '0');
+    const digits = currentString.split('');
 
     return (
         <span className="counter-wrapper">
@@ -12,58 +52,21 @@ const AnimatedCounter = ({ target, duration, isVisible }) => {
                 <RollingDigit
                     key={index}
                     digit={parseInt(digit)}
-                    duration={duration}
-                    delay={index * 50}
-                    isVisible={isVisible}
+                    isAnimating={isAnimating}
                 />
             ))}
         </span>
     );
 };
 
-const RollingDigit = ({ digit, duration, delay, isVisible }) => {
-    const [currentDigit, setCurrentDigit] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    useEffect(() => {
-        if (!isVisible) return;
-
-        const timeout = setTimeout(() => {
-            setIsAnimating(true);
-            let startTime = null;
-            const startValue = 0;
-
-            const animate = (currentTime) => {
-                if (!startTime) startTime = currentTime;
-                const progress = Math.min((currentTime - startTime) / duration, 1);
-
-                // Easing function for smooth animation
-                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                const current = Math.floor(easeOutQuart * (digit - startValue) + startValue);
-
-                setCurrentDigit(current);
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    setCurrentDigit(digit);
-                    setTimeout(() => setIsAnimating(false), 100);
-                }
-            };
-
-            requestAnimationFrame(animate);
-        }, delay);
-
-        return () => clearTimeout(timeout);
-    }, [isVisible, digit, duration, delay]);
-
+const RollingDigit = ({ digit, isAnimating }) => {
     return (
         <span className="rolling-digit">
             <span
                 className={`digit-container ${isAnimating ? 'animating' : ''}`}
                 style={{
-                    transform: `translateY(-${currentDigit * 10}%)`,
-                    filter: isAnimating ? 'blur(1.5px)' : 'blur(0px)'
+                    transform: `translateY(-${digit * 10}%)`,
+                    filter: isAnimating ? 'blur(1px)' : 'blur(0px)'
                 }}
             >
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
@@ -171,9 +174,9 @@ const HeroComponent = () => {
                     <div className="LeftCircleContainer">
 
                     </div>
-                    <img 
-                        src="/Images/BackgroundImages/HeroBackgroundRoughBack.webp" 
-                        alt="Modern real estate branding agency hero background showcasing premium property marketing services" 
+                    <img
+                        src="/Images/BackgroundImages/HeroBackgroundRoughBack.webp"
+                        alt="Modern real estate branding agency hero background showcasing premium property marketing services"
                         loading="eager"
                     />
                     <div className="RightCircleContainer">
@@ -183,45 +186,45 @@ const HeroComponent = () => {
             </AnimatedElement>
 
             <div className="HeroContentContainer">
-               <div className="Container">
-               <div className="ContainerGridSystem ">
-                    {/* Layer 1: Small tag - appears after background */}
-                    <AnimatedElement animation="fade-down" duration={0.6} delay={0.3}>
+                <div className="Container">
+                    <div className="ContainerGridSystem ">
+                        {/* Layer 1: Small tag - appears after background */}
+                        <AnimatedElement animation="fade-down" duration={0.6} delay={0.3}>
+                            <div>
+                                <p className="SmallParagraph"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                                </svg>
+                                    WE RUN THE SHOW</p>
+                            </div>
+                        </AnimatedElement>
+
+                        {/* Layer 2: Main content container */}
                         <div>
-                            <p className="SmallParagraph"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-                            </svg>
-                                WE RUN THE SHOW</p>
-                        </div>
-                    </AnimatedElement>
+                            <div className="gapAdjustment">
+                                {/* Layer 3: Main heading - slides up */}
+                                <AnimatedElement animation="fade-up" duration={0.8} delay={0.6}>
+                                    <h1>From Brand Story to Sold-Out Inventory</h1>
+                                </AnimatedElement>
 
-                    {/* Layer 2: Main content container */}
-                    <div>
-                        <div className="gapAdjustment">
-                            {/* Layer 3: Main heading - slides up */}
-                            <AnimatedElement animation="fade-up" duration={0.8} delay={0.6}>
-                                <h1>From Brand Story to Sold-Out Inventory</h1>
-                            </AnimatedElement>
-
-                            {/* Layer 4: Description - slides up with more delay */}
-                            <AnimatedElement animation="fade-up" duration={0.8} delay={0.9}>
-                                <p className="WhiteColor">High-Impact Identity. High-Conversion Sales. One seamless engine that takes your project <br /> from 'Coming Soon' to 'Sold Out' on autopilot.</p>
-                            </AnimatedElement>
+                                {/* Layer 4: Description - slides up with more delay */}
+                                <AnimatedElement animation="fade-up" duration={0.8} delay={0.9}>
+                                    <p className="WhiteColor">High-Impact Identity. High-Conversion Sales. One seamless engine that takes your project from 'Coming Soon' to 'Sold Out' on autopilot.</p>
+                                </AnimatedElement>
+                            </div>
                         </div>
+
+                        {/* Layer 5: Button - appears last in main section */}
+                        <AnimatedElement animation="zoom-in" duration={0.6} delay={1.2}>
+                            <InteractiveButton
+                                buttonText="Let's Talk Strategy"
+                                arrowText=""
+                            />
+                        </AnimatedElement>
                     </div>
-
-                    {/* Layer 5: Button - appears last in main section */}
-                    <AnimatedElement animation="zoom-in" duration={0.6} delay={1.2}>
-                        <InteractiveButton
-                            buttonText="Let's Talk Strategy"
-                            arrowText=""
-                        />
-                    </AnimatedElement>
                 </div>
-               </div>
 
                 {/* Layer 6: Stats Container - fades in from bottom */}
-                {/* <AnimatedElement 
+                <AnimatedElement 
                     animation="fade-up" 
                     duration={0.8} 
                     delay={1.5} 
@@ -251,7 +254,7 @@ const HeroComponent = () => {
                             ))}
                         </div>
                     </div>
-                </AnimatedElement> */}
+                </AnimatedElement>
             </div>
 
             {/* Client Logos Marquee */}
@@ -261,9 +264,9 @@ const HeroComponent = () => {
                         {/* Render logos twice for seamless infinite loop */}
                         {[...clientLogos, ...clientLogos].map((client, index) => (
                             <div key={`logo-${index}`} className="client-logo-item">
-                                <img 
-                                    src={client.logo} 
-                                    alt={`${client.name} real estate developer client of The Bliss Solution branding agency Gujarat`} 
+                                <img
+                                    src={client.logo}
+                                    alt={`${client.name} real estate developer client of The Bliss Solution branding agency Gujarat`}
                                     loading="lazy"
                                 />
                             </div>

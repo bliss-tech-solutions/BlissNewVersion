@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Modal } from "antd";
 import "./HomePageSomeOfWork.css";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
@@ -6,7 +6,7 @@ import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHe
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
-import WhyRealStateBrandingData from "../../OtherComponents/WhyRealStateBranding/WhyRealStateBrandingData";
+import OurWorkGridData from "../../OtherComponents/OurWorkGrid/OurWorkGridData";
 // Swiper imports (commented out for future use)
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
@@ -17,8 +17,22 @@ const HomePageSomeOfWork = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Use WhyRealStateBrandingData and show all items
-    const displayedItems = WhyRealStateBrandingData;
+    // Get top 6 items from Brochures category
+    const displayedItems = useMemo(() => {
+        const brochuresCategory = OurWorkGridData.find(
+            (item) => item.category === "Brochures"
+        );
+        if (!brochuresCategory || !brochuresCategory.works) return [];
+
+        // Map the data structure to match component expectations and take only top 6
+        return brochuresCategory.works.slice(0, 6).map((item) => ({
+            tagline: item.title,
+            title: item.title,
+            img: item.image,
+            pdfDocument: item.pdfUrl,
+            description: item.description || "Premium real estate project brochure.",
+        }));
+    }, []);
 
     const handleCardClick = (item) => {
         if (!item || !item.pdfDocument) return;
@@ -140,8 +154,8 @@ const HomePageSomeOfWork = () => {
                 <div className="Container MarginTop60">
                     <div className="WorkGridContainer">
                         {displayedItems.map((item, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="WorkGridCard"
                                 onClick={() => handleCardClick(item)}
                                 style={{ cursor: 'pointer' }}
@@ -207,7 +221,7 @@ const HomePageSomeOfWork = () => {
                 title={selectedItem ? (
                     <div className="PdfModalHeader">
                         <div className="PdfModalHeaderContent">
-                            <h3 className="PdfModalTitle" style={{color: 'black'}}>{selectedItem.title}</h3>
+                            <h3 className="PdfModalTitle" style={{ color: 'black' }}>{selectedItem.title}</h3>
                         </div>
                     </div>
                 ) : null}

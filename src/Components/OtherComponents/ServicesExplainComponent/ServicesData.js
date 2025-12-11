@@ -2,33 +2,39 @@ const ServicesData = [
     {
         title: "Social Media Management",
         servicesTags: ["Social Media", "Website", "Performance", "Branding", "Creative"],
-        description: "From trend-setting campaigns to community engagement, we ensure your brand stays relevant, visible, and impactful across all platforms.",
+        description:
+            "We manage your social media with fresh ideas, strong visuals, and consistent engagement. Our campaigns keep your brand visible, relevant, and connected with the right audience across all platforms.",
     },
     {
-        title: "Original Content & Copywriting",
+        title: "Original Content and Copywriting",
         servicesTags: ["Brand Strategy", "Influencer Marketing", "Social Media", "Digital Identity"],
-        description: "Words that sell, inspire, and persuade—our strategic storytelling turns real estate projects into desirable destinations.",
+        description:
+            "We create content that sells, inspires, and builds trust. Our simple and powerful storytelling helps your brand stand out and turns real estate projects into desirable choices for buyers.",
     },
     {
-        title: "Graphic Design, Iconography & Illustrations",
+        title: "Graphic Design, Iconography and Illustrations",
         servicesTags: ["Influence Marketing", "Performance", "Social Media Strategy", "Brand Engagement"],
-        description: "Striking visual identities that make your brand instantly recognizable and resonate with the right audience.",
+        description:
+            "Our design team creates clear, memorable visual identities that make your brand instantly recognizable. From icons to illustrations, every detail is crafted to attract and engage your target audience.",
     },
     {
-        title: "Video Editing & Animation",
+        title: "Video Editing and Animation",
         servicesTags: ["Performance Marketing", "Tech Solutions", "Social Media", "Campaign Analytics"],
-        description: "Dynamic videos and high-impact animations that bring your projects to life and create immersive experiences for potential buyers.",
+        description:
+            "We produce dynamic videos and smooth animations that bring your ideas to life. Perfect for showcasing real estate projects, brand stories, and digital campaigns with high impact.",
     },
     {
-        title: "Print, OOH & Mainline Advertising",
+        title: "Print, OOH and Mainline Advertising",
         servicesTags: ["Creative Tech", "Marketing Tech", "Social Media Integration", "Scalable Systems"],
-        description: "Billboards that grab eyeballs, brochures that command attention, and print ads that drive action—we make sure your brand dominates every medium.",
+        description:
+            "We design eye-catching billboards, impactful brochures, and print ads that grab attention instantly. Your brand stays strong and visible across every medium, from outdoor ads to offline campaigns.",
     },
     {
-        title:"New Brand Launch & Rebranding",
+        title: "New Brand Launch and Rebranding",
         servicesTags: ["Brand Strategy", "Influencer Marketing", "Social Media", "Digital Identity"],
-        description: "From defining your identity to repositioning for success, we create brands that stand tall, evolve, and thrive in a competitive market.",
+        description:
+            "Whether you are launching a new brand or refreshing an existing one, we define your identity with clarity and purpose. We help you stand out, build trust, and grow in a competitive market.",
     }
-]
+];
 
 export default ServicesData;

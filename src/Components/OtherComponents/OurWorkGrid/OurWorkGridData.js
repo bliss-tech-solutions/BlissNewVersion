@@ -106,21 +106,21 @@ const OurWorkGridData = [
             {
                 title: "Skyline Rera",
                 pdfUrl: "/Images/PdfDocuments/SkylinRera.pdf",
-                image: "/Images/PdfDocuments/Images/SkylineRera.png",
+                image: "/Images/CoverPagesImages/skyline.jpg",
                 description: "Premium residential project brochure showcasing luxury living spaces and amenities.",
                 type: "pdf",
             },
             {
                 title: "Tatva Bliss",
                 pdfUrl: "/Images/PdfDocuments/TatvaBlissBrochure.pdf",
-                image: "/Images/PdfDocuments/Images/TatvaBlissBrochure.png",
+                image: "/Images/CoverPagesImages/tatva-bliss.jpg",
                 description: "Elite township project brochure highlighting modern architecture and lifestyle.",
                 type: "pdf",
             },
             {
                 title: "Shyam Developer",
                 pdfUrl: "/Images/PdfDocuments/ShyamDeveloperBrochure.pdf",
-                image: "/Images/PdfDocuments/Images/ShyamDeveloperBrochure.png",
+                image: "/Images/CoverPagesImages/shyam-devloper.jpg",
                 description: "Comprehensive developer portfolio showcasing multiple residential projects.",
                 type: "pdf",
             },
@@ -141,7 +141,7 @@ const OurWorkGridData = [
             {
                 title: "Keshvaa Pre Rera",
                 pdfUrl: "/Images/PdfDocuments/KeshvaaPreReraBrochure.pdf",
-                image: "/Images/PdfDocuments/Images/KeshvaaPreReraBrochure.png",
+                image: "/Images/CoverPagesImages/keshav-narayan.jpg",
                 description: "Pre-RERA project documentation and marketing brochure.",
                 type: "pdf",
             },
@@ -155,7 +155,7 @@ const OurWorkGridData = [
             {
                 title: "Vertex Jade",
                 pdfUrl: "/Images/PdfDocuments/VertexJadeBroucher.pdf",
-                image: "/Images/PdfDocuments/Images/VertexJadeBroucher.png",
+                image: "/Images/CoverPagesImages/jade-group.jpg",
                 description: "Premium commercial and residential development brochure.",
                 type: "pdf",
             },

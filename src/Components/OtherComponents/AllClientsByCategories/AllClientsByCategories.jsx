@@ -38,8 +38,8 @@ const AllClientsByCategories = () => {
         <div id="all-clients-by-categories">
             <div className="Container SectionLargeTopPadding">
                 <CenteredHeader
-                    heading="All Clients by Categories"
-                    description="Explore the industries we collaborate with. Tap a segment to filter the roster and see who's trusting us with their next launch."
+                    heading="Clients by Industry"
+                    description="Discover the diverse industries we work with. Select a category to explore the brands that partner with us for growth, visibility, and successful launches."
                 />
 
                 <div className="ClientCategoriesTabs">
@@ -65,9 +65,9 @@ const AllClientsByCategories = () => {
                         >
                             <div className="ClientLogoCardInner">
                                 {client.logo && (
-                                    <img 
-                                        src={client.logo} 
-                                        alt={`${client.name} real estate developer client logo trusted partner of The Bliss Solution branding agency`} 
+                                    <img
+                                        src={client.logo}
+                                        alt={`${client.name} real estate developer client logo trusted partner of The Bliss Solution branding agency`}
                                         loading="lazy"
                                         onError={(e) => {
                                             // Hide image if logo not found

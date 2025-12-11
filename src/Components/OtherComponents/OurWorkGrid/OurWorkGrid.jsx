@@ -190,13 +190,15 @@ const OurWorkGrid = () => {
                     <div className="OurWorkGridContainer MarginTop60">
                         {worksToRender.map((item, index) => (
                             <article className="OurWorkGridItem" key={`${item.title}-${index}`}>
-                                <div className="WorkCardHeader">
-                                    <span className="WorkCategoryPill">{activeCategory}</span>
-                                    {item.year && <span className="WorkYearPill">{item.year}</span>}
-                                </div>
-                                <div className="WorkContent">
-                                    <h4>{item.title}</h4>
-                                    {item.description && <p>{item.description}</p>}
+                                <div className="OurWorkGridItemContent">
+                                    <div className="WorkContent">
+                                        <h4>{item.title}</h4>
+                                        {/* {item.description && <p>{item.description}</p>} */}
+                                    </div>
+                                    <div className="WorkCardHeader">
+                                        <span className="WorkCategoryPill">{activeCategory}</span>
+                                        {item.year && <span className="WorkYearPill">{item.year}</span>}
+                                    </div>
                                 </div>
                                 <div className="OurWorkGridItemImage">
                                     <img
@@ -210,7 +212,7 @@ const OurWorkGrid = () => {
                                         alt={`${item.title} real estate marketing project by The Bliss Solution`}
                                         loading="lazy"
                                     />
-                                    {item.type === "video" && item.videoUrl && !item.pdfUrl && (
+                                    {item.type === "video" && (
                                         <button
                                             type="button"
                                             className="VideoPlayButton"
@@ -220,7 +222,7 @@ const OurWorkGrid = () => {
                                             <span></span>
                                         </button>
                                     )}
-                                    {item.type === "pdf" && item.pdfUrl && !item.videoUrl && (
+                                    {item.type === "pdf" && (
                                         <button
                                             type="button"
                                             className="VideoPlayButton PdfViewButton"

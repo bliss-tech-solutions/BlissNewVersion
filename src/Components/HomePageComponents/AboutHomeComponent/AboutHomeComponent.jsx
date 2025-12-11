@@ -4,8 +4,48 @@ import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/Animated
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
 const AnimatedCounter = ({ target, duration, isVisible }) => {
+    const [currentValue, setCurrentValue] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        if (!isVisible) return;
+
+        setIsAnimating(true);
+        let startTime = null;
+        const startValue = 0;
+        let animationFrameId = null;
+
+        const animate = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            // Smoother easing function - easeOutCubic for more natural motion
+            const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(easeOutCubic * (target - startValue) + startValue);
+
+            setCurrentValue(current);
+
+            if (progress < 1) {
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                setCurrentValue(target);
+                setTimeout(() => setIsAnimating(false), 150);
+            }
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        };
+    }, [isVisible, target, duration]);
+
+    // Convert current value to string and pad to match target length
     const targetString = target.toString();
-    const digits = targetString.split('');
+    const currentString = currentValue.toString().padStart(targetString.length, '0');
+    const digits = currentString.split('');
 
     return (
         <span className="counter-wrapper">
@@ -13,58 +53,21 @@ const AnimatedCounter = ({ target, duration, isVisible }) => {
                 <RollingDigit
                     key={index}
                     digit={parseInt(digit)}
-                    duration={duration}
-                    delay={index * 50}
-                    isVisible={isVisible}
+                    isAnimating={isAnimating}
                 />
             ))}
         </span>
     );
 };
 
-const RollingDigit = ({ digit, duration, delay, isVisible }) => {
-    const [currentDigit, setCurrentDigit] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    useEffect(() => {
-        if (!isVisible) return;
-
-        const timeout = setTimeout(() => {
-            setIsAnimating(true);
-            let startTime = null;
-            const startValue = 0;
-
-            const animate = (currentTime) => {
-                if (!startTime) startTime = currentTime;
-                const progress = Math.min((currentTime - startTime) / duration, 1);
-
-                // Easing function for smooth animation
-                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                const current = Math.floor(easeOutQuart * (digit - startValue) + startValue);
-
-                setCurrentDigit(current);
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    setCurrentDigit(digit);
-                    setTimeout(() => setIsAnimating(false), 100);
-                }
-            };
-
-            requestAnimationFrame(animate);
-        }, delay);
-
-        return () => clearTimeout(timeout);
-    }, [isVisible, digit, duration, delay]);
-
+const RollingDigit = ({ digit, isAnimating }) => {
     return (
         <span className="rolling-digit">
             <span
                 className={`digit-container ${isAnimating ? 'animating' : ''}`}
                 style={{
-                    transform: `translateY(-${currentDigit * 10}%)`,
-                    filter: isAnimating ? 'blur(1.5px)' : 'blur(0px)'
+                    transform: `translateY(-${digit * 10}%)`,
+                    filter: isAnimating ? 'blur(1px)' : 'blur(0px)'
                 }}
             >
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
@@ -153,9 +156,10 @@ const AboutHomeComponent = () => {
             <div className="Container">
                 <div className="AboutHomeComponentContainer SectionTopPadding">
                     <div className="FlexGridSystem">
-                    <CenteredHeader
-                            heading="You conceive the Landmark. We architect the Demand. Together, we Define the Market."
-                            description={`This is the most direct, sales-focused variant. "We guarantee the buyer" is a bold, high-stakes promise that addresses the developer's core concern: sales volume.`}
+                        <CenteredHeader
+                            tagText="Real estate demand engineering"
+                            heading="Real Estate Marketing Agency for Developers – We Engineer Buyer Demand"
+                            description={`Partner‑first real estate marketing agency helping property developers turn landmark projects into sold‑out addresses. Through brand architecture, launch strategy, high‑intent lead generation and sales pipeline activation, we create consistent buyer demand and accelerate bookings for residential and commercial projects.`}
                         />
 
                         {/* Layer 4: Stats Container - Fades up */}
@@ -189,8 +193,11 @@ const AboutHomeComponent = () => {
                         <div className="MarginTop60">
                             <AnimatedElement animation="zoom-in" duration={0.6} delay={0.8}>
                                 <InteractiveButton
-                                    buttonText="Know More"
-                                    arrowText="Got a concept? Let's design it right."
+                                    onClick={() => {
+                                        window.location.href = "tel:+918401849206";
+                                    }}
+                                    buttonText="Start Your Project"
+                                    arrowText="Got a concept? Let’s engineer the demand."
                                 />
                             </AnimatedElement>
                         </div>

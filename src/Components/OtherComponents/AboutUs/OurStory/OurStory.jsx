@@ -5,6 +5,7 @@ import InteractiveButton from "../../../CommonUsedComponents/InteractiveButton/I
 import HomeWorkFlowComponent from "../../../HomePageComponents/HomeWorkFlowComponent/HomeWorkFlowComponent";
 import { motion } from "framer-motion";
 import RevealImage from "../../../CommonUsedComponents/RevealImage/RevealImage";
+import AboutUsCounters from "../AboutUsCounters/AboutUsCounters";
 const pageFade = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
@@ -160,6 +161,8 @@ const OurStory = () => {
             <div className="GradientOverlay">
 
             </div>
+      
+            <AboutUsCounters />
             <HomeWorkFlowComponent />
         </>
     );

@@ -120,7 +120,7 @@ const formatClientName = (fileName) => {
 // Helper function to find logo file by client name
 const findLogoFile = (clientName) => {
     const normalizedName = clientName.toLowerCase().replace(/\s+/g, "");
-    
+
     // Direct mappings for Vadodara clients
     const vadodaraLogoMap = {
         "kaspergenesis": "KasperGenesis.png",

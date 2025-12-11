@@ -1,8 +1,8 @@
 /* Grid Layout - 3 rows x 2 columns */
 .WorkGridContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .WorkGridCard {
@@ -21,7 +21,7 @@
 
 .WorkGridImageContainer {
     width: 100%;
-    height: 500px;
+    height: 320px;
     overflow: hidden;
 }
 
@@ -136,7 +136,14 @@
     color: white !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    .WorkGridContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
     .WorkGridContainer {
         grid-template-columns: 1fr;
         gap: 24px;

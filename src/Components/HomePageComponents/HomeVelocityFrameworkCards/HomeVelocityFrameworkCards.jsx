@@ -98,9 +98,9 @@ const HomeVelocityFrameworkCards = () => {
                     <AnimatedElement animation="fade-up" duration={0.8} delay={0}>
                         <div>
                             <FlexBetweenHeader
-                                tagText="our process"
-                                heading="Services and solutions we offer."
-                                description=""
+                                tagText="Real Estate Branding, Marketing & Digital Experiences"
+                                heading="Services and solutions for property developers and ambitious brands."
+                                description="We partner with real estate developers, marketers and founders to turn vision into high‑performing brands, campaigns and digital products."
                                 buttonLabel=""
                             />
                         </div>
@@ -127,10 +127,10 @@ const HomeVelocityFrameworkCards = () => {
                                 <div className="VelocityContentAndImageGrid">
                                     <div className="VelocityContentFirstHalf">
                                         <div>
-                                            <h3>{item.title}</h3>
-                                            <p>{item.description}</p>
+                                            <h4>{item.title}</h4>
+                                            <p className="MarginTop30">{item.description}</p>
                                         </div>
-                                        <div className="PointsTagList">
+                                        <div className="PointsTagList MarginTop30">
                                             {item.points.map((point, index) => (
                                                 <div key={index}>
                                                     <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

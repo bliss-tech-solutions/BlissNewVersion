@@ -11,6 +11,8 @@ import usePageTitle from './hooks/usePageTitle'
 import Career from './Components/OtherComponents/Career/Career'
 import CareerPosition from './Components/OtherComponents/Career/CareerPosition'
 import { AnimatePresence, motion } from 'framer-motion'
+import Influence from './Components/OtherComponents/Influence/Influence'
+import { useEffect } from 'react'
 
 const PageTransition = ({ children }) => {
   return (
@@ -42,6 +44,16 @@ function App() {
   usePageTitle(); // Automatically update page title on route change
   const location = useLocation();
 
+  // Scroll to top on route change
+  useEffect(() => {
+    // Immediately scroll to top when route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // Use 'instant' to prevent smooth scroll animation
+    });
+  }, [location.pathname]);
+
   return (
     <>
       <NavigationBar />
@@ -53,6 +65,7 @@ function App() {
           <Route path="/ourstory" element={<PageTransition><OurStory /></PageTransition>} />
           <Route path="/ourwork" element={<PageTransition><OurWorkGrid /></PageTransition>} />
           <Route path="/career" element={<PageTransition><Career /></PageTransition>} />
+          <Route path="/influence" element={<PageTransition><Influence /></PageTransition>} />
           <Route path="/career/:positionName" element={<PageTransition><CareerPosition /></PageTransition>} />
         </Routes>
       </AnimatePresence>
