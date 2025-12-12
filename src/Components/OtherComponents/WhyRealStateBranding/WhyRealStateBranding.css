@@ -239,4 +239,7 @@
     .WhyRealStateBrandingGridSystemContainerRightSide>div{
         min-height: 100% !important;
     }
+    .WhyRealStateBrandingGridSystemContainerRightSide{
+        gap: 20px;
+    }
 }
