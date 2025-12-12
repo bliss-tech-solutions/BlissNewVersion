@@ -236,4 +236,7 @@
         height: 32px !important;
         font-size: 24px !important;
     }
+    .WhyRealStateBrandingGridSystemContainerRightSide>div{
+        min-height: 100% !important;
+    }
 }
