@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import CenteredHeader from '../../CommonUsedComponents/CenteredHeader/CenteredHeader'
 import InteractiveButton from '../../CommonUsedComponents/InteractiveButton/InteractiveButton'
 import './Branding.css'
@@ -6,6 +6,7 @@ import WhyRealStateBranding from '../WhyRealStateBranding/WhyRealStateBranding'
 import ServicesExplainComponent from '../ServicesExplainComponent/ServicesExplainComponent'
 import AllClientsByCategories from '../AllClientsByCategories/AllClientsByCategories'
 import RevealImage from '../../CommonUsedComponents/RevealImage/RevealImage'
+import AdFilmsVideos from '../AdFilmsVideos/AdFilmsVideos'
 const AboutUs = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,8 +35,8 @@ const AboutUs = () => {
                         </div>
                         <div className='BrandingImageContainer'>
                             <RevealImage
-                                src="/Images/SectionImages/BrandingImage.png" 
-                                alt="Premium real estate branding and identity design services by The Bliss Solution agency in Gujarat" 
+                                src="/Images/SectionImages/BrandingImage.png"
+                                alt="Premium real estate branding and identity design services by The Bliss Solution agency in Gujarat"
                                 loading="lazy"
                             />
                         </div>
@@ -44,7 +45,9 @@ const AboutUs = () => {
             </div>
             <WhyRealStateBranding />
             <ServicesExplainComponent />
+            <AdFilmsVideos />
             <AllClientsByCategories />
+
         </>
     )
 }
