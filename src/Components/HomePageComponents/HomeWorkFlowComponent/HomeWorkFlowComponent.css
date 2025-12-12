@@ -1,151 +1,163 @@
+#home-work-flow-component {
+   background: #e6b03517;
+}
+
 .HomeWorkFlowComponentContainer {
     border-top: 0.1px solid rgba(255, 255, 255, 0.385);
     padding-top: 40px;
 }
 
-.WorkFlowGrid {
+.WorkflowCardsGrid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 60px;
-    /* min-height: 500px; */
-}
-
-.CategoryButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.CategoryButton {
-    background: transparent;
-    border: none;
-    color: white;
-    font-weight: 400;
-    text-align: left;
-    padding: 20px 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-left: 2px solid transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.CategoryButton .arrow-icon {
-    width: 24px;
-    height: 24px;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.CategoryButton:hover {
-    opacity: 0.7;
-    padding-left: 35px;
-}
-
-.CategoryButton:hover .arrow-icon {
-    opacity: 0.5;
-}
-
-.CategoryButton.active {
-    background: var(--BrandColor);
-    opacity: 1;
-    border-left: 2px solid var(--BrandColor);
-}
-
-.CategoryButton.active .arrow-icon {
-    opacity: 1;
-}
-
-.ContentArea {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 20px;
-}
-
-.ContentCard {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     width: 100%;
 }
 
-.StatusIndicator {
-    margin-bottom: 30px;
-}
-
-.StatusDot {
-    width: 16px;
-    height: 16px;
-    background: #4ade80;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
-}
-
-.ContentCard h2 {
-    margin-bottom: 20px;
-    font-size: 48px;
-    line-height: 120%;
-}
-
-.ContentDescription {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 18px;
-    line-height: 160%;
-    margin-bottom: 30px;
-    max-width: 600px;
-}
-
-.TagsContainer {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.Tag {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.HeaderGridItem>div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-}
-
-.processImageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.processImageContainer{
+.WorkflowCard {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), rgba(8, 7, 15, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    cursor: pointer;
     position: relative;
-}
-.processImageContainer::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 22%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.85) 100%);
-    mix-blend-mode: soft-light;
+    overflow: hidden;
+    transition: .5s;
 }
 
-.processImageContainer::before {
+.WorkflowCard::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    /* background: radial-gradient(ellipse at top center, rgba(230, 176, 53, 0.15) 0%, rgba(230, 176, 53, 0.05) 40%, transparent 70%); */
+    opacity: 0.8;
     pointer-events: none;
-    width: 100%;
+    transition: .5s;
+}
+
+.WorkflowCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transition: .5s;
+}
+
+.WorkflowCard:hover::before {
+    opacity: 0.5;
+    background: radial-gradient(ellipse at top center, rgba(230, 176, 53, 0.25) 0%, rgba(230, 176, 53, 0.1) 40%, transparent 70%);
+    transition: .5s;
+}
+
+.WorkflowCardIcon {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Outer ring with glow */
+.WorkflowCardIcon::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    /* top: 0px;
+    left: 0px; */
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    z-index: 0;
+    /* box-shadow: 0 0 12px rgba(230, 176, 53, 0.2), 0 0 24px rgba(230, 176, 53, 0.1); */
+}
+
+/* Inner circle with dark background */
+.WorkflowCardIcon::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: #ffffff12;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.WorkflowCardIcon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--BrandColor);
+    position: relative;
     z-index: 2;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 0%, transparent 32%, transparent 68%, rgba(0, 0, 0, 0.9) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, transparent 26%, transparent 74%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.WorkflowCard:hover .WorkflowCardIcon {
+    transform: scale(1.05);
+}
+
+/* .WorkflowCard:hover .WorkflowCardIcon::before {
+    box-shadow: 0 0 16px rgba(230, 176, 53, 0.3), 0 0 32px rgba(230, 176, 53, 0.15);
+    border-color: rgba(255, 255, 255, 0.15);
+} */
+
+.WorkflowCardTitle {
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.WorkflowCardDescription {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .WorkflowCardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .WorkFlowGrid {
+    .WorkflowCardsGrid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .WorkflowCard {
+        padding: 24px;
+    }
+
+    .WorkflowCardIcon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+    }
+
+    .WorkflowCardIcon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .WorkflowCardTitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .WorkflowCardDescription {
+        font-size: 14px;
     }
 }

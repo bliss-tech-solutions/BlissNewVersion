@@ -6,7 +6,7 @@ const AboutUsCounters = () => {
 
     return (
         <div id='AboutUsCounters'>
-            <div className='Container' id='AboutUsCountersGridSystem'>
+            <div className='Container SectionLargeTopPadding PaddingBottomSection' id='AboutUsCountersGridSystem'>
                 <div className='FirstRow'>
                     <div>
                         <div>
