@@ -73,7 +73,7 @@ const OurStory = () => {
                             <motion.div variants={gridItemVariant}>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
@@ -82,7 +82,7 @@ const OurStory = () => {
                                 <div></div>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
@@ -90,7 +90,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="/Images/TeamPhoto/AlokImage.jpg"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                     alt="Alok team member at The Bliss Solution real estate branding and marketing agency"
                                     loading="lazy"
                                 />
@@ -99,14 +99,14 @@ const OurStory = () => {
                                 <div></div>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
                                 </div>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
@@ -115,7 +115,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553ceece6ab5502d275_about-hero-image4.webp"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                     alt="Creative design process for real estate branding projects at The Bliss Solution"
                                     loading="lazy"
                                 />
@@ -125,7 +125,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca553f729022091570393_about-hero-image5.webp"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                     alt="Real estate marketing strategy session and brand development workshop at The Bliss Solution"
                                     loading="lazy"
                                 />
@@ -137,14 +137,14 @@ const OurStory = () => {
                                 <div></div>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
                                 </div>
                                 <div>
                                     <RevealImage
-                                        src="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/688ca55235fd8bbc19dbef3e_about-hero-image1.webp"
+                                        src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
                                         alt="Real estate branding team collaboration workspace at The Bliss Solution agency"
                                         loading="lazy"
                                     />
