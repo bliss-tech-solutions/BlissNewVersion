@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Influence from './Components/OtherComponents/Influence/Influence'
 import { useEffect } from 'react'
 import Contact from './Components/OtherComponents/Contact/Contact'
+import LightRaysPage from './Components/OtherComponents/LightRaysPage/LightRaysPage'
 
 const PageTransition = ({ children }) => {
   return (
@@ -51,7 +52,7 @@ function App() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant' // Use 'instant' to prevent smooth scroll animation
+      behavior: 'instant'
     });
   }, [location.pathname]);
 
@@ -69,6 +70,7 @@ function App() {
           <Route path="/influence" element={<PageTransition><Influence /></PageTransition>} />
           <Route path="/career/:positionName" element={<PageTransition><CareerPosition /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/lightrays" element={<PageTransition><LightRaysPage /></PageTransition>} />
         </Routes>
       </AnimatePresence>
       {/* <ContactBottomCommon /> */}

@@ -1,0 +1,47 @@
+#LightRaysPage {
+    min-height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.LightRaysPageHero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.LightRaysPageContent {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 120px 0;
+    pointer-events: auto;
+}
+
+.LightRaysTextContent {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.LightRaysTextReveal {
+    text-align: center;
+}
+
+.LightRaysText {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .LightRaysPageContent {
+        padding: 80px 0;
+    }
+}
+

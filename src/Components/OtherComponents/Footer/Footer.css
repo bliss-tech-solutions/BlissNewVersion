@@ -1,68 +1,220 @@
 #footer {
+    background: #0a0a0a;
     color: white;
+    padding: 80px 0 40px;
 }
 
-.FooterListContainer ul {
+/* Top Section - Grid Layout */
+.FooterTopSection {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.FooterGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.FooterColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Branding Section */
+.FooterBranding {
+    margin-bottom: 24px;
+}
+
+.FooterLogo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.FooterCompanyName {
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.FooterSocialIcons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.FooterSocialIcons a {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    gap: 20px;
     justify-content: center;
-    padding: 0px;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.FooterSocialMediaContainer ul li svg{
-    font-size: 25px;
-    /* background-color: white; */
-    padding: 2px;
+.FooterSocialIcons a:hover {
+    background: var(--BrandColor);
+    color: #000;
+    transform: translateY(-2px);
+    border-color: var(--BrandColor);
+}
+
+/* Column Titles */
+.FooterColumnTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 16px 0;
+}
+
+.FooterColumnDescription {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* Contact Details */
+.FooterContactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.FooterContactItem {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.FooterContactItem:hover {
     color: var(--BrandColor);
 }
-.FooterSocialMediaContainer ul li , .FooterListContainer ul li a {
+
+/* Links List */
+.FooterLinksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.FooterLinksList li {
+    margin: 0;
+}
+
+.FooterLinksList a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.FooterLinksList a:hover {
+    color: var(--BrandColor);
+}
+
+/* Middle Section - Address */
+.FooterMiddleSection {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.FooterAddressTitle {
+    font-size: 18px;
+    font-weight: 500;
     color: white;
-    font-size: 16px;
-    font-weight: 600;
+    margin: 0 0 12px 0;
 }
 
-#footer .ant-row {
-    margin: auto;
-    width: 100%;
-    justify-content: center;
+.FooterAddress {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.FooterSocialMediaContainer ul {
+/* Bottom Section - About & Copyright */
+.FooterBottomSection {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    /* justify-content: center; */
-}
-
-.FooterRowContainer{
-    padding-bottom: 30px;
-    border-bottom:1px solid rgba(255, 255, 255, 0.2);
-}
-
-.FooterBottomContainer{
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 30px;
 }
 
-.FooterBottomContainer>div img{
-    width: 80px;
+.FooterAbout {
+    max-width: 100%;
+}
+
+.FooterAbout p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.FooterCopyright {
+    text-align: right;
+}
+
+.FooterCopyright p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .FooterGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
 }
 
 @media (max-width: 768px) {
-    .FooterRowContainer{
-        padding-bottom: 0px;
+    #footer {
+        padding: 60px 0 30px;
     }
-    .FooterListContainer ul{
-        flex-wrap: wrap;
-        /* justify-content: start; */
+
+    .FooterTopSection {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
     }
-    .FooterBottomContainer{
-        flex-direction: column;
-        gap: 10px;
+
+    .FooterGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-    /* #footer .ant-row{
-        justify-content: start;
-    } */
+
+    .FooterMiddleSection {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+
+    .FooterCompanyName {
+        font-size: 28px;
+    }
+
+    .FooterLogo {
+        width: 100px;
+    }
+
+    .FooterCopyright {
+        text-align: center;
+    }
+
+    .FooterAbout p {
+        font-size: 13px;
+    }
 }

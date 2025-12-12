@@ -1,6 +1,7 @@
 import React from "react";
 import "./FlexBetweenHeader.css";
 import { motion } from "framer-motion";
+import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const DefaultSparkIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
@@ -123,9 +124,17 @@ const FlexBetweenHeader = ({
                                 </motion.div>
                             )}
                             {heading && (
-                                <motion.h2 variants={headingVariant}>
+                                <ScrollReveal
+                                    baseOpacity={0.2}
+                                    enableBlur={true}
+                                    baseRotation={3}
+                                    blurStrength={6}
+                                    containerClassName="FlexHeaderScrollReveal"
+                                    textClassName="FlexHeaderHeading"
+                                    as="h2"
+                                >
                                     {heading}
-                                </motion.h2>
+                                </ScrollReveal>
                             )}
                         </motion.div>
                         {description && (

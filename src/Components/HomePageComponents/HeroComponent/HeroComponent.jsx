@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./HeroComponent.css";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
+import LightRays from "../../CommonUsedComponents/LightRays/LightRays";
 const AnimatedCounter = ({ target, duration, isVisible }) => {
     const [currentValue, setCurrentValue] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -165,8 +166,26 @@ const HeroComponent = () => {
     }, [isVisible]);
     return (
         <div id="hero-component">
+            <div></div>
             <div className="HomePageBackgroundVideo">
                 <video src="/Images/BlisslandingPageVideo.mp4" autoPlay muted loop />
+            </div>
+            {/* LightRays Animation - Top Center */}
+            <div className="HeroLightRaysContainer">
+                <LightRays
+                    raysOrigin="top-center"
+                    raysColor="#E6B035"
+                    raysSpeed={1.5}
+                    lightSpread={0.5}
+                    followMouse={true}
+                    rayLength={2.5}
+                    pulsating={true}
+                    fadeDistance={1.0}
+                    saturation={1.0}
+                    mouseInfluence={0.15}
+                    noiseAmount={0.0}
+                    distortion={0.0}
+                />
             </div>
             {/* Background Layer - Fades in first */}
             <AnimatedElement animation="fade-in" duration={1} delay={0}>
@@ -224,10 +243,10 @@ const HeroComponent = () => {
                 </div>
 
                 {/* Layer 6: Stats Container - fades in from bottom */}
-                <AnimatedElement 
-                    animation="fade-up" 
-                    duration={0.8} 
-                    delay={1.5} 
+                <AnimatedElement
+                    animation="fade-up"
+                    duration={0.8}
+                    delay={1.5}
                     once={false}
                     className="stats-container-wrapper"
                 >

@@ -30,8 +30,21 @@
 }
 
 .CenteredHeaderContent--alignCenter h2,
-.CenteredHeaderContent--alignCenter .CenteredDescription p {
+.CenteredHeaderContent--alignCenter .CenteredDescription p,
+.CenteredHeaderContent--alignCenter .CenteredHeaderScrollReveal {
     text-align: center;
+}
+
+.CenteredHeaderScrollReveal {
+    width: 100%;
+}
+
+.CenteredHeaderHeading {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 120%;
+    font-weight: 400;
+    color: white;
+    margin: 0;
 }
 
 .CenteredHeaderContent--alignStart {
@@ -44,7 +57,8 @@
 }
 
 .CenteredHeaderContent--alignStart h2,
-.CenteredHeaderContent--alignStart .CenteredDescription p {
+.CenteredHeaderContent--alignStart .CenteredDescription p,
+.CenteredHeaderContent--alignStart .CenteredHeaderScrollReveal {
     text-align: left;
 }
 
@@ -87,8 +101,14 @@
     .CenteredHeaderContent--alignCenter h2,
     .CenteredHeaderContent--alignStart h2,
     .CenteredHeaderContent--alignCenter .CenteredDescription p,
-    .CenteredHeaderContent--alignStart .CenteredDescription p {
+    .CenteredHeaderContent--alignStart .CenteredDescription p,
+    .CenteredHeaderContent--alignCenter .CenteredHeaderScrollReveal,
+    .CenteredHeaderContent--alignStart .CenteredHeaderScrollReveal {
         text-align: start;
+    }
+
+    .CenteredHeaderHeading {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
     }
 
     #contact-bottom-common .CenteredDescription p {
