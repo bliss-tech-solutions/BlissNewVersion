@@ -4,8 +4,7 @@ const VelocityFrameWorkData = [
         img: "/Images/BackgroundImages/TopVelocityDummyImage.png",
         alt: "Top Velocity Framework high intensity launch phase visual showcasing real estate marketing strategy and brand visibility by The Bliss Solution",
         tagline: "Building Strong Visibility and Attracting Serious Homebuyer Interest",
-        description:
-            "This phase is designed to give your real estate project maximum visibility and brand recall. It helps you reach qualified homebuyers, build awareness around your location and USP, and create strong early-stage demand.",
+        description: "This phase gives your real estate project maximum visibility and brand recall, reaching qualified homebuyers and creating strong early-stage demand.",
         points: [
             "Neighbourhood and location storytelling to build trust",
             "Unique content strategies for luxury and mid segment properties",
@@ -18,8 +17,7 @@ const VelocityFrameWorkData = [
         img: "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/689063f73ca4b93428c95476_service4-p-2000.webp",
         alt: "Mid Velocity Framework steady nurture phase visual displaying real estate marketing conversion strategy and buyer engagement by The Bliss Solution",
         tagline: "Turning Buyer Interest into Qualified Site Visits",
-        description:
-            "This stage focuses on nurturing the awareness you have created and converting it into meaningful engagement. Every touchpoint educates buyers, resolves doubts and prepares them for an in-person site visit.",
+        description: "This stage nurtures awareness and converts it into meaningful engagement, educating buyers and preparing them for site visits.",
         points: [
             "Conversion focused landing pages and high performance microsites",
             "Influencer partnerships for credibility and social proof",
@@ -32,8 +30,7 @@ const VelocityFrameWorkData = [
         img: "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/689063f6bd0ae5514015212d_service5-p-2000.webp",
         alt: "Low Velocity Framework precision conversion phase visual featuring real estate marketing booking strategy and lead conversion by The Bliss Solution",
         tagline: "Driving Final Conversions and Increasing Bookings",
-        description:
-            "This phase focuses on converting warm and high intent leads into confirmed bookings. Strategic follow ups, limited period offers and targeted content help buyers move confidently from enquiry to final decision.",
+        description: "This phase converts warm and high intent leads into confirmed bookings through strategic follow-ups, limited offers, and targeted content.",
         points: [
             "WhatsApp and SMS follow ups to increase visits and token bookings",
             "Festive and closing cycle campaigns for faster decision making",
