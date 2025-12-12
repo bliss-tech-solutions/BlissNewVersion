@@ -95,7 +95,7 @@ const AdFilmsVideos = () => {
     return (
         <>
             <div id="AdFilmsVideos">
-                <div className="Container SectionLargeTopPadding">
+                <div className="Container SectionLargeTopPadding PaddingBottomSection">
                     <CenteredHeader
                         tagText="Ad Films Videos"
                         heading="Ad Films Videos"

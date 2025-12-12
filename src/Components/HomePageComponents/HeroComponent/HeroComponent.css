@@ -82,7 +82,7 @@
 .gapAdjustment {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     text-align: start;
     align-items: start;
 }

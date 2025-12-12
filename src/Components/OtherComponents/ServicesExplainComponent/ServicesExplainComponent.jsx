@@ -35,7 +35,7 @@ const ServicesExplainComponent = () => {
 
     return (
         <div id="services-explain-component">
-            <div className="Container SectionLargeTopPadding">
+            <div className="Container SectionLargeTopPadding PaddingBottomSection">
             <FlexBetweenHeader
     tagText="Branding Solutions"
     heading="Branding Solutions We Offer"
