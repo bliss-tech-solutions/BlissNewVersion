@@ -7,7 +7,6 @@ const VelocityFrameWorkData = [
         description:
             "This phase is designed to give your real estate project maximum visibility and brand recall. It helps you reach qualified homebuyers, build awareness around your location and USP, and create strong early-stage demand.",
         points: [
-            "Area focused awareness videos and advertising campaigns",
             "Neighbourhood and location storytelling to build trust",
             "Unique content strategies for luxury and mid segment properties",
             "High impact digital hoardings and immersive creatives",
@@ -22,7 +21,6 @@ const VelocityFrameWorkData = [
         description:
             "This stage focuses on nurturing the awareness you have created and converting it into meaningful engagement. Every touchpoint educates buyers, resolves doubts and prepares them for an in-person site visit.",
         points: [
-            "Behaviour based retargeting with personalised messages",
             "Conversion focused landing pages and high performance microsites",
             "Influencer partnerships for credibility and social proof",
             "Lifestyle driven video content featuring the actual living experience",
@@ -37,7 +35,6 @@ const VelocityFrameWorkData = [
         description:
             "This phase focuses on converting warm and high intent leads into confirmed bookings. Strategic follow ups, limited period offers and targeted content help buyers move confidently from enquiry to final decision.",
         points: [
-            "Dedicated focus on high intent buyer segments",
             "WhatsApp and SMS follow ups to increase visits and token bookings",
             "Festive and closing cycle campaigns for faster decision making",
             "Retargeting customised for buyers who viewed price or floor plans",

@@ -107,13 +107,13 @@ const HomeVelocityFrameworkCards = () => {
                     </AnimatedElement>
 
                     {/* Animated Description */}
-                    <AnimatedElement animation="fade-up" duration={0.8} delay={0.2}>
+                    {/* <AnimatedElement animation="fade-up" duration={0.8} delay={0.2}>
                         <div className="MaxWidth-600 MarginTop30">
                             <p>We work with creative teams and ambitious founders to turn vision into product with intuitive UX, standout visuals, and seamless digital experiences that users remember.</p>
                         </div>
-                    </AnimatedElement>
+                    </AnimatedElement> */}
                     {/* Cards keep their existing scroll-based animations */}
-                    <div className="VelocityFrameworkCardsGrid MarginTop30">
+                    <div className="VelocityFrameworkCardsGrid MarginTop60">
                         {VelocityFrameWorkData.map((item, index) => (
                             <div
                                 key={index}
@@ -128,7 +128,7 @@ const HomeVelocityFrameworkCards = () => {
                                     <div className="VelocityContentFirstHalf">
                                         <div>
                                             <h4>{item.title}</h4>
-                                            <p className="MarginTop30">{item.description}</p>
+                                            <p>{item.description}</p>
                                         </div>
                                         <div className="PointsTagList MarginTop30">
                                             {item.points.map((point, index) => (

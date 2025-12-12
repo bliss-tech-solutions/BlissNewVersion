@@ -7,6 +7,7 @@ import ServicesExplainComponent from '../ServicesExplainComponent/ServicesExplai
 import AllClientsByCategories from '../AllClientsByCategories/AllClientsByCategories'
 import RevealImage from '../../CommonUsedComponents/RevealImage/RevealImage'
 import AdFilmsVideos from '../AdFilmsVideos/AdFilmsVideos'
+import MainLineCreatives from '../MainLineCreatives/MainLineCreatives'
 const AboutUs = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,6 +47,7 @@ const AboutUs = () => {
             <WhyRealStateBranding />
             <ServicesExplainComponent />
             <AdFilmsVideos />
+            <MainLineCreatives />
             <AllClientsByCategories />
 
         </>
