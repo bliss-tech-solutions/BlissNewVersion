@@ -13,6 +13,7 @@ import CareerPosition from './Components/OtherComponents/Career/CareerPosition'
 import { AnimatePresence, motion } from 'framer-motion'
 import Influence from './Components/OtherComponents/Influence/Influence'
 import { useEffect } from 'react'
+import Contact from './Components/OtherComponents/Contact/Contact'
 
 const PageTransition = ({ children }) => {
   return (
@@ -67,6 +68,7 @@ function App() {
           <Route path="/career" element={<PageTransition><Career /></PageTransition>} />
           <Route path="/influence" element={<PageTransition><Influence /></PageTransition>} />
           <Route path="/career/:positionName" element={<PageTransition><CareerPosition /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         </Routes>
       </AnimatePresence>
       {/* <ContactBottomCommon /> */}

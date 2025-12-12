@@ -29,6 +29,7 @@ const AboutUs = () => {
                             />
                             <div className="MarginTop60">
                                 <InteractiveButton
+                                iconImage="/Images/Icons/ButtonSvgIcon.png"
                                     buttonText="Explore Branding"
                                     arrowText="See how we create brands"
                                 />

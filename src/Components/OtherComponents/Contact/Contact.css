@@ -1,0 +1,311 @@
+#Contact {
+    background-color: #000;
+    min-height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.ContactBackgroundWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.ContactBackgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Images/BackgroundImages/ContactusBackgroundImage.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    animation: fadeInBackground 1.5s ease-in-out;
+}
+
+.ContactBackgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.85) 50%, rgb(0 0 0 / 33%) 100%);
+    z-index: 1;
+}
+
+.ContactContentWrapper {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.4;
+    }
+}
+
+.ContactContent {
+    width: 100%;
+}
+
+.MarginTop40 {
+    margin-top: 40px;
+}
+
+.ContactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.ContactSectionTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Form Styles */
+.ContactFormSection {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), rgba(8, 7, 15, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    position: sticky;
+    top: 20%;
+}
+
+.ContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.FormGroup {
+    width: 100%;
+}
+
+.FormInput,
+.FormTextarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.FormInput::placeholder,
+.FormTextarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.FormInput:focus,
+.FormTextarea:focus {
+    border-color: var(--BrandColor);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(230, 176, 53, 0.1);
+}
+
+.FormTextarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.FormSubmit {
+    margin-top: 4px;
+}
+
+.ContactSubmitButton {
+    width: 100%;
+    padding: 14px 24px;
+    background: var(--BrandColor);
+    border: 1px solid var(--BrandColor);
+    border-radius: 10px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Bricolage Grotesque", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.ContactSubmitButton:hover {
+    background: rgba(230, 176, 53, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 176, 53, 0.3);
+}
+
+.ContactSubmitButton:active {
+    transform: translateY(0);
+}
+
+.ContactSubmitButton svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.ContactSubmitButton:hover svg {
+    transform: translateX(4px);
+}
+
+/* Contact Info Styles */
+.ContactInfoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ContactInfoCard {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), rgba(8, 7, 15, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.ContactInfoItem {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.ContactInfoItem:last-child {
+    margin-bottom: 0;
+}
+
+.ContactInfoIcon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(230, 176, 53, 0.1);
+    border: 1px solid rgba(230, 176, 53, 0.3);
+    border-radius: 10px;
+    color: var(--BrandColor);
+}
+
+.ContactInfoIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.ContactInfoContent h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--BrandColor);
+}
+
+.ContactInfoContent p {
+    margin: 2px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Map Styles */
+.ContactMapSection {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), rgba(8, 7, 15, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.MapContainer {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.MapContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 992px) {
+    .ContactGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ContactFormSection,
+    .ContactInfoCard,
+    .ContactMapSection {
+        padding: 24px;
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .ContactGrid {
+        gap: 20px;
+    }
+
+    .ContactSectionTitle {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .ContactFormSection,
+    .ContactInfoCard,
+    .ContactMapSection {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .ContactInfoItem {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .ContactInfoIcon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .ContactInfoIcon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .MapContainer {
+        height: 220px;
+    }
+
+    .FormInput,
+    .FormTextarea {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .ContactForm {
+        gap: 14px;
+    }
+}

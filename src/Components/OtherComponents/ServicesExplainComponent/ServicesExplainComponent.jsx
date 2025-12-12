@@ -36,13 +36,13 @@ const ServicesExplainComponent = () => {
     return (
         <div id="services-explain-component">
             <div className="Container SectionLargeTopPadding PaddingBottomSection">
-            <FlexBetweenHeader
-    tagText="Branding Solutions"
-    heading="Branding Solutions We Offer"
-    description="Build a strong, memorable brand with clear, user-focused design that connects with your audience and drives results."
-    buttonLabel="Reach Out"
-    onButtonClick={() => { window.location.href = "mailto:info@blisssolutions.com"; }}
-/>
+                <FlexBetweenHeader
+                    tagText="Branding Solutions"
+                    heading="Branding Solutions We Offer"
+                    description="Build a strong, memorable brand with clear, user-focused design that connects with your audience and drives results."
+                    buttonLabel="Reach Out"
+                    onButtonClick={() => { window.location.href = "mailto:info@blisssolutions.com"; }}
+                />
 
                 <div className="ServicesWithDetailsContainer MarginTop60">
                     <motion.div

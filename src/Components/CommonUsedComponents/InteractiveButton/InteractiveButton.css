@@ -18,6 +18,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .interactive-button:hover {
@@ -54,6 +57,13 @@
     margin: 0;
     line-height: 1.4;
     max-width: 300px;
+}
+
+.button-icon{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Responsive Design */

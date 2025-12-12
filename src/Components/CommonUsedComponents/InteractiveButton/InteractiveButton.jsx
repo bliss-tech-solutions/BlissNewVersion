@@ -15,6 +15,7 @@ const InteractiveButton = ({
     buttonText = "Click Here",
     arrowText = null,
     arrowImage = "/Images/Icons/SmallArrowToUserIntactButtonSign.svg",
+    iconImage = "/Images/Icons/ButtonSvgIcon.png",
     onClick,
     className = "",
     ...props
@@ -22,6 +23,12 @@ const InteractiveButton = ({
     return (
         <div className={`interactive-button-wrapper ${className}`} {...props}>
             <button className="interactive-button" onClick={onClick}>
+                <img
+                    src={iconImage}
+                    alt="Icon for real estate branding services"
+                    className="button-icon"
+                    loading="lazy"
+                />
                 <span className="button-main-text">{buttonText}</span>
             </button>
 
