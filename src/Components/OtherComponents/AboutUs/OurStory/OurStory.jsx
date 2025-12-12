@@ -90,7 +90,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/OurStoryBoxImage2.jpeg"
                                     alt="Alok team member at The Bliss Solution real estate branding and marketing agency"
                                     loading="lazy"
                                 />
@@ -115,7 +115,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/OurStoryBoxImage4.jpeg"
                                     alt="Creative design process for real estate branding projects at The Bliss Solution"
                                     loading="lazy"
                                 />
@@ -125,7 +125,7 @@ const OurStory = () => {
                             </motion.div>
                             <motion.div variants={gridItemVariant}>
                                 <RevealImage
-                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/WhatsApp Image 2025-12-12 at 13.59.46.jpeg"
+                                    src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/OurStoryBoxImage3.jpeg"
                                     alt="Real estate marketing strategy session and brand development workshop at The Bliss Solution"
                                     loading="lazy"
                                 />
@@ -161,7 +161,7 @@ const OurStory = () => {
             <div className="GradientOverlay">
 
             </div>
-      
+
             <AboutUsCounters />
             <HomeWorkFlowComponent />
         </>
