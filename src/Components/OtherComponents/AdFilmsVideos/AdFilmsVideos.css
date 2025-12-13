@@ -3,9 +3,17 @@
 }
 
 .AdFilmsVideoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .AdFilmsVideoContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .AdFilmsVideoCard {
@@ -44,6 +52,14 @@
 }
 
 .AdFilmsVideoImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.AdFilmsVideoThumbnail {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -130,6 +146,15 @@
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.VideoModalVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .VideoModalClose {

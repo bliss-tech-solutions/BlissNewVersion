@@ -30,13 +30,22 @@ const AdFilmsVideos = () => {
         return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1` : url || "";
     };
 
-    const getVideoThumbnailUrl = (url) => {
-        const videoId = extractYouTubeId(url);
-        return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
+    const getVideoThumbnailUrl = (video) => {
+        // If video has a custom thumbnail image, use it
+        if (video.image) {
+            return video.image;
+        }
+        // For YouTube videos, use YouTube thumbnail
+        if (video.type === "youtube") {
+            const videoId = extractYouTubeId(video.videoUrl);
+            return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
+        }
+        // For regular videos without thumbnail, return empty string (will use video element)
+        return "";
     };
 
-    const openVideo = () => {
-        setActiveVideo(AdFilmsVideosData);
+    const openVideo = (video) => {
+        setActiveVideo(video);
     };
 
     const closeVideo = () => {
@@ -79,12 +88,23 @@ const AdFilmsVideos = () => {
                         ×
                     </button>
                     <div className="VideoFrameWrapper">
-                        <iframe
-                            src={getVideoEmbedUrl(activeVideo.videoUrl)}
-                            title={activeVideo.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                        {activeVideo.type === "youtube" ? (
+                            <iframe
+                                src={getVideoEmbedUrl(activeVideo.videoUrl)}
+                                title={activeVideo.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <video
+                                src={activeVideo.videoUrl}
+                                controls
+                                autoPlay
+                                className="VideoModalVideo"
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        )}
                     </div>
                 </div>
             </div>,
@@ -103,23 +123,40 @@ const AdFilmsVideos = () => {
                     />
                     
                     <div className="AdFilmsVideoContainer MarginTop60">
-                        <div className="AdFilmsVideoCard">
-                            <div className="AdFilmsVideoImage">
-                                <img
-                                    src={getVideoThumbnailUrl(AdFilmsVideosData.videoUrl)}
-                                    alt={AdFilmsVideosData.title || "Ad Films Videos"}
-                                    loading="lazy"
-                                />
-                                <button
-                                    type="button"
-                                    className="VideoPlayButton"
-                                    onClick={openVideo}
-                                    aria-label={`Play ${AdFilmsVideosData.title} video`}
-                                >
-                                    <span></span>
-                                </button>
-                            </div>
-                        </div>
+                        {AdFilmsVideosData.videos.map((video) => {
+                            const thumbnailUrl = getVideoThumbnailUrl(video);
+                            return (
+                                <div key={video.id} className="AdFilmsVideoCard">
+                                    <div className="AdFilmsVideoImage">
+                                        {thumbnailUrl ? (
+                                            <img
+                                                src={thumbnailUrl}
+                                                alt={video.title || "Ad Films Videos"}
+                                                loading="lazy"
+                                            />
+                                        ) : (
+                                            <video
+                                                src={video.videoUrl}
+                                                muted
+                                                loop
+                                                playsInline
+                                                className="AdFilmsVideoThumbnail"
+                                            >
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        )}
+                                        <button
+                                            type="button"
+                                            className="VideoPlayButton"
+                                            onClick={() => openVideo(video)}
+                                            aria-label={`Play ${video.title} video`}
+                                        >
+                                            <span></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
