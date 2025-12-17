@@ -1,7 +1,7 @@
 const VelocityFrameWorkData = [
     {
         title: "Top Velocity Framework (High Intensity Launch Phase)",
-        img: "/Images/BackgroundImages/TopVelocityDummyImage.png",
+        img: "/Images/HomePageVelocityImages/Artboard 1.jpg",
         alt: "Top Velocity Framework high intensity launch phase visual showcasing real estate marketing strategy and brand visibility by The Bliss Solution",
         tagline: "Building Strong Visibility and Attracting Serious Homebuyer Interest",
         description: "This phase gives your real estate project maximum visibility and brand recall, reaching qualified homebuyers and creating strong early-stage demand.",
@@ -14,7 +14,7 @@ const VelocityFrameWorkData = [
     },
     {
         title: "Mid Velocity Framework (Steady Nurture Phase)",
-        img: "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/689063f73ca4b93428c95476_service4-p-2000.webp",
+        img: "/Images/HomePageVelocityImages/Artboard 2.jpg",
         alt: "Mid Velocity Framework steady nurture phase visual displaying real estate marketing conversion strategy and buyer engagement by The Bliss Solution",
         tagline: "Turning Buyer Interest into Qualified Site Visits",
         description: "This stage nurtures awareness and converts it into meaningful engagement, educating buyers and preparing them for site visits.",
@@ -27,7 +27,7 @@ const VelocityFrameWorkData = [
     },
     {
         title: "Low Velocity Framework (Precision Conversion Phase)",
-        img: "https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/689063f6bd0ae5514015212d_service5-p-2000.webp",
+        img: "/Images/HomePageVelocityImages/Artboard 3.jpg",
         alt: "Low Velocity Framework precision conversion phase visual featuring real estate marketing booking strategy and lead conversion by The Bliss Solution",
         tagline: "Driving Final Conversions and Increasing Bookings",
         description: "This phase converts warm and high intent leads into confirmed bookings through strategic follow-ups, limited offers, and targeted content.",
