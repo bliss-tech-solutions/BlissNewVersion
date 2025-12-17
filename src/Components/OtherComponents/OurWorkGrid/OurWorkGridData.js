@@ -143,7 +143,7 @@ const OurWorkGridData = [
             {
                 title: "Shreemad",
                 pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/ShreemadBrochure.pdf",
-                image: "/Images/PdfDocuments/Images/ShreemadBrochure.png",
+                image: "/Images/CoverPagesImages/shreemad-glory2.jpg",
                 alt: "Shreemad luxury residential development brochure cover page featuring premium amenities and design by The Bliss Solution",
                 description: "Luxury residential development brochure featuring premium amenities and design.",
                 type: "pdf",
@@ -151,7 +151,7 @@ const OurWorkGridData = [
             {
                 title: "Shreeji",
                 pdfUrl: "https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/SHREEJIBrocher.pdf",
-                image: "/Images/PdfDocuments/Images/SHREEJIBrocher.png",
+                image: "/Images/CoverPagesImages/shreeji.jpg",
                 alt: "Shreeji premium real estate project brochure cover page with detailed floor plans and amenities by The Bliss Solution",
                 description: "Premium real estate project brochure with detailed floor plans and amenities.",
                 type: "pdf",
