@@ -27,9 +27,9 @@ const Footer = () => {
                         {/* Company Branding & Social Media */}
                         <div className="FooterColumn">
                             <div className="FooterBranding">
-                                <img 
-                                    src="/Images/TBSLogos/BlissWhiteLogo.webp" 
-                                    alt="The Bliss Solution logo" 
+                                <img
+                                    src="/Images/TBSLogos/BlissWhiteLogo.webp"
+                                    alt="The Bliss Solution logo"
                                     className="FooterLogo"
                                     loading="lazy"
                                 />
@@ -50,10 +50,11 @@ const Footer = () => {
 
                         {/* Contact Info */}
                         <div className="FooterColumn">
-                            <h3 className="FooterColumnTitle">Contact Info</h3>
-                            <p className="FooterColumnDescription">
-                                For quick and efficient communication, please use the provided contact details. We look forward to hearing from you.
+                            <h3 className="FooterAddressTitle">Head Office (Ahmedabad)</h3>
+                            <p className="FooterAddress">
+                                Arista Business Space, 103 & 109, Sindhubhavan Rd, Bodakdev, Ahmedabad, Gujarat 380059
                             </p>
+                            <br />
                             <div className="FooterContactDetails">
                                 <a href="mailto:hello@theblisssolution.com" className="FooterContactItem">
                                     hello@theblisssolution.com
@@ -94,24 +95,18 @@ const Footer = () => {
                 </div>
 
                 {/* Middle Section - Address */}
-                <div className="FooterMiddleSection">
-                    <h3 className="FooterAddressTitle">Head Office (Ahmedabad)</h3>
-                    <p className="FooterAddress">
-                        Arista Business Space, 103 & 109, Sindhubhavan Rd, Bodakdev, Ahmedabad, Gujarat 380059
-                    </p>
-                </div>
 
                 {/* Bottom Section - About & Copyright */}
                 <div className="FooterBottomSection">
                     <div className="FooterAbout">
                         <p>
-                            At The Bliss Solution, we are a results-driven real estate marketing agency committed to helping developers succeed online. 
-                            As a leading real estate digital marketing agency, The Bliss Solution delivers high-impact digital marketing for real estate 
-                            that includes everything from real estate social media marketing to strategic real estate lead generation. Recognized among 
-                            the best digital marketing agencies for real estate, our team specializes in custom solutions tailored to your brand. 
-                            Whether you're looking for a real estate marketing company or a full-service digital marketing agency for real estate, 
-                            The Bliss Solution has you covered. Our real estate lead generation agency leverages the latest tools and trends to deliver 
-                            real ROI. From digital marketing services for real estate to performance-driven campaigns. Choose The Bliss Solution—the 
+                            At The Bliss Solution, we are a results-driven real estate marketing agency committed to helping developers succeed online.
+                            As a leading real estate digital marketing agency, The Bliss Solution delivers high-impact digital marketing for real estate
+                            that includes everything from real estate social media marketing to strategic real estate lead generation. Recognized among
+                            the best digital marketing agencies for real estate, our team specializes in custom solutions tailored to your brand.
+                            Whether you're looking for a real estate marketing company or a full-service digital marketing agency for real estate,
+                            The Bliss Solution has you covered. Our real estate lead generation agency leverages the latest tools and trends to deliver
+                            real ROI. From digital marketing services for real estate to performance-driven campaigns. Choose The Bliss Solution—the
                             best real estate digital marketing agency to grow your brand with expert Real Estate Digital Marketing solutions.
                         </p>
                     </div>

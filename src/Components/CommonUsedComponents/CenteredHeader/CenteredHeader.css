@@ -40,7 +40,7 @@
 }
 
 .CenteredHeaderHeading {
-    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 3vw, 4.5rem);
     line-height: 120%;
     font-weight: 400;
     color: white;

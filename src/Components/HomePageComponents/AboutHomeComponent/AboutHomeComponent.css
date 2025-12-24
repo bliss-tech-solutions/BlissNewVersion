@@ -80,14 +80,12 @@
 
 
 #about-home-component .FlexGridSystem {
-    align-items: center;
-    max-width: 1000px;
+    /* align-items: center; */
+    /* max-width: 1000px; */
     margin: 0 auto;
 }
 
-#about-home-component h2, #about-home-component p{
-    text-align: center;
-}
+
 
 
 .imageContainer {
@@ -259,20 +257,24 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
     #about-home-component .FlexGridSystem {
         align-items: start;
         max-width: 1000px;
         margin: 0 auto;
     }
-    #about-home-component h2, #about-home-component p{
+
+    #about-home-component h2,
+    #about-home-component p {
         text-align: start;
     }
+
     #about-home-component .ContainerGridSystem p {
         text-align: center;
     }
 
-    .backgroundOverlayImageSet{
+    .backgroundOverlayImageSet {
         width: 100%;
     }
-    
+
 }

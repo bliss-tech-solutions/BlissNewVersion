@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import "./AboutHomeComponent.css";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
-import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
+// import FlexCenteredHeader from "../../CommonUsedComponents/FlexCenteredHeader/FlexCenteredHeader";
+import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
+
 const AnimatedCounter = ({ target, duration, isVisible }) => {
     const [currentValue, setCurrentValue] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -156,11 +158,12 @@ const AboutHomeComponent = () => {
             <div className="Container">
                 <div className="AboutHomeComponentContainer SectionTopPadding">
                     <div className="FlexGridSystem">
-                        <CenteredHeader
+                        <FlexBetweenHeader
                             tagText="Real estate demand engineering"
                             heading="Real Estate Marketing Agency for Developers – We Engineer Buyer Demand"
-                            description={`Partner‑first real estate marketing agency helping property developers turn landmark projects into sold‑out addresses. Through brand architecture, launch strategy, high‑intent lead generation and sales pipeline activation, we create consistent buyer demand and accelerate bookings for residential and commercial projects.`}
+                            description=""
                         />
+                        <p>Partner‑first real estate marketing agency helping property developers turn landmark projects into sold‑out addresses. Through brand architecture, launch strategy, high‑intent lead generation and sales pipeline activation, we create consistent buyer demand and accelerate bookings for residential and commercial projects.</p>
 
                         {/* Layer 4: Stats Container - Fades up */}
                         <AnimatedElement animation="fade-up" duration={0.8} delay={0.6}>

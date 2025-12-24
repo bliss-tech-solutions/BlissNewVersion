@@ -7,6 +7,8 @@ import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/Animated
 import RevealImage from "../../CommonUsedComponents/RevealImage/RevealImage";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 import OurWorkGridData from "../../OtherComponents/OurWorkGrid/OurWorkGridData";
+import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
+
 // Swiper imports (commented out for future use)
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
@@ -94,11 +96,13 @@ const HomePageSomeOfWork = () => {
                 {/* Animated Header */}
                 <AnimatedElement animation="fade-up" duration={0.8} delay={0}>
                     <div className="Container">
-                        <CenteredHeader
+                        <FlexBetweenHeader
                             tagText="our portfolio"
                             heading="Projects That Define Excellence"
-                            description="Verified Success. Unfiltered Data. Explore the Metrics That Define Market Leadership."
+                            buttonLabel=""
+                            description=""
                         />
+                        <p>Verified Success. Unfiltered Data. Explore the Metrics That Define Market Leadership.</p>
                     </div>
                 </AnimatedElement>
 
