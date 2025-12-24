@@ -158,12 +158,15 @@ const AboutHomeComponent = () => {
             <div className="Container">
                 <div className="AboutHomeComponentContainer SectionTopPadding">
                     <div className="FlexGridSystem">
-                        <FlexBetweenHeader
-                            tagText="Real estate demand engineering"
-                            heading="Real Estate Marketing Agency for Developers – We Engineer Buyer Demand"
-                            description=""
-                        />
-                        <p>Partner‑first real estate marketing agency helping property developers turn landmark projects into sold‑out addresses. Through brand architecture, launch strategy, high‑intent lead generation and sales pipeline activation, we create consistent buyer demand and accelerate bookings for residential and commercial projects.</p>
+                        <div className="Max1000px">
+                            <FlexBetweenHeader
+                                tagText="Real estate demand engineering"
+                                heading="Real Estate Marketing Agency for Developers – We Engineer Buyer Demand"
+                                description=""
+                            />
+                            <p>Partner‑first real estate marketing agency helping property developers turn landmark projects into sold‑out addresses. Through brand architecture, launch strategy, high‑intent lead generation and sales pipeline activation, we create consistent buyer demand and accelerate bookings for residential and commercial projects.</p>
+
+                        </div>
 
                         {/* Layer 4: Stats Container - Fades up */}
                         <AnimatedElement animation="fade-up" duration={0.8} delay={0.6}>

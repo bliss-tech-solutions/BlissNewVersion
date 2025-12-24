@@ -32,3 +32,8 @@ li{
   list-style: none;
   font-size: 16px;
 }
+
+.Max1000px{
+  max-width: 1000px;
+  margin:  unset !important;
+}

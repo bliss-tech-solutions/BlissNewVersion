@@ -64,7 +64,7 @@ const Influence = () => {
 
             <div className="Container  PaddingBottomSection">
 
-                <div className="SectionLargeTopPadding">
+                <div className="SectionLargeTopPadding Max1000px">
                     <FlexBetweenHeader
                         heading="Why Influence Matters in Real Estate"
                         tagText="Influence"
