@@ -9,11 +9,11 @@ const NavigationData = [
         name: 'Branding',
         path: '/branding'
     },
-    {
-        id: 3,
-        name: 'Performance',
-        path: '/performance'
-    },
+    // {
+    //     id: 3,
+    //     name: 'Performance',
+    //     path: '/performance'
+    // },
     {
         id: 4,
         name: 'Influence',

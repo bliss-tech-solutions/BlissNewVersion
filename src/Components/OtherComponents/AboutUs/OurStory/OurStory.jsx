@@ -162,7 +162,7 @@ const OurStory = () => {
 
             </div>
 
-            <AboutUsCounters />
+            {/* <AboutUsCounters /> */}
             <HomeWorkFlowComponent />
         </>
     );

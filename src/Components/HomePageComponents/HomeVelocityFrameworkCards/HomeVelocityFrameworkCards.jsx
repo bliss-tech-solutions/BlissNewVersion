@@ -142,7 +142,7 @@ const HomeVelocityFrameworkCards = () => {
                                         </div>
                                         <div className="VideosListContainer">
                                             <div className="video-slider-wrapper">
-                                                <Swiper
+                                                {/* <Swiper
                                                     // ref={videoSliderRef}
                                                     loop={true}
                                                     slidesPerView={4}
@@ -162,8 +162,8 @@ const HomeVelocityFrameworkCards = () => {
                                                             </div>
                                                         </SwiperSlide>
                                                     ))}
-                                                </Swiper>
-                                                <div className="video-slider-navigation">
+                                                </Swiper> */}
+                                                {/* <div className="video-slider-navigation">
                                                     <button className={`video-nav-btn video-prev-${index}`}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -174,7 +174,7 @@ const HomeVelocityFrameworkCards = () => {
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                                         </svg>
                                                     </button>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
