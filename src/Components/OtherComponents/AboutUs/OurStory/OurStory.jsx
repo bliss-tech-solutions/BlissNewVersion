@@ -61,13 +61,13 @@ const OurStory = () => {
                                 heading="We design identities that instantly command premium valuation and investor trust."
                                 description="We design delightful experiences that make life simpler and more enjoyable."
                             />
-                            <div className="MarginTop60">
+                            {/* <div className="MarginTop60">
                                 <InteractiveButton
                                     arrowImage="/Images/Icons/ButtonArrowImage2.svg"
                                     buttonText="Dummy Button"
                                     arrowText="Dummy Arrow Text"
                                 />
-                            </div>
+                            </div> */}
                         </motion.div>
                         <motion.div className='AboutUsRightSideGridSystem' variants={gridVariant}>
                             <motion.div variants={gridItemVariant}>
