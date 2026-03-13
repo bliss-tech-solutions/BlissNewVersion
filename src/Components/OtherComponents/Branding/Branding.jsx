@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import CenteredHeader from '../../CommonUsedComponents/CenteredHeader/CenteredHeader'
 import InteractiveButton from '../../CommonUsedComponents/InteractiveButton/InteractiveButton'
 import './Branding.css'
@@ -9,6 +10,7 @@ import RevealImage from '../../CommonUsedComponents/RevealImage/RevealImage'
 import AdFilmsVideos from '../AdFilmsVideos/AdFilmsVideos'
 import MainLineCreatives from '../MainLineCreatives/MainLineCreatives'
 const AboutUs = () => {
+    const navigate = useNavigate();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -32,6 +34,7 @@ const AboutUs = () => {
                                 iconImage="/Images/Icons/ButtonSvgIcon.png"
                                     buttonText="Explore Branding"
                                     arrowText="See how we create brands"
+                                    onClick={() => navigate('/ourstory')}
                                 />
                             </div>
                         </div>
@@ -45,10 +48,10 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
+            <MainLineCreatives />
             <WhyRealStateBranding />
             <ServicesExplainComponent />
             <AdFilmsVideos />
-            <MainLineCreatives />
             <AllClientsByCategories />
 
         </>
