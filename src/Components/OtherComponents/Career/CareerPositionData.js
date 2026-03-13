@@ -13,7 +13,7 @@ const CareerPositionData = {
         alt: "Graphics Designer career opportunity at The Bliss Solution real estate branding agency in Gujarat",
         address: "Ahmedabad, Gujarat, India",
         email: "careers@theblisssolution.com",
-        contact: "+91 98765 43210",
+        contact: "+91 90671 57357",
         description: "We are looking for a creative Graphics Designer to join our real estate branding team. You will be responsible for creating visually stunning marketing materials, brand identities, and digital assets that help real estate projects stand out in the market.",
         experienceProfile: "Graphics Designer at The Bliss Solution is a skilled creative professional with experience in planning, designing, and executing high-quality visual identities for real estate projects. They manage design projects from concept to delivery, ensuring strong brand consistency, visual excellence, and market appeal. Skilled in Adobe Creative Suite, brand identity design, print and digital design, they create engaging visual content that connects with potential buyers and drives property sales.",
         responsibilities: [
@@ -44,7 +44,7 @@ const CareerPositionData = {
         alt: "Content Writer career opportunity at The Bliss Solution real estate branding agency in Gujarat",
         address: "Ahmedabad, Gujarat, India",
         email: "careers@theblisssolution.com",
-        contact: "+91 98765 43210",
+        contact: "+91 90671 57357",
         description: "Join our content team as a Content Writer specializing in real estate marketing. You'll craft compelling narratives that transform properties into desirable lifestyles, creating content that drives engagement and conversions.",
         experienceProfile: "Content Writer at The Bliss Solution is a skilled professional with experience in crafting compelling narratives for real estate marketing. They manage content projects from concept to publication, ensuring strong storytelling, brand consistency, and SEO excellence. Skilled in copywriting, content strategy, SEO optimization, and multi-channel content creation, they create engaging written content that connects with audiences and drives property inquiries.",
         responsibilities: [
@@ -75,7 +75,7 @@ const CareerPositionData = {
         alt: "Social Media Manager career opportunity at The Bliss Solution real estate branding agency in Gujarat",
         address: "Ahmedabad, Gujarat, India",
         email: "careers@theblisssolution.com",
-        contact: "+91 98765 43210",
+        contact: "+91 90671 57357",
         description: "We're seeking a Social Media Manager to lead our real estate social media strategy. You'll manage multiple property accounts, create engaging content, and build communities that drive brand awareness and lead generation.",
         experienceProfile: "Social Media Manager at The Bliss Solution is a skilled digital marketing professional with experience in planning, executing, and optimizing social media strategies for real estate projects. They manage social media campaigns from concept to analytics, ensuring strong community engagement, brand awareness, and lead generation. Skilled in content creation, community management, social media analytics, and paid advertising, they create engaging social content that connects with potential buyers and drives property inquiries.",
         responsibilities: [
@@ -106,7 +106,7 @@ const CareerPositionData = {
         alt: "Video Editor career opportunity at The Bliss Solution real estate branding agency in Gujarat",
         address: "Ahmedabad, Gujarat, India",
         email: "careers@theblisssolution.com",
-        contact: "+91 98765 43210",
+        contact: "+91 90671 57357",
         description: "Join our creative production team as a Video Editor. You'll create stunning video content for real estate projects, including property tours, promotional videos, and social media content that captivates potential buyers.",
         experienceProfile: "Video Editor at The Bliss Solution is a skilled creative professional with experience in planning, editing, and producing high-quality video content for real estate projects. They manage video projects from footage to final delivery, ensuring strong storytelling, visual excellence, and brand consistency. Skilled in video editing, color grading, motion graphics, and sound design, they create engaging video content that connects with audiences and showcases properties in the best light.",
         responsibilities: [
@@ -137,7 +137,7 @@ const CareerPositionData = {
         alt: "Software and Website Developer career opportunity at The Bliss Solution real estate branding agency in Gujarat",
         address: "Ahmedabad, Gujarat, India",
         email: "careers@theblisssolution.com",
-        contact: "+91 98765 43210",
+        contact: "+91 90671 57357",
         description: "We're looking for a skilled Software and Website Developer to build and maintain high-performance websites and digital platforms for real estate projects. You'll work on cutting-edge web solutions that drive conversions and enhance user experience.",
         experienceProfile: "Software and Website Developer at The Bliss Solution is a skilled technology professional with experience in planning, developing, and maintaining high-performance websites and digital platforms for real estate projects. They manage development projects from concept to deployment, ensuring strong technical excellence, user experience, and performance optimization. Skilled in React, JavaScript, HTML/CSS, API integration, and modern web frameworks, they create engaging web solutions that connect with users and drive property conversions.",
         responsibilities: [

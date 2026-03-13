@@ -111,8 +111,8 @@ const Contact = () => {
                                     </div>
                                     <div className="ContactInfoContent">
                                         <h4>Email</h4>
-                                        <p>hello@theblisssolution.com</p>
                                         <p>info@theblisssolution.com</p>
+                                        {/* <p>info@theblisssolution.com</p> */}
                                     </div>
                                 </div>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                                     </div>
                                     <div className="ContactInfoContent">
                                         <h4>Phone</h4>
-                                        <p>+91 72039 17285</p>
+                                        <p>+91 90671 57357</p>
                                     </div>
                                 </div>
 
@@ -137,7 +137,7 @@ const Contact = () => {
                                     </div>
                                     <div className="ContactInfoContent">
                                         <h4>Address</h4>
-                                        <p>Arista Business Space, 103 & 109, Sindhubhavan Rd,</p>
+                                        <p>Arista Business Space, 109 & 306, Sindhubhavan Rd,</p>
                                         <p>Bodakdev, Ahmedabad,</p>
                                         <p>Gujarat 380059</p>
                                     </div>

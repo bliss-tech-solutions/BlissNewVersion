@@ -200,7 +200,7 @@ const AboutHomeComponent = () => {
                             <AnimatedElement animation="zoom-in" duration={0.6} delay={0.8}>
                                 <InteractiveButton
                                     onClick={() => {
-                                        window.location.href = "tel:+918401849206";
+                                        window.location.href = "tel:+919067157357";
                                     }}
                                     buttonText="Start Your Project"
                                     arrowText="Got a concept? Let’s engineer the demand."

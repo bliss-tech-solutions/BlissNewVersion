@@ -52,18 +52,18 @@ const Footer = () => {
                         <div className="FooterColumn">
                             <h3 className="FooterAddressTitle">Head Office (Ahmedabad)</h3>
                             <p className="FooterAddress">
-                                Arista Business Space, 103 & 109, Sindhubhavan Rd, Bodakdev, Ahmedabad, Gujarat 380059
+                                Arista Business Space, 109 & 306, Sindhubhavan Rd, Bodakdev, Ahmedabad, Gujarat 380059
                             </p>
                             <br />
                             <div className="FooterContactDetails">
-                                <a href="mailto:hello@theblisssolution.com" className="FooterContactItem">
-                                    hello@theblisssolution.com
+                                <a href="mailto:info@theblisssolution.com" className="FooterContactItem">
+                                    info@theblisssolution.com
                                 </a>
                                 <a href="mailto:info@theblisssolution.com" className="FooterContactItem">
                                     info@theblisssolution.com
                                 </a>
-                                <a href="tel:+917203917285" className="FooterContactItem">
-                                    +91 72039 17285
+                                <a href="tel:+919067157357" className="FooterContactItem">
+                                    +91 90671 57357
                                 </a>
                             </div>
                         </div>

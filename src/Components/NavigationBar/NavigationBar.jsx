@@ -50,7 +50,7 @@ const NavigationBar = () => {
     }, [isDrawerOpen]);
 
     const contactInfo = {
-        phone: "+91 84018 49206",
+        phone: "+91 90671 57357",
         email: "info@blisssolutions.com"
     };
 
