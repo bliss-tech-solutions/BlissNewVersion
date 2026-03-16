@@ -2,36 +2,20 @@ import React, { useMemo, useState } from "react";
 import "./AllClientsByCategories.css";
 import FlexBetweenHeader from "../../CommonUsedComponents/FlexBetweenHeader/FlexBetweenHeader";
 import CenteredHeader from "../../CommonUsedComponents/CenteredHeader/CenteredHeader";
-import AllClientsByCategoriesData from "./AllClientsByCategoriesData";
+import AllClientsByCategoriesData, { allClientLogos, clientCategories } from "./AllClientsByCategoriesData";
 
 const AllClientsByCategories = () => {
     const [activeCategory, setActiveCategory] = useState("All");
 
-    const categories = useMemo(() => {
-        const categoryList = AllClientsByCategoriesData.map((item) => item.category);
-        return ["All", ...categoryList];
-    }, []);
+    const categories = clientCategories;
 
     const clientsToRender = useMemo(() => {
         if (activeCategory === "All") {
-            return AllClientsByCategoriesData.flatMap((item) =>
-                item.clients.map((client) => ({
-                    ...client,
-                    category: item.category,
-                }))
-            );
+            return allClientLogos;
         }
 
-        const selectedCategory = AllClientsByCategoriesData.find(
-            (item) => item.category === activeCategory
-        );
-
-        return (
-            selectedCategory?.clients.map((client) => ({
-                ...client,
-                category: activeCategory,
-            })) ?? []
-        );
+        // Other categories should not show logos for now
+        return [];
     }, [activeCategory]);
 
     return (
@@ -55,6 +39,12 @@ const AllClientsByCategories = () => {
                         </button>
                     ))}
                 </div>
+
+                {activeCategory !== "All" && (
+                    <div className="ClientComingSoon">
+                        <p>Coming soon</p>
+                    </div>
+                )}
 
                 <div className="ClientLogosGrid">
                     {clientsToRender.map((client, index) => (
