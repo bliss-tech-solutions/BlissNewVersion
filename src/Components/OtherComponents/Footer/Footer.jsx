@@ -56,9 +56,9 @@ const Footer = () => {
                             </p>
                             <br />
                             <div className="FooterContactDetails">
-                                <a href="mailto:info@theblisssolution.com" className="FooterContactItem">
+                                {/* <a href="mailto:info@theblisssolution.com" className="FooterContactItem">
                                     info@theblisssolution.com
-                                </a>
+                                </a> */}
                                 <a href="mailto:info@theblisssolution.com" className="FooterContactItem">
                                     info@theblisssolution.com
                                 </a>

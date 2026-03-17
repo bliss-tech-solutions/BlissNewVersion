@@ -3,6 +3,7 @@ import "./HeroComponent.css";
 import AnimatedElement from "../../CommonUsedComponents/AnimatedElement/AnimatedElement";
 import InteractiveButton from "../../CommonUsedComponents/InteractiveButton/InteractiveButton";
 import LightRays from "../../CommonUsedComponents/LightRays/LightRays";
+import { allClientLogos } from "../../OtherComponents/AllClientsByCategories/AllClientsByCategoriesData";
 const AnimatedCounter = ({ target, duration, isVisible }) => {
     const [currentValue, setCurrentValue] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -85,21 +86,8 @@ const HeroComponent = () => {
     const [startCounter, setStartCounter] = useState(false);
     const counterRef = useRef(null);
 
-    // Top 12 Client Logos
-    const clientLogos = [
-        { id: 1, name: "Samruddh", logo: "/Images/ClientsLogos/samruddh.png" },
-        { id: 2, name: "Pravish", logo: "/Images/ClientsLogos/pravish.png" },
-        { id: 3, name: "Origin Group", logo: "/Images/ClientsLogos/origingroup.png" },
-        { id: 4, name: "Vraj", logo: "/Images/ClientsLogos/Vraj.png" },
-        { id: 5, name: "VR Buildcon", logo: "/Images/ClientsLogos/VrBuildcon.png" },
-        { id: 6, name: "Vision Creative Group", logo: "/Images/ClientsLogos/VisionCreativeGroup.png" },
-        { id: 7, name: "Vinayak", logo: "/Images/ClientsLogos/Vinayak.png" },
-        { id: 8, name: "Verdana", logo: "/Images/ClientsLogos/Verdana.png" },
-        { id: 9, name: "VR Group", logo: "/Images/ClientsLogos/VRGroup.png" },
-        { id: 10, name: "Trisha", logo: "/Images/ClientsLogos/Trisha.png" },
-        { id: 11, name: "Times Square Arcade Group", logo: "/Images/ClientsLogos/TimesSquareArcadeGroup.png" },
-        { id: 12, name: "The Orion", logo: "/Images/ClientsLogos/TheOrion.png" }
-    ];
+    // Client logos from PngAllLogos (shared with AllClientsByCategories)
+    const clientLogos = allClientLogos;
 
     const companyWorkDetails = [
         {
