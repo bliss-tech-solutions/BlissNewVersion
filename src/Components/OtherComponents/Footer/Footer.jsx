@@ -110,9 +110,11 @@ const Footer = () => {
                             best real estate digital marketing agency to grow your brand with expert Real Estate Digital Marketing solutions.
                         </p>
                     </div>
-                    <div className="FooterCopyright">
-                        <p>Copyright © 2025, All Right Reserved The Bliss Solution</p>
-                    </div>
+                  <div className="FooterCopyright">
+  <p>
+    Copyright © {new Date().getFullYear()}, All Rights Reserved The Bliss Solution
+  </p>
+</div>
                 </div>
             </div>
         </div>
